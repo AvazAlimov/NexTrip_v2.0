@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.layout.HBox?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Activities.GuideActivity" style="-fx-background-color: transparent;">
+
+    <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10"
+              AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10"
+              style="-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0); -fx-background-image: url('/Resources/Pictures/guide_background.png'); -fx-background-size: cover;">
+
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints vgrow="ALWAYS"/>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <HBox>
+            <Separator HBox.hgrow="ALWAYS" visible="false"/>
+            <JFXButton prefWidth="40" style="-fx-background-color: transparent; -fx-text-fill: white;" prefHeight="40"
+                       text="✖"/>
+        </HBox>
+
+
+        <HBox GridPane.rowIndex="2">
+
+        </HBox>
+
+    </GridPane>
+
+</AnchorPane>
