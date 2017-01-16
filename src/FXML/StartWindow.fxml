@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Activities.StartActivity">
+
+    <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" style="-fx-background-color: transparent;">
+
+        <ImageView fx:id="imageLogo" fitWidth="600" fitHeight="600" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
+            <Image url="@../Resources/logo.gif"/>
+        </ImageView>
+
+    </GridPane>
+
+</AnchorPane>
