@@ -11,7 +11,8 @@
     <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
               AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" style="-fx-background-color: transparent;">
 
-        <ImageView fx:id="imageLogo" fitWidth="600" fitHeight="600" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
+        <ImageView fx:id="imageLogo" fitWidth="600" fitHeight="600"
+                   style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
             <Image url="@../Resources/logo.gif"/>
         </ImageView>
 
