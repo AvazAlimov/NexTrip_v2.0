@@ -15,6 +15,8 @@ import java.util.ResourceBundle;
 public class GuideActivity implements Initializable {
 
     public HBox container;
+    private double xOffset;
+    private double yOffset;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -61,5 +63,15 @@ public class GuideActivity implements Initializable {
 
     public void closeWindow() {
         Main.closeWindow();
+    }
+
+    public void mousePressed(MouseEvent mouseEvent) {
+        xOffset = Main.stage.getX() - mouseEvent.getScreenX();
+        yOffset = Main.stage.getY() - mouseEvent.getScreenY();
+    }
+
+    public void mouseDragged(MouseEvent mouseEvent) {
+        Main.stage.setX(mouseEvent.getScreenX() + xOffset);
+        Main.stage.setY(mouseEvent.getScreenY() + yOffset);
     }
 }

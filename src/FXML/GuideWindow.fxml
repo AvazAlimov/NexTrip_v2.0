@@ -32,7 +32,7 @@
             <RowConstraints prefHeight="20"/>
         </rowConstraints>
 
-        <HBox>
+        <HBox onMousePressed="#mousePressed" onMouseDragged="#mouseDragged">
             <Separator HBox.hgrow="ALWAYS" visible="false"/>
             <JFXButton prefWidth="40" prefHeight="40" text="✖"
                        onAction="#closeWindow"
