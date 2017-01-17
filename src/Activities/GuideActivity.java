@@ -58,4 +58,8 @@ public class GuideActivity implements Initializable {
         timeline.setCycleCount(1);
         timeline.play();
     }
+
+    public void closeWindow() {
+        Main.closeWindow();
+    }
 }

@@ -34,6 +34,10 @@ public class Main extends Application {
         super.stop();
     }
 
+    static void closeWindow(){
+        stage.hide();
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
