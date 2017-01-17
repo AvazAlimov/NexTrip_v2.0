@@ -4,7 +4,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
@@ -24,9 +23,36 @@ public class GuideActivity implements Initializable {
 
     public void transformContainer(MouseEvent actionEvent) {
         int value = Integer.parseInt(((Circle) actionEvent.getSource()).getId());
+        int firstFadeObject = 0;
+        int secondFadeObject = 0;
+        int showObject = 0;
+
+        switch (value) {
+            case 0:
+                showObject = 1;
+                firstFadeObject = 2;
+                secondFadeObject = 3;
+                break;
+            case -768:
+                showObject = 2;
+                firstFadeObject = 1;
+                secondFadeObject = 3;
+                break;
+            case -1536:
+                showObject = 3;
+                firstFadeObject = 2;
+                secondFadeObject = 1;
+                break;
+            default:
+                break;
+        }
+
+        KeyValue first_fade = new KeyValue(container.getChildren().get(firstFadeObject).opacityProperty(), 0.0);
+        KeyValue second_fade = new KeyValue(container.getChildren().get(secondFadeObject).opacityProperty(), 0.0);
+        KeyValue show = new KeyValue(container.getChildren().get(showObject).opacityProperty(), 1.0);
 
         KeyValue keyValue = new KeyValue(container.translateXProperty(), value);
-        KeyFrame keyFrame = new KeyFrame(new Duration(2000), keyValue);
+        KeyFrame keyFrame = new KeyFrame(new Duration(500), keyValue, first_fade, second_fade, show);
         Timeline timeline = new Timeline(keyFrame);
 
         timeline.setCycleCount(1);

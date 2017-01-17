@@ -58,14 +58,14 @@
             <Label text="First guide"/>
         </VBox>
 
-        <VBox spacing="10" alignment="CENTER">
+        <VBox spacing="10" alignment="CENTER" opacity="0.0">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                 <Image url="/Resources/Pictures/second_guide.png"/>
             </ImageView>
             <Label text="Second guide"/>
         </VBox>
 
-        <VBox spacing="10" alignment="CENTER">
+        <VBox spacing="10" alignment="CENTER" opacity="0.0">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                 <Image url="/Resources/Pictures/third_guide.png"/>
             </ImageView>
