@@ -13,7 +13,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GuideActivity implements Initializable {
-
     public HBox container;
     private double xOffset;
     private double yOffset;
