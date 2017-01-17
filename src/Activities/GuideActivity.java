@@ -54,10 +54,10 @@ public class GuideActivity implements Initializable {
         KeyValue show = new KeyValue(container.getChildren().get(showObject).opacityProperty(), 1.0);
 
         KeyValue keyValue = new KeyValue(container.translateXProperty(), value);
-        KeyFrame keyFrame = new KeyFrame(new Duration(500), keyValue, first_fade, second_fade, show);
+        KeyFrame keyFrame = new KeyFrame(new Duration(5), keyValue, first_fade, second_fade, show);
         Timeline timeline = new Timeline(keyFrame);
 
-        timeline.setCycleCount(1);
+        timeline.setCycleCount(100);
         timeline.play();
     }
 

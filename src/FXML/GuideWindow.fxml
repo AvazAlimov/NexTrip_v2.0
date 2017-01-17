@@ -39,7 +39,6 @@
                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';"/>
         </HBox>
 
-
         <HBox GridPane.rowIndex="2" spacing="5" alignment="CENTER">
             <Circle id="0" radius="8" style="-fx-fill: teal; -fx-cursor: hand;" onMousePressed="#transformContainer"/>
             <Circle id="-768" radius="8" style="-fx-fill: teal; -fx-cursor: hand;"
@@ -47,7 +46,6 @@
             <Circle id="-1536" radius="8" style="-fx-fill: teal; -fx-cursor: hand;"
                     onMousePressed="#transformContainer"/>
         </HBox>
-
     </GridPane>
 
     <HBox AnchorPane.topAnchor="100" AnchorPane.bottomAnchor="100" alignment="CENTER" spacing="512" fx:id="container">
@@ -76,5 +74,4 @@
 
         <Separator prefWidth="0" visible="false"/>
     </HBox>
-
 </AnchorPane>
