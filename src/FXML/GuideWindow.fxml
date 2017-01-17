@@ -28,7 +28,7 @@
         <rowConstraints>
             <RowConstraints/>
             <RowConstraints vgrow="ALWAYS"/>
-            <RowConstraints/>
+            <RowConstraints valignment="CENTER"/>
             <RowConstraints prefHeight="20"/>
         </rowConstraints>
 
@@ -38,35 +38,41 @@
                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';"/>
         </HBox>
 
-        <HBox GridPane.rowIndex="1" alignment="CENTER" spacing="10">
-            <VBox spacing="10">
-                <ImageView fitWidth="256" fitHeight="256">
-                    <Image url="/Resources/Pictures/first_guide.png"/>
-                </ImageView>
-                <Label text="First guide"/>
-            </VBox>
 
-            <VBox spacing="10">
-                <ImageView fitWidth="256" fitHeight="256">
-                    <Image url="/Resources/Pictures/second_guide.png"/>
-                </ImageView>
-                <Label text="Second guide"/>
-            </VBox>
-
-            <VBox spacing="10">
-                <ImageView fitWidth="256" fitHeight="256">
-                    <Image url="/Resources/Pictures/third_guide.png"/>
-                </ImageView>
-                <Label text="Third guide"/>
-            </VBox>
-        </HBox>
 
         <HBox GridPane.rowIndex="2" spacing="5" alignment="CENTER">
-            <Circle radius="8" style="-fx-fill: teal;"/>
-            <Circle radius="8" style="-fx-fill: teal;"/>
-            <Circle radius="8" style="-fx-fill: teal;"/>
+            <Circle id="0" radius="8" style="-fx-fill: teal;" onMousePressed="#transformContainer"/>
+            <Circle id="-768" radius="8" style="-fx-fill: teal;" onMousePressed="#transformContainer"/>
+            <Circle id="-1536" radius="8" style="-fx-fill: teal;" onMousePressed="#transformContainer"/>
         </HBox>
 
     </GridPane>
+
+    <HBox AnchorPane.topAnchor="100" AnchorPane.bottomAnchor="100" alignment="CENTER" spacing="512" fx:id="container">
+        <Separator prefWidth="0" visible="false"/>
+
+        <VBox spacing="10" alignment="CENTER">
+            <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
+                <Image url="/Resources/Pictures/first_guide.png"/>
+            </ImageView>
+            <Label text="First guide"/>
+        </VBox>
+
+        <VBox spacing="10" alignment="CENTER">
+            <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
+                <Image url="/Resources/Pictures/second_guide.png"/>
+            </ImageView>
+            <Label text="Second guide"/>
+        </VBox>
+
+        <VBox spacing="10" alignment="CENTER">
+            <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
+                <Image url="/Resources/Pictures/third_guide.png"/>
+            </ImageView>
+            <Label text="Third guide"/>
+        </VBox>
+
+        <Separator prefWidth="0" visible="false"/>
+    </HBox>
 
 </AnchorPane>
