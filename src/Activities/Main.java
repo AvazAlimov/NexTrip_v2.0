@@ -18,7 +18,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Locale.setDefault(Locale.ENGLISH);
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/GuideWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/StartWindow.fxml"));
         Scene scene = new Scene(root,1280,720);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
