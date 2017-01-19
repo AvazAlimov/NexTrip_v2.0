@@ -8,7 +8,7 @@
     -fx-background-color: white;
     -fx-background-radius: 6;
     -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-pref-width: 200;
+
 }
 
 .text-field {
@@ -22,9 +22,16 @@
 #nameLabel {
     -fx-font-size: 30;
     -fx-text-fill: #212121;
-    -fx-font-size: 22;
     -fx-background-color: white;
     -fx-background-radius: 10;
     -fx-effect: dropshadow(gaussian, #212121, 5, 0, 0, 0);
+}
+
+#locationLabel{
+    -fx-background-color: white;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
+    -fx-pref-height: 25;
+    -fx-pref-width: 400;
 }
 
