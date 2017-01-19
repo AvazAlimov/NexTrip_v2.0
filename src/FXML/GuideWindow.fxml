@@ -14,6 +14,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
+
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.GuideActivity" style="-fx-background-color: transparent;">
 
@@ -62,7 +63,7 @@
                    style="-fx-font-size: 18; -fx-wrap-text: true; -fx-text-alignment: center; -fx-pref-width: 256;"/>
         </VBox>
 
-        <VBox spacing="20" alignment="CENTER" opacity="0.0">
+        <VBox spacing="20" alignment="CENTER" opacity="0.0" scaleX="0.0" scaleY="0.0">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                 <Image url="/Resources/Pictures/second_guide.png"/>
             </ImageView>
@@ -72,7 +73,7 @@
                    style="-fx-font-size: 18; -fx-wrap-text: true; -fx-text-alignment: center; -fx-pref-width: 256;"/>
         </VBox>
 
-        <VBox spacing="20" alignment="CENTER" opacity="0.0">
+        <VBox spacing="20" alignment="CENTER" opacity="0.0" scaleX="0.0" scaleY="0.0">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                 <Image url="/Resources/Pictures/third_guide.png"/>
             </ImageView>

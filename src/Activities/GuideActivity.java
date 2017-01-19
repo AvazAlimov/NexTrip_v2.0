@@ -29,7 +29,7 @@ public class GuideActivity implements Initializable {
         setTexts();
     }
 
-    private void setTexts(){
+    private void setTexts() {
         firstTextLabel.setText(Main.Language.getTranslation("firstGuideLabel"));
         firstText.setText(Main.Language.getTranslation("firstGuide"));
         secondTextLabel.setText(Main.Language.getTranslation("secondGuideLabel"));
@@ -68,8 +68,17 @@ public class GuideActivity implements Initializable {
         KeyValue second_fade = new KeyValue(container.getChildren().get(secondFadeObject).opacityProperty(), 0.0);
         KeyValue show = new KeyValue(container.getChildren().get(showObject).opacityProperty(), 1.0);
 
+        KeyValue first_ScaleX = new KeyValue(container.getChildren().get(firstFadeObject).scaleXProperty(), 0.0);
+        KeyValue first_ScaleY = new KeyValue(container.getChildren().get(firstFadeObject).scaleYProperty(), 0.0);
+
+        KeyValue second_ScaleX = new KeyValue(container.getChildren().get(secondFadeObject).scaleXProperty(), 0.0);
+        KeyValue second_ScaleY = new KeyValue(container.getChildren().get(secondFadeObject).scaleYProperty(), 0.0);
+
+        KeyValue show_ScaleX = new KeyValue(container.getChildren().get(showObject).scaleXProperty(), 1.0);
+        KeyValue show_ScaleY = new KeyValue(container.getChildren().get(showObject).scaleYProperty(), 1.0);
+
         KeyValue keyValue = new KeyValue(container.translateXProperty(), value);
-        KeyFrame keyFrame = new KeyFrame(new Duration(600), keyValue, first_fade, second_fade, show);
+        KeyFrame keyFrame = new KeyFrame(new Duration(600), keyValue, first_fade, second_fade, show, first_ScaleX, first_ScaleY, second_ScaleX, second_ScaleY, show_ScaleX, show_ScaleY);
         Timeline timeline = new Timeline(keyFrame);
 
         timeline.setCycleCount(1);
