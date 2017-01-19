@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
@@ -14,12 +15,19 @@ import java.util.ResourceBundle;
 
 public class GuideActivity implements Initializable {
     public HBox container;
+    public Label firstText;
+    public Label firstTextLabel;
+    public Label secondText;
+    public Label secondTextLabel;
+    public Label thirdText;
+    public Label thirdTextLabel;
     private double xOffset;
     private double yOffset;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        firstTextLabel.setText(Main.Language.getTranslation("firstGuideLabel"));
+        firstText.setText(Main.Language.getTranslation("firstGuide"));
     }
 
     public void transformContainer(MouseEvent actionEvent) {

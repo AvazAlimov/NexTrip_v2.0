@@ -48,28 +48,38 @@
         </HBox>
     </GridPane>
 
-    <HBox AnchorPane.topAnchor="100" AnchorPane.bottomAnchor="100" alignment="CENTER" spacing="512" fx:id="container">
+    <HBox AnchorPane.topAnchor="100" AnchorPane.bottomAnchor="100" alignment="CENTER" spacing="512" fx:id="container"
+          style="-fx-font-family: 'Roboto';">
         <Separator prefWidth="0" visible="false"/>
 
         <VBox spacing="10" alignment="CENTER">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                 <Image url="/Resources/Pictures/first_guide.png"/>
             </ImageView>
-            <Label text="First guide"/>
+            <Label fx:id="firstTextLabel"
+                   style="-fx-font-size: 24; -fx-wrap-text: true; -fx-text-alignment: center;"/>
+            <Label fx:id="firstText"
+                   style="-fx-font-size: 18; -fx-wrap-text: true; -fx-text-alignment: center; -fx-pref-width: 256;"/>
         </VBox>
 
         <VBox spacing="10" alignment="CENTER" opacity="0.0">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                 <Image url="/Resources/Pictures/second_guide.png"/>
             </ImageView>
-            <Label text="Second guide"/>
+            <Label fx:id="secondTextLabel"
+                   style="-fx-font-size: 24; -fx-wrap-text: true; -fx-text-alignment: center; -fx-pref-width: 256;"/>
+            <Label fx:id="secondText"
+                   style="-fx-font-size: 18; -fx-wrap-text: true; -fx-text-alignment: center; -fx-pref-width: 256;"/>
         </VBox>
 
         <VBox spacing="10" alignment="CENTER" opacity="0.0">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                 <Image url="/Resources/Pictures/third_guide.png"/>
             </ImageView>
-            <Label text="Third guide"/>
+            <Label fx:id="thirdTextLabel"
+                   style="-fx-font-size: 24; -fx-wrap-text: true; -fx-text-alignment: center; -fx-pref-width: 256;"/>
+            <Label fx:id="thirdText"
+                   style="-fx-font-size: 18; -fx-wrap-text: true; -fx-text-alignment: center; -fx-pref-width: 256;"/>
         </VBox>
 
         <Separator prefWidth="0" visible="false"/>

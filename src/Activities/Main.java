@@ -48,24 +48,22 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Language.setLanguage("english");
+        Language.setLanguage("russian");
 
         launch(args);
     }
 
     @SuppressWarnings("unused")
-    private static class Language {
+    static class Language {
         private static HashMap<String, String> currentTranslation;
         private static HashMap<String, HashMap<String, String>> translations;
 
         static void init(Reader stream) throws IOException {
             CSVReader reader = new CSVReader(stream);
 
-            // list of translation HashMaps
             translations = new HashMap<>();
             HashMap<Integer, String> indices = new HashMap<>();
 
-            // set up columns (each language HashMap)
             String[] next = reader.readNext();
             if (next != null) {
                 for (int n = 1; n < next.length; n++) {
@@ -74,13 +72,11 @@ public class Main extends Application {
                 }
             }
 
-            // add definitions (cell values into proper translation HashMaps)
             while ((next = reader.readNext()) != null) {
                 for (int n = 1; n < next.length; n++)
                     translations.get(indices.get(n)).put(next[0], next[n]);
             }
 
-            // close the CSV reader
             reader.close();
         }
 
