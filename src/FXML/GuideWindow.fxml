@@ -15,6 +15,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
+
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.GuideActivity" style="-fx-background-color: transparent;">
 
@@ -34,6 +36,9 @@
         </rowConstraints>
 
         <HBox onMousePressed="#mousePressed" onMouseDragged="#mouseDragged">
+            <JFXComboBox fx:id="languageBox" promptText="Language"
+                         style="-fx-background-color: transparent; -fx-prompt-text-fill: #fff; -fx-font-family: 'Trebuchet MS'; -fx-font-weight: bolder; -fx-text-fill: white;"
+                         onAction="#changeLanguage"/>
             <Separator HBox.hgrow="ALWAYS" visible="false"/>
             <JFXButton prefWidth="40" prefHeight="40" text="✖"
                        onAction="#closeWindow"

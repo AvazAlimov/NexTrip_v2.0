@@ -1,8 +1,10 @@
 package Activities;
 
+import com.jfoenix.controls.JFXComboBox;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -21,11 +23,16 @@ public class GuideActivity implements Initializable {
     public Label secondTextLabel;
     public Label thirdText;
     public Label thirdTextLabel;
+    public JFXComboBox<String> languageBox;
     private double xOffset;
     private double yOffset;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        languageBox.getItems().add("english");
+        languageBox.getItems().add("uzbek");
+        languageBox.getItems().add("russian");
+
         setTexts();
     }
 
@@ -97,5 +104,10 @@ public class GuideActivity implements Initializable {
     public void mouseDragged(MouseEvent mouseEvent) {
         Main.stage.setX(mouseEvent.getScreenX() + xOffset);
         Main.stage.setY(mouseEvent.getScreenY() + yOffset);
+    }
+
+    public void changeLanguage() {
+        Main.Language.setLanguage(languageBox.getSelectionModel().getSelectedItem());
+        setTexts();
     }
 }
