@@ -50,12 +50,12 @@ public class GuideActivity implements Initializable {
                 firstFadeObject = 2;
                 secondFadeObject = 3;
                 break;
-            case -768:
+            case -896:
                 showObject = 2;
                 firstFadeObject = 1;
                 secondFadeObject = 3;
                 break;
-            case -1536:
+            case -1792:
                 showObject = 3;
                 firstFadeObject = 2;
                 secondFadeObject = 1;
