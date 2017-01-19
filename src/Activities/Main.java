@@ -48,7 +48,7 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Language.setLanguage("russian");
+        Language.setLanguage("english");
 
         launch(args);
     }
