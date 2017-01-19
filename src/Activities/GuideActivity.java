@@ -24,6 +24,7 @@ public class GuideActivity implements Initializable {
     public Label thirdText;
     public Label thirdTextLabel;
     public JFXComboBox<String> languageBox;
+    public HBox pageContainer;
     private double xOffset;
     private double yOffset;
 
@@ -46,6 +47,10 @@ public class GuideActivity implements Initializable {
     }
 
     public void transformContainer(MouseEvent actionEvent) {
+        for (int i = 0; i < pageContainer.getChildren().size(); i++)
+            pageContainer.getChildren().get(i).setStyle("-fx-fill: white; -fx-cursor: hand;");
+        ((Circle) actionEvent.getSource()).setStyle("-fx-fill: cyan; -fx-cursor: hand;");
+
         int value = Integer.parseInt(((Circle) actionEvent.getSource()).getId());
         int firstFadeObject = 0;
         int secondFadeObject = 0;

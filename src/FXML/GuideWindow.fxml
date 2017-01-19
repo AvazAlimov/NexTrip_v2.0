@@ -37,7 +37,7 @@
 
         <HBox onMousePressed="#mousePressed" onMouseDragged="#mouseDragged">
             <JFXComboBox fx:id="languageBox" promptText="Language"
-                         style="-fx-background-color: transparent; -fx-prompt-text-fill: #fff; -fx-font-family: 'Trebuchet MS'; -fx-font-weight: bolder; -fx-text-fill: white;"
+                         style="-fx-font-family: 'Trebuchet MS'; -fx-font-weight: bolder;"
                          onAction="#changeLanguage"/>
             <Separator HBox.hgrow="ALWAYS" visible="false"/>
             <JFXButton prefWidth="40" prefHeight="40" text="✖"
@@ -45,8 +45,8 @@
                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';"/>
         </HBox>
 
-        <HBox GridPane.rowIndex="2" spacing="10" alignment="CENTER">
-            <Circle id="0" radius="8" style="-fx-fill: white; -fx-cursor: hand;" onMousePressed="#transformContainer"/>
+        <HBox fx:id="pageContainer" GridPane.rowIndex="2" spacing="10" alignment="CENTER">
+            <Circle id="0" radius="8" style="-fx-fill: cyan; -fx-cursor: hand;" onMousePressed="#transformContainer"/>
             <Circle id="-896" radius="8" style="-fx-fill: white; -fx-cursor: hand;"
                     onMousePressed="#transformContainer"/>
             <Circle id="-1792" radius="8" style="-fx-fill: white; -fx-cursor: hand;"
