@@ -50,7 +50,13 @@
                 </HBox>
 
                 <HBox spacing="20" alignment="CENTER" >
-                    <Button fx:id="locationButton" prefWidth="100" />
+                    <Button fx:id="locationButton" prefWidth="100" >
+                        <graphic>
+                            <ImageView fitHeight="30.0" fitWidth="30.0">
+                                <Image url="/Resources/Icons/location_(64px).png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
                     <Label fx:id="locationLabel" style="-fx-text-fill: #212121" prefWidth="200"  id="textBackground"/>
                 </HBox>
 
