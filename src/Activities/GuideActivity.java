@@ -26,10 +26,16 @@ public class GuideActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setTexts();
+    }
+
+    private void setTexts(){
         firstTextLabel.setText(Main.Language.getTranslation("firstGuideLabel"));
         firstText.setText(Main.Language.getTranslation("firstGuide"));
         secondTextLabel.setText(Main.Language.getTranslation("secondGuideLabel"));
         secondText.setText(Main.Language.getTranslation("secondGuide"));
+        thirdTextLabel.setText(Main.Language.getTranslation("thirdGuideLabel"));
+        thirdText.setText(Main.Language.getTranslation("thirdGuide"));
     }
 
     public void transformContainer(MouseEvent actionEvent) {
