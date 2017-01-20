@@ -1,6 +1,7 @@
 package Activities;
 
 import au.com.bytecode.opencsv.CSVReader;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,8 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -43,23 +43,27 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        try {
+            Language.init(new BufferedReader(new FileReader("src/Translations.csv")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Language.setLanguage("english");
+
         launch(args);
     }
 
     @SuppressWarnings("unused")
-    private static class Language {
+    static class Language {
         private static HashMap<String, String> currentTranslation;
         private static HashMap<String, HashMap<String, String>> translations;
 
-        public static void init(Reader stream) throws IOException {
-            // open a CSV reader
+        static void init(Reader stream) throws IOException {
             CSVReader reader = new CSVReader(stream);
 
-            // list of translation HashMaps
             translations = new HashMap<>();
             HashMap<Integer, String> indices = new HashMap<>();
 
-            // set up columns (each language HashMap)
             String[] next = reader.readNext();
             if (next != null) {
                 for (int n = 1; n < next.length; n++) {
@@ -68,24 +72,22 @@ public class Main extends Application {
                 }
             }
 
-            // add definitions (cell values into proper translation HashMaps)
             while ((next = reader.readNext()) != null) {
                 for (int n = 1; n < next.length; n++)
                     translations.get(indices.get(n)).put(next[0], next[n]);
             }
 
-            // close the CSV reader
             reader.close();
         }
 
-        public static void setLanguage(String languageName) throws NullPointerException {
+        static void setLanguage(String languageName) throws NullPointerException {
             if (!translations.containsKey(languageName))
                 throw new NullPointerException(String.format("Language %s not found!", languageName));
 
             currentTranslation = translations.get(languageName);
         }
 
-        public static String getTranslation(String key) throws NullPointerException {
+        static String getTranslation(String key) throws NullPointerException {
             if (currentTranslation == null)
                 throw new NullPointerException("Please, call setLanguage(String) before getTranslation()!");
             return currentTranslation.get(key);
