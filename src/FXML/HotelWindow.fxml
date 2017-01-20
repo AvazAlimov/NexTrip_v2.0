@@ -53,15 +53,18 @@
 
                 <VBox spacing="8">
                     <HBox spacing="40" alignment="CENTER">
-                        <GridPane HBox.hgrow="ALWAYS" alignment="CENTER" style="-fx-background-color: rgba(100,100,100,0.5); -fx-fit-to-height: true;-fx-fit-to-width: true;">
+                        <GridPane HBox.hgrow="ALWAYS" alignment="CENTER" style="-fx-background-color: rgba(100,100,100,0.5);
+                        -fx-fit-to-height: true;-fx-fit-to-width: true;">
                             <ImageView fx:id="imageView" fitWidth="640" fitHeight="360"
                                        style="-fx-effect: dropshadow(gaussian, black, 15, 0, 0, 0);"/>
                             <HBox alignment="CENTER">
                                 <Button fx:id="prevImage" id="prevImage" prefWidth="25"
-                                        style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0); -fx-background-color: #80DEEA;"/>
+                                        style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
+                                        -fx-background-color: #80DEEA;"/>
                                 <Separator HBox.hgrow="ALWAYS" visible="false"/>
                                 <Button fx:id="nextImage" id="nextImage" prefWidth="25"
-                                        style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0); -fx-background-color: #80DEEA;"/>
+                                        style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
+                                        -fx-background-color: #80DEEA;"/>
                             </HBox>
                         </GridPane>
                     </HBox>
@@ -86,7 +89,8 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Label fx:id="locationLabel" text="Location" style="-fx-text-fill: #212121; -fx-font-size: 22; -fx-background-color: #E0F7FA;" alignment="CENTER" />
+                        <Label fx:id="locationLabel" text="Location" style="-fx-text-fill: #212121; -fx-font-size: 22;
+                        -fx-background-color: #E0F7FA;" alignment="CENTER" />
                     </HBox>
 
                     <HBox fx:id="ratingLayout" spacing="5" prefHeight="50" alignment="CENTER" id="textBackground">
@@ -105,12 +109,14 @@
                         </HBox>
                     </HBox>
 
-                    <VBox alignment="CENTER" prefHeight="60" prefWidth="640" id="textBackground">
+                    <VBox alignment="CENTER" prefHeight="60" prefWidth="640" style="-fx-background-radius: 6; -fx-background-color: #B2EBF2;
+                                                                                    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);">
                         <Label text="Amenities" alignment="CENTER"
                                style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
 
                         <HBox spacing="20" alignment="CENTER">
-                            <Button visible="true" fx:id="freeWiFi" text="Free WiFI" prefHeight="50.0" style="-fx-background-color: transparent;">
+                            <Button visible="true" fx:id="freeWiFi" text="Free WiFI" prefHeight="50.0"
+                                    style="-fx-background-color: transparent;">
                                 <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true"
                                                disable="true">
@@ -118,7 +124,8 @@
                                     </ImageView>
                                 </graphic>
                             </Button>
-                            <Button visible="true" fx:id="freeParking" text="Free Parking" prefHeight="50.0" style="-fx-background-color: transparent;">
+                            <Button visible="true" fx:id="freeParking" text="Free Parking" prefHeight="50.0"
+                                    style="-fx-background-color: transparent;">
                                 <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true"
                                                disable="true">
@@ -126,7 +133,8 @@
                                     </ImageView>
                                 </graphic>
                             </Button>
-                            <Button visible="true" fx:id="freeYard" text="Free Children Yard" prefHeight="50.0" style="-fx-background-color: transparent;">
+                            <Button visible="true" fx:id="freeYard" text="Free Children Yard" prefHeight="50.0"
+                                    style="-fx-background-color: transparent;">
                                 <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
                                                preserveRatio="true">
@@ -209,7 +217,8 @@
                         <Separator prefHeight="60" visible="false"/>
                         <HBox alignment="BOTTOM_RIGHT">
                             <JFXButton prefWidth="60"
-                                       style=" -fx-text-fill: #212121; -fx-font-size: 8;  -fx-background-radius: 80; -fx-background-color:#B2EBF2; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)"
+                                       style=" -fx-text-fill: #212121; -fx-font-size: 8;  -fx-background-radius: 80;
+                                       -fx-background-color:#B2EBF2; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)"
                                        prefHeight="60" text="Comments"  />
                         </HBox>
                     </VBox>
