@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
@@ -25,11 +26,18 @@ public class GuideActivity implements Initializable {
     public Label thirdTextLabel;
     public JFXComboBox<String> languageBox;
     public HBox pageContainer;
+    public AnchorPane parent;
     private double xOffset;
     private double yOffset;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        KeyValue value = new KeyValue(parent.opacityProperty(), 1.0);
+        KeyFrame frame = new KeyFrame(new Duration(1500), value);
+        Timeline timeline = new Timeline(frame);
+        timeline.setCycleCount(1);
+        timeline.play();
+
         languageBox.getItems().add("english");
         languageBox.getItems().add("uzbek");
         languageBox.getItems().add("russian");
