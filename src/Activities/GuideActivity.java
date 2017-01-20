@@ -5,6 +5,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -33,7 +34,7 @@ public class GuideActivity implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         KeyValue value = new KeyValue(parent.opacityProperty(), 1.0);
-        KeyFrame frame = new KeyFrame(new Duration(1500), value);
+        KeyFrame frame = new KeyFrame(new Duration(1000), value);
         Timeline timeline = new Timeline(frame);
         timeline.setCycleCount(1);
         timeline.play();

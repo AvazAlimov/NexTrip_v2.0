@@ -2,23 +2,22 @@
 
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.AnchorPane?>
-
 <?import javafx.scene.layout.HBox?>
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.shape.Circle?>
-
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Activities.GuideActivity" style="-fx-background-color: transparent;" fx:id="parent" opacity="0.0">
+            fx:controller="Activities.GuideActivity" style="-fx-background-color: transparent;" fx:id="parent"
+            opacity="0.0">
 
     <GridPane alignment="CENTER" vgap="20" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10"
               AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10"
@@ -90,5 +89,4 @@
 
         <Separator prefWidth="0" visible="false"/>
     </HBox>
-
 </AnchorPane>
