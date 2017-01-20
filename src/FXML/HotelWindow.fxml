@@ -36,13 +36,20 @@
 
         <HBox alignment="TOP_CENTER" GridPane.rowIndex="0">
 
-            <Button   id="backButton" text="Back" style="-fx-background-color: #E0F7FA; -fx-background-radius: 15;" />
+            <Button   id="backButton" text="Back" onAction="#previousWindow" style="-fx-background-color: #E0F7FA; -fx-background-radius: 15;" />
             <Separator HBox.hgrow="ALWAYS" visible="false"/>
             <JFXButton prefWidth="40" style="-fx-background-color: transparent; -fx-text-fill: #B2EBF2;"
                        prefHeight="40"
                        onAction="#closeWindow" text="✖" alignment="TOP_RIGHT"/>
         </HBox>
         <HBox GridPane.rowIndex="1" alignment="CENTER">
+            <Button fx:id="HotelButton" prefWidth="40" prefHeight="50" style="-fx-background-color: #006064; -fx-background-radius: 70">
+                <graphic>
+                    <ImageView fitHeight="40.0" fitWidth="40.0">
+                        <Image url="/Resources/Icons/hotel_icon(64px).png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
             <Label text="Hotel Window" alignment="CENTER"
                    style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
         </HBox>
@@ -70,27 +77,28 @@
                     </HBox>
 
                     <HBox spacing="20" alignment="CENTER">
-                        <Button fx:id="nameButton" prefWidth="100" style="-fx-background-color: transparent;">
+                        <Button fx:id="nameButton" prefWidth="100" style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)">
                             <graphic>
-                                <ImageView fitHeight="60.0" fitWidth="60.0">
+                                <ImageView fitHeight="50.0" fitWidth="50.0">
                                     <Image url="/Resources/Icons/location_(64px).png"/>
                                 </ImageView>
                             </graphic>
                         </Button>
                         <Label id="textBackground" text="Marocco" alignment="CENTER" fx:id="nameLabel" prefWidth="400"
-                               prefHeight="28"/>
+                               prefHeight="28" style="-fx-font-size: 20;"/>
                     </HBox>
 
                     <HBox spacing="20" alignment="CENTER">
-                        <Button fx:id="locationButton" prefWidth="100" style="-fx-background-color: transparent;">
+                        <Button fx:id="locationButton" prefWidth="100" style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)">
                             <graphic>
-                                <ImageView fitHeight="60.0" fitWidth="60.0">
+                                <ImageView fitHeight="50.0" fitWidth="50.0">
                                     <Image url="/Resources/Icons/location_(64px).png"/>
                                 </ImageView>
                             </graphic>
                         </Button>
                         <Label fx:id="locationLabel" text="Location" style="-fx-text-fill: #212121; -fx-font-size: 22;
-                        -fx-background-color: #E0F7FA;" alignment="CENTER" />
+                        -fx-background-radius: 6; -fx-background-color: #B2EBF2;
+                        -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);" alignment="CENTER" />
                     </HBox>
 
                     <HBox fx:id="ratingLayout" spacing="5" prefHeight="50" alignment="CENTER" id="textBackground">
@@ -109,12 +117,12 @@
                         </HBox>
                     </HBox>
 
-                    <VBox alignment="CENTER" prefHeight="60" prefWidth="640" style="-fx-background-radius: 6; -fx-background-color: #B2EBF2;
-                                                                                    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);">
+                    <VBox  alignment="CENTER" >
                         <Label text="Amenities" alignment="CENTER"
                                style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
 
-                        <HBox spacing="20" alignment="CENTER">
+                        <HBox spacing="20" prefHeight="60" prefWidth="500" alignment="CENTER" style="-fx-background-radius: 6; -fx-background-color: #B2EBF2;
+                                                                     -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);">
                             <Button visible="true" fx:id="freeWiFi" text="Free WiFI" prefHeight="50.0"
                                     style="-fx-background-color: transparent;">
                                 <graphic>
@@ -152,8 +160,18 @@
                 <VBox prefWidth="400" >
 
                     <VBox alignment="CENTER" id="textBackground">
-                        <Label text="Information" alignment="CENTER"
-                               style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                        <HBox alignment="CENTER">
+                            <Button fx:id="InfoButton" prefWidth="100"
+                                    style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-background-radius: 20;">
+                                <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                        <Image url="/Resources/Icons/info_(64px).png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Label text="Information" alignment="CENTER"
+                                   style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                        </HBox>
 
                         <TextArea fx:id="infoText" wrapText="true" editable="false"/>
 
