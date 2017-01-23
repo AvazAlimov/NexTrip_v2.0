@@ -42,7 +42,8 @@
                        prefHeight="40"
                        onAction="#closeWindow" text="✖" alignment="TOP_RIGHT"/>
         </HBox>
-        <HBox GridPane.rowIndex="1" alignment="CENTER">
+        <HBox GridPane.rowIndex="1" alignment="CENTER_LEFT" GridPane.columnIndex="0">
+            <Separator prefWidth="230" visible="false"/>
             <Button fx:id="HotelButton" prefWidth="40" prefHeight="50" style="-fx-background-color: #006064; -fx-background-radius: 70">
                 <graphic>
                     <ImageView fitHeight="40.0" fitWidth="40.0">
@@ -50,8 +51,9 @@
                     </ImageView>
                 </graphic>
             </Button>
+
             <Label text="Hotel Window" alignment="CENTER"
-                   style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                   style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
         </HBox>
 
         <GridPane GridPane.rowIndex="2">
@@ -76,23 +78,24 @@
                         </GridPane>
                     </HBox>
 
-                    <HBox spacing="20" alignment="CENTER">
-                        <Button fx:id="nameButton" prefWidth="100" style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)">
+                    <HBox spacing="10" alignment="CENTER">
+                        <Button opacity="0.83" prefHeight="40" prefWidth="200" text="Add Client">
                             <graphic>
-                                <ImageView fitHeight="50.0" fitWidth="50.0">
-                                    <Image url="/Resources/Icons/location_(64px).png"/>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image smooth="false" url="/Resources/Icons/hotel_icon(64px).png"/>
                                 </ImageView>
                             </graphic>
                         </Button>
+
                         <Label id="textBackground" text="Marocco" alignment="CENTER" fx:id="nameLabel" prefWidth="400"
                                prefHeight="28" style="-fx-font-size: 20;"/>
                     </HBox>
 
                     <HBox spacing="20" alignment="CENTER">
-                        <Button fx:id="locationButton" prefWidth="100" style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)">
+                        <Button fx:id="locationButton" prefWidth="20" style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)">
                             <graphic>
                                 <ImageView fitHeight="50.0" fitWidth="50.0">
-                                    <Image url="/Resources/Icons/location_(64px).png"/>
+                                    <Image url="/Resources/Icons/location2_(64px).png"/>
                                 </ImageView>
                             </graphic>
                         </Button>
@@ -119,7 +122,7 @@
 
                     <VBox  alignment="CENTER" >
                         <Label text="Amenities" alignment="CENTER"
-                               style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                               style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
 
                         <HBox spacing="20" prefHeight="60" prefWidth="500" alignment="CENTER" style="-fx-background-radius: 6; -fx-background-color: #B2EBF2;
                                                                      -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);">
@@ -161,14 +164,7 @@
 
                     <VBox alignment="CENTER" id="textBackground">
                         <HBox alignment="CENTER">
-                            <Button fx:id="InfoButton" prefWidth="100"
-                                    style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-background-radius: 20;">
-                                <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0">
-                                        <Image url="/Resources/Icons/info_(64px).png"/>
-                                    </ImageView>
-                                </graphic>
-                            </Button>
+
                             <Label text="Information" alignment="CENTER"
                                    style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
                         </HBox>
@@ -187,7 +183,7 @@
 
                         <HBox alignment="CENTER">
                             <Label text="Contacts" alignment="CENTER"
-                                   style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                                   style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
                         </HBox>
 
                         <HBox fx:id="contactContainer" spacing="10" alignment="CENTER" prefWidth="500">
@@ -234,10 +230,14 @@
                         </HBox>
                         <Separator prefHeight="60" visible="false"/>
                         <HBox alignment="BOTTOM_RIGHT">
-                            <JFXButton prefWidth="60"
-                                       style=" -fx-text-fill: #212121; -fx-font-size: 8;  -fx-background-radius: 80;
-                                       -fx-background-color:#B2EBF2; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)"
-                                       prefHeight="60" text="Comments"  />
+                            <Button fx:id="CommentButton" prefWidth="100"
+                                    style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 8, 0, 0, 0);-fx-background-radius: 20;">
+                                <graphic>
+                                    <ImageView fitHeight="70.0" fitWidth="70.0">
+                                        <Image url="/Resources/Icons/chat_(64px).png"/>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
                         </HBox>
                     </VBox>
                 </VBox>
