@@ -4,7 +4,7 @@
     -fx-background-size: cover;
 }
 
-#textBackground{
+#textBackground {
     -fx-background-color: #E0F7FA;
     -fx-background-radius: 6;
     -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
@@ -27,11 +27,40 @@
     -fx-effect: dropshadow(gaussian, #212121, 5, 0, 0, 0);
 }
 
-#locationLabel{
+#locationLabel {
     -fx-background-color: white;
     -fx-background-radius: 6;
     -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
     -fx-pref-height: 25;
     -fx-pref-width: 400;
+}
+
+#mail_icon:hover {
+    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+#facebook_icon:hover{
+    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+#telegram_icon:hover{
+    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+#phone_icon:hover{
+    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+#web_icon:hover{
+    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
+    -fx-cursor: hand;
+}
+
+#commentText:hover{
+    -fx-text-fill: white;
+    -fx-cursor: hand;
 }
 
