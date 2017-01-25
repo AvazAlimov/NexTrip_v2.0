@@ -311,12 +311,12 @@
                             </HBox>
                             <Separator prefHeight="60" visible="false"/>
                             <VBox alignment="BOTTOM_RIGHT">
-                                <Label fx:id="commentText" text="Leave your comment here" underline="true" style="-fx-font-size: 16; -fx-text-fill: #000000;"/>
+                                <Label fx:id="commentText" text="Leave your comment here" underline="true" style="-fx-font-size: 16;"/>
                                 <HBox alignment="BOTTOM_RIGHT">
                                     <Button fx:id="CommentButton" prefWidth="100"
                                             style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 8, 0, 0, 0);-fx-background-radius: 20;">
                                         <graphic>
-                                            <ImageView fitHeight="70.0" fitWidth="70.0">
+                                            <ImageView fitHeight="60.0" fitWidth="60.0">
                                                 <Image url="/Resources/Icons/comments(64px).png"/>
                                             </ImageView>
                                         </graphic>
