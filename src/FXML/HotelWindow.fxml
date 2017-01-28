@@ -53,18 +53,18 @@
                            prefHeight="40"
                            onAction="#closeWindow" text="✖" alignment="TOP_RIGHT"/>
             </HBox>
-            <HBox GridPane.rowIndex="1" alignment="CENTER_LEFT" GridPane.columnIndex="0">
+            <HBox GridPane.rowIndex="1" alignment="BASELINE_LEFT" GridPane.columnIndex="0">
                 <Separator prefWidth="230" visible="false"/>
-                <Button fx:id="HotelButton" prefWidth="40" prefHeight="50"
+                <!--<Button fx:id="HotelButton" prefWidth="40" prefHeight="50"
                         style="-fx-background-color: #006064; -fx-background-radius: 70">
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0">
                             <Image url="/Resources/Icons/hotel_icon(64px).png"/>
                         </ImageView>
                     </graphic>
-                </Button>
+                </Button>-->
 
-                <Label text="Hotel Window" alignment="CENTER"
+                <Label text="Hotel Window" underline="true"
                        style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
             </HBox>
 
@@ -268,7 +268,7 @@
 
                             <Separator/>
 
-                            <Pagination pageCount="5" layoutX="118.0" layoutY="121.0" prefHeight="200.0" prefWidth="200.0" />
+                            <Pagination pageCount="3" layoutX="118.0" layoutY="121.0" prefHeight="200.0" prefWidth="200.0" />
 
                         </VBox>
 
@@ -332,7 +332,7 @@
                                 <Label fx:id="commentText" text="Leave your comment here" underline="true" style="-fx-font-size: 16;"/>
                                 <HBox alignment="BOTTOM_RIGHT">
                                     <Button fx:id="CommentButton" prefWidth="100"
-                                            style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 8, 0, 0, 0);-fx-background-radius: 20;">
+                                            style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 6, 0.2, 0, 0);-fx-background-radius: 20;">
                                         <graphic>
                                             <ImageView fitHeight="60.0" fitWidth="60.0">
                                                 <Image url="/Resources/Icons/comments(64px).png"/>

@@ -1,6 +1,6 @@
 
 .root {
-    -fx-background-image: url("/Resources/Pictures/guide_background.png");
+    -fx-background-image: url("/Resources/Pictures/Background.png");
     -fx-background-size: cover;
 }
 
@@ -60,7 +60,7 @@
 }
 
 #commentText:hover{
-    -fx-text-fill: white;
+    -fx-text-fill: blue;
     -fx-cursor: hand;
 }
 
