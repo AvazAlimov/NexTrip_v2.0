@@ -47,11 +47,11 @@
             <HBox alignment="TOP_RIGHT" GridPane.rowIndex="0">
 
                 <JFXButton id="backButton" onAction="#previousWindow" prefHeight="45" prefWidth="45"
-                           style="-fx-background-color: transparent; -fx-background-radius: 15; -fx-font-size: 14;">
+                           style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-font-size: 14;">
 
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
-                            <Image url="/Resources/Icons/back_50px.png"/>
+                            <Image url="/Resources/Icons/Back_64px.png"/>
                         </ImageView>
                     </graphic>
                 </JFXButton>
