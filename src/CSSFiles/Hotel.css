@@ -5,7 +5,7 @@
 }
 
 #textBackground {
-    -fx-background-color: #E0F7FA;
+    -fx-background-color: #80DEEA;
     -fx-background-radius: 6;
     -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
 
