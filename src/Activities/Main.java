@@ -17,7 +17,7 @@ import java.util.Locale;
 
 public class Main extends Application {
     static Stage stage;
-
+    public static int count = 0;
     @Override
     public void start(Stage primaryStage) throws Exception {
         Locale.setDefault(Locale.ENGLISH);
@@ -39,7 +39,7 @@ public class Main extends Application {
     }
 
     static void closeWindow() {
-        stage.hide();
+        stage.close();
     }
 
     public static void main(String[] args) {

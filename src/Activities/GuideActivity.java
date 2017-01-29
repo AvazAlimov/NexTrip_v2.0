@@ -65,6 +65,9 @@ public class GuideActivity implements Initializable {
         int secondFadeObject = 0;
         int showObject = 0;
 
+
+
+
         switch (value) {
             case 0:
                 showObject = 1;
