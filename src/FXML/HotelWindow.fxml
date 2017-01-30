@@ -304,8 +304,8 @@
                                 <Button fx:id="telegram_icon" prefHeight="50" prefWidth="50"
                                         style="-fx-background-color: transparent;">
                                     <graphic>
-                                        <ImageView fitHeight="27.0" fitWidth="27.0">
-                                            <Image url="/Resources/Icons/telegram(28px).png"/>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0">
+                                            <Image url="/Resources/Icons/Paper Plane_48px.png"/>
                                         </ImageView>
                                     </graphic>
                                 </Button>
@@ -319,10 +319,10 @@
                                 </Button>
                             </HBox>
                             <Separator prefHeight="60" visible="false"/>
-                            <VBox alignment="BOTTOM_RIGHT">
+                            <VBox alignment="BOTTOM_CENTER">
                                 <Label fx:id="commentText" text="Leave your comment here" underline="true"
                                        style="-fx-font-size: 16;"/>
-                                <HBox alignment="BOTTOM_RIGHT">
+                                <HBox alignment="BOTTOM_CENTER">
                                     <Button fx:id="CommentButton" prefWidth="100"
                                             style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 6, 0.2, 0, 0);-fx-background-radius: 20;">
                                         <graphic>

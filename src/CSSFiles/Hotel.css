@@ -60,7 +60,8 @@
 }
 
 #commentText:hover{
-    -fx-text-fill: blue;
+    -fx-text-fill: darkblue;
     -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #212121, 8, 0, 0, 0);
 }
 
