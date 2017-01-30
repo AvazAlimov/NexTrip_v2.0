@@ -17,6 +17,7 @@
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.control.Pagination?>
+<?import javafx.geometry.Rectangle2D?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
             prefWidth="600.0"
             xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
@@ -64,6 +65,7 @@
                                 <ImageView fx:id="imageView" fitWidth="640" fitHeight="360"
                                            style="-fx-effect: dropshadow(gaussian, black, 15, 0, 0, 0);">
                                     <Image url="/Resources/Pictures/c.jpg"/>
+
                                 </ImageView>
                                 <HBox alignment="CENTER">
                                     <JFXButton fx:id="prevImage" id="prevImage" prefWidth="25" prefHeight="25"
@@ -197,7 +199,7 @@
                                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
                                                    preserveRatio="true"
                                                    disable="true">
-                                            <Image url="/Resources/Icons/wifi_icon(64px).png" smooth="false"/>
+                                            <Image url="/Resources/Icons/Wi-Fi Logo_48px.png" smooth="false"/>
                                         </ImageView>
                                     </graphic>
                                 </Button>
@@ -216,7 +218,7 @@
                                     <graphic>
                                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
                                                    preserveRatio="true">
-                                            <Image url="/Resources/Icons/childrenYard_icon1(64px).png" smooth="false"/>
+                                            <Image url="/Resources/Icons/Brick_48px.png" smooth="false"/>
                                         </ImageView>
                                     </graphic>
                                 </Button>

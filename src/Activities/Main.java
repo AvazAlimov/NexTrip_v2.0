@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -18,6 +19,7 @@ import java.util.Locale;
 public class Main extends Application {
     static Stage stage;
     public static int count = 0;
+    static  ImageView[] slides;
     @Override
     public void start(Stage primaryStage) throws Exception {
         Locale.setDefault(Locale.ENGLISH);

@@ -1,9 +1,15 @@
 package Activities;
 
+import com.sun.scenario.effect.impl.prism.ps.PPSDrawable;
+import javafx.animation.FadeTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.Transition;
+import javafx.application.Application;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -12,10 +18,13 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class HotelActivity implements Initializable {
+import static Activities.Main.slides;
+
+public class HotelActivity  implements Initializable {
 
 
     public ImageView imageView;
+    private SequentialTransition root;
 
 
     @Override
@@ -49,7 +58,6 @@ public class HotelActivity implements Initializable {
             }
         }, 0, 5000);
 
-
     }
 
     public void closeWindow() {
@@ -60,5 +68,25 @@ public class HotelActivity implements Initializable {
     public void previousWindow() throws IOException {
 
     }
+
+   /* public void start() {
+
+        SequentialTransition slideshow = new SequentialTransition();
+
+        for (ImageView slide : slides) {
+
+            SequentialTransition sequentialTransition = new SequentialTransition();
+
+            FadeTransition fadeIn = Transition.getFadeTransition(slide, 0.0, 1.0, 2000);
+            FadeTransition stayOn = Transition.getFadeTransition(slide, 1.0, 1.0, 2000);
+            FadeTransition fadeOut = Transition.getFadeTransition(slide, 1.0, 0.0, 2000);
+
+            sequentialTransition.getChildren().addAll(fadeIn, stayOn, fadeOut);
+            this.root.getChildren().add(slide);
+            slideshow.getChildren().add(sequentialTransition);
+
+        }
+        slideshow.play();
+    }*/
 
 }
