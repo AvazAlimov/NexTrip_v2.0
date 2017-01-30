@@ -66,7 +66,7 @@
 
                 <GridPane GridPane.columnIndex="0" alignment="CENTER">
 
-                    <VBox spacing="8">
+                    <VBox spacing="13">
                         <HBox spacing="40" alignment="CENTER">
                             <GridPane HBox.hgrow="ALWAYS" alignment="CENTER" style="-fx-background-color: rgba(100,100,100,0.5);
                         -fx-fit-to-height: true;-fx-fit-to-width: true;">
@@ -75,13 +75,25 @@
                                     <Image url="/Resources/Pictures/c.jpg"/>
                                 </ImageView>
                                 <HBox alignment="CENTER">
-                                    <Button fx:id="prevImage" id="prevImage" prefWidth="25"
+                                    <JFXButton fx:id="prevImage" id="prevImage" prefWidth="25" prefHeight="25"
                                             style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
-                                        -fx-background-color: #80DEEA; -fx-opacity: 0.6;"/>
+                                        -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
+                                        <graphic>
+                                            <ImageView fitHeight="23.0" fitWidth="15.0">
+                                                <Image url="/Resources/Icons/Back_52px.png"/>
+                                            </ImageView>
+                                        </graphic>
+                                    </JFXButton>
                                     <Separator HBox.hgrow="ALWAYS" visible="false"/>
-                                    <Button fx:id="nextImage" id="nextImage" prefWidth="25"
+                                    <JFXButton fx:id="nextImage" id="nextImage" prefWidth="25" prefHeight="25"
                                             style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
-                                        -fx-background-color: #80DEEA; -fx-opacity: 0.6;"/>
+                                        -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
+                                        <graphic>
+                                            <ImageView fitHeight="23.0" fitWidth="15.0">
+                                                <Image url="/Resources/Icons/Forward_52px.png"/>
+                                            </ImageView>
+                                        </graphic>
+                                    </JFXButton>
                                 </HBox>
                             </GridPane>
                         </HBox>
@@ -139,13 +151,17 @@
                                     <InnerShadow/>
                                 </effect>
                                 <graphic>
-                                    <HBox spacing="50" alignment="CENTER">
+                                    <HBox  alignment="CENTER">
+
                                         <ImageView fitHeight="30.0" fitWidth="36.0"
                                                    style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                                             <image>
                                                 <Image url="/Resources/Icons/users_48px.png"/>
                                             </image>
                                         </ImageView>
+                                        <Separator prefWidth="10" visible="false"/>
+                                        <Label text="number" style="-fx-font-weight: bolder;"/>
+                                        <Separator prefWidth="50" visible="false"/>
                                         <Group>
                                             <children>
                                                 <Group>
@@ -248,8 +264,12 @@
 
                 <GridPane prefWidth="600" GridPane.columnIndex="2" alignment="CENTER">
                     <VBox >
-
+                        <effect>
+                            <InnerShadow/>
+                        </effect>
+                        <Separator prefHeight="90" visible="false"/>
                         <VBox alignment="CENTER" id="textBackground">
+
                             <HBox alignment="CENTER" spacing="5">
                                 <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;">
                                     <graphic>
@@ -286,9 +306,9 @@
 
                         </VBox>
 
-                        <Separator prefHeight="20" visible="false"/>
-                        <VBox alignment="CENTER" prefWidth="500">
 
+                        <VBox alignment="CENTER" prefWidth="500">
+                            <Separator prefHeight="30" visible="false"/>
                             <HBox alignment="CENTER">
                                 <Label text="Contacts" alignment="CENTER"
                                        style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
@@ -335,8 +355,8 @@
                                 <Button fx:id="web_icon" prefHeight="50" prefWidth="50"
                                         style="-fx-background-color: transparent;">
                                     <graphic>
-                                        <ImageView fitHeight="27.0" fitWidth="27.0">
-                                            <Image url="/Resources/Icons/web(32px).png"/>
+                                        <ImageView fitHeight="35.0" fitWidth="35.0">
+                                            <Image url="/Resources/Icons/Domain_48px.png"/>
                                         </ImageView>
                                     </graphic>
                                 </Button>
