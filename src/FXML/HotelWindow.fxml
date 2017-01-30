@@ -21,29 +21,23 @@
             prefWidth="600.0"
             xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.HotelActivity">
-
     <children>
-
         <GridPane vgap="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="46"
                   AnchorPane.rightAnchor="10" AnchorPane.topAnchor="0">
-
             <columnConstraints>
                 <ColumnConstraints/>
                 <ColumnConstraints/>
                 <ColumnConstraints/>
             </columnConstraints>
-
             <rowConstraints>
                 <RowConstraints/>
                 <RowConstraints/>
-
+                <RowConstraints/>
             </rowConstraints>
-
             <HBox alignment="TOP_RIGHT" GridPane.rowIndex="0">
 
                 <JFXButton id="backButton" onAction="#previousWindow" prefHeight="20" prefWidth="20"
                            style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-font-size: 14;">
-
                     <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0">
                             <Image url="/Resources/Icons/back1_64px.png"/>
@@ -61,11 +55,8 @@
                 <Label text="Hotel Window" underline="true"
                        style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>&ndash;&gt;
             </HBox>-->
-
             <GridPane GridPane.rowIndex="1">
-
                 <GridPane GridPane.columnIndex="0" alignment="CENTER">
-
                     <VBox spacing="13">
                         <HBox spacing="40" alignment="CENTER">
                             <GridPane HBox.hgrow="ALWAYS" alignment="CENTER" style="-fx-background-color: rgba(100,100,100,0.5);
@@ -80,7 +71,7 @@
                                         -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
                                         <graphic>
                                             <ImageView fitHeight="23.0" fitWidth="15.0">
-                                                <Image url="/Resources/Icons/Back2_52px.png"/>
+                                                <Image url="/Resources/Icons/Back3_52px.png"/>
                                             </ImageView>
                                         </graphic>
                                     </JFXButton>
@@ -90,7 +81,7 @@
                                         -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
                                         <graphic>
                                             <ImageView fitHeight="23.0" fitWidth="15.0">
-                                                <Image url="/Resources/Icons/Forward2_52px.png"/>
+                                                <Image url="/Resources/Icons/Forward3_52px.png"/>
                                             </ImageView>
                                         </graphic>
                                     </JFXButton>
@@ -99,7 +90,6 @@
                         </HBox>
 
                         <HBox alignment="CENTER">
-
                             <Group>
                                 <children>
                                     <Button layoutX="56.0" layoutY="94.0" mnemonicParsing="false" prefHeight="38.0"
@@ -144,7 +134,6 @@
                         </HBox>
 
                         <HBox alignment="CENTER">
-
                             <Button layoutX="122.0" layoutY="245.0" mnemonicParsing="false" prefHeight="50.0"
                                     prefWidth="640.0" style="-fx-background-color: #64B5F6;">
                                 <effect>
@@ -152,7 +141,6 @@
                                 </effect>
                                 <graphic>
                                     <HBox  alignment="CENTER">
-
                                         <ImageView fitHeight="30.0" fitWidth="36.0"
                                                    style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                                             <image>
@@ -195,38 +183,14 @@
                             </Button>
 
                         </HBox>
-
-                        <!-- <HBox fx:id="ratingLayout" spacing="5" prefHeight="50" alignment="CENTER" id="textBackground">
-                             <ImageView fitWidth="30" fitHeight="30"
-                                        style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
-                                 <Image url="/Resources/Icons/users_48px.png"/>
-                             </ImageView>
-                             <Label fx:id="numberRating" text="number"/>
-                             <Separator prefWidth="20" visible="false"/>
-                             <HBox fx:id="stars" spacing="5" alignment="CENTER">
-                                 <Button prefWidth="25"
-                                         style="-fx-background-radius: 30px; -fx-background-color: yellow;"/>
-                                 <Button prefWidth="25"
-                                         style="-fx-background-radius: 30px; -fx-background-color: yellow;"/>
-                                 <Button prefWidth="25"
-                                         style="-fx-background-radius: 30px; -fx-background-color: yellow;"/>
-                                 <Button prefWidth="25"
-                                         style="-fx-background-radius: 30px; -fx-background-color: yellow;"/>
-                                 <Button prefWidth="25"
-                                         style="-fx-background-radius: 30px; -fx-background-color: yellow;"/>
-                             </HBox>
-                         </HBox>-->
-
                         <VBox alignment="CENTER">
                             <Label text="Amenities" alignment="CENTER"
                                    style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
 
-                            <HBox spacing="20" prefHeight="55" prefWidth="500" alignment="CENTER" style="-fx-background-radius: 6; -fx-background-color: #64B5F6;
-                                                                 ">
+                            <HBox spacing="20" prefHeight="55" prefWidth="500" alignment="CENTER" style="-fx-background-radius: 6; -fx-background-color: #64B5F6;">
                                 <effect>
                                     <InnerShadow/>
                                 </effect>
-
                                 <Button visible="true" fx:id="freeWiFi" text="Free WiFi" prefHeight="50.0"
                                         style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-weight: bolder;">
                                     <graphic>
@@ -260,52 +224,50 @@
                         </VBox>
                     </VBox>
                 </GridPane>
+
                 <Separator prefWidth="20" visible="false" GridPane.columnIndex="1"/>
 
                 <GridPane prefWidth="600" GridPane.columnIndex="2" alignment="CENTER">
                     <VBox >
-                        <effect>
-                            <InnerShadow/>
-                        </effect>
                         <Separator prefHeight="90" visible="false"/>
-                        <VBox alignment="CENTER" id="textBackground">
+                        <VBox>
+                            <effect>
+                                <InnerShadow/>
+                            </effect>
+                            <VBox alignment="CENTER" id="textBackground">
+                                <HBox alignment="CENTER" spacing="5">
+                                    <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;">
+                                        <graphic>
+                                            <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                <Image url="/Resources/Icons/info1_(64px).png"/>
+                                            </ImageView>
+                                        </graphic>
+                                    </Button>
+                                    <Label text="Information" alignment="CENTER" underline="true"
+                                           style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                                </HBox>
 
-                            <HBox alignment="CENTER" spacing="5">
-                                <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;">
-                                    <graphic>
-                                        <ImageView fitHeight="25.0" fitWidth="25.0">
-                                            <Image url="/Resources/Icons/info1_(64px).png"/>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                                <Label text="Information" alignment="CENTER" underline="true"
-                                       style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
-                            </HBox>
+                                <TextArea fx:id="infoText" wrapText="true" editable="false"/>
 
-                            <TextArea fx:id="infoText" wrapText="true" editable="false"/>
+                                <HBox alignment="CENTER" spacing="10">
+                                    <Label text="Price:" alignment="CENTER"
+                                           style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                                    <Label text="               " underline="true"/>
+                                    <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;">
+                                        <graphic>
+                                            <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                <Image url="/Resources/Icons/price(32px).png"/>
+                                            </ImageView>
+                                        </graphic>
+                                    </Button>
+                                </HBox>
 
-                            <HBox alignment="CENTER" spacing="10">
+                                <Separator/>
 
-                                <Label text="Price:" alignment="CENTER"
-                                       style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
-                                <Label text="               " underline="true"/>
-
-                                <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;">
-                                    <graphic>
-                                        <ImageView fitHeight="25.0" fitWidth="25.0">
-                                            <Image url="/Resources/Icons/price(32px).png"/>
-                                        </ImageView>
-                                    </graphic>
-                                </Button>
-                            </HBox>
-
-                            <Separator/>
-
-                            <Pagination pageCount="3" layoutX="118.0" layoutY="121.0" prefHeight="200.0"
-                                        prefWidth="200.0"/>
-
+                                <Pagination pageCount="3" layoutX="118.0" layoutY="121.0" prefHeight="200.0"
+                                            prefWidth="200.0"/>
+                            </VBox>
                         </VBox>
-
 
                         <VBox alignment="CENTER" prefWidth="500">
                             <Separator prefHeight="30" visible="false"/>
@@ -315,16 +277,14 @@
                             </HBox>
 
                             <HBox fx:id="contactContainer" spacing="10" alignment="CENTER" prefWidth="500">
-
                                 <Button fx:id="mail_icon" prefHeight="50" prefWidth="50"
                                         style="-fx-background-color: transparent;">
                                     <graphic>
                                         <ImageView fitHeight="27.0" fitWidth="27.0">
-                                            <Image url="/Resources/Icons/mail(32px).png"/>
+                                            <Image url="/Resources/Icons/Gmail_48px.png"/>
                                         </ImageView>
                                     </graphic>
                                 </Button>
-
                                 <Button fx:id="phone_icon" prefHeight="50" prefWidth="50"
                                         style="-fx-background-color: transparent;">
                                     <graphic>
@@ -333,7 +293,6 @@
                                         </ImageView>
                                     </graphic>
                                 </Button>
-
                                 <Button fx:id="facebook_icon" prefHeight="50" prefWidth="50"
                                         style="-fx-background-color: transparent;">
                                     <graphic>
@@ -342,7 +301,6 @@
                                         </ImageView>
                                     </graphic>
                                 </Button>
-
                                 <Button fx:id="telegram_icon" prefHeight="50" prefWidth="50"
                                         style="-fx-background-color: transparent;">
                                     <graphic>
@@ -351,7 +309,6 @@
                                         </ImageView>
                                     </graphic>
                                 </Button>
-
                                 <Button fx:id="web_icon" prefHeight="50" prefWidth="50"
                                         style="-fx-background-color: transparent;">
                                     <graphic>
@@ -382,9 +339,7 @@
             </GridPane>
         </GridPane>
     </children>
-
     <stylesheets>
         <URL value="@../CSSFiles/Hotel.css"/>
     </stylesheets>
-
 </AnchorPane>
