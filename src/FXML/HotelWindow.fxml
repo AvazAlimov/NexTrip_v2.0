@@ -80,7 +80,7 @@
                                         -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
                                         <graphic>
                                             <ImageView fitHeight="23.0" fitWidth="15.0">
-                                                <Image url="/Resources/Icons/Back_52px.png"/>
+                                                <Image url="/Resources/Icons/Back2_52px.png"/>
                                             </ImageView>
                                         </graphic>
                                     </JFXButton>
@@ -90,7 +90,7 @@
                                         -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
                                         <graphic>
                                             <ImageView fitHeight="23.0" fitWidth="15.0">
-                                                <Image url="/Resources/Icons/Forward_52px.png"/>
+                                                <Image url="/Resources/Icons/Forward2_52px.png"/>
                                             </ImageView>
                                         </graphic>
                                     </JFXButton>
