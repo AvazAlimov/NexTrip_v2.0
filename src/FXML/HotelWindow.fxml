@@ -45,10 +45,13 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
+                <HBox alignment="TOP_RIGHT">
 
-                <JFXButton prefWidth="40" style="-fx-background-color: transparent; -fx-text-fill: #B2EBF2;"
-                           prefHeight="40"
-                           onAction="#closeWindow" text="✖" alignment="TOP_RIGHT"/>
+                    <JFXButton prefWidth="40" style="-fx-background-color: transparent; -fx-text-fill: #B2EBF2;"
+                               prefHeight="40"
+                               onAction="#closeWindow" text="✖"  textAlignment="CENTER"/>
+                </HBox>
+
             </HBox>
            <!-- <HBox GridPane.rowIndex="1" alignment="BASELINE_LEFT" GridPane.columnIndex="0">
                &lt;!&ndash; <Separator prefWidth="230" visible="false"/>

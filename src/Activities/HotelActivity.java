@@ -1,24 +1,14 @@
 package Activities;
 
-import com.sun.scenario.effect.impl.prism.ps.PPSDrawable;
-import javafx.animation.FadeTransition;
 import javafx.animation.SequentialTransition;
-import javafx.animation.Transition;
-import javafx.application.Application;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import static Activities.Main.slides;
 
 public class HotelActivity  implements Initializable {
 
@@ -57,7 +47,7 @@ public class HotelActivity  implements Initializable {
                 }
             }
         }, 0, 5000);
-
+        timer.cancel();
     }
 
     public void closeWindow() {
