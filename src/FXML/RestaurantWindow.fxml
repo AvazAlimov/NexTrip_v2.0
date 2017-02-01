@@ -49,7 +49,7 @@
 
                     <JFXButton prefWidth="40" style="-fx-background-color: transparent; -fx-text-fill: #B2EBF2;"
                                prefHeight="40"
-                               onAction="#closeWindow" text="✖"  textAlignment="CENTER"/>
+                               onAction="#closeWindow" text="✖" textAlignment="CENTER"/>
                 </HBox>
 
             </HBox>
@@ -66,8 +66,9 @@
 
                                 </ImageView>
                                 <HBox alignment="CENTER">
-                                    <JFXButton fx:id="prevImage" id="prevImage" prefWidth="25" prefHeight="25" onAction="#switchPrevImage"
-                                            style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
+                                    <JFXButton fx:id="prevImage" id="prevImage" prefWidth="25" prefHeight="25"
+                                               onAction="#switchPrevImage"
+                                               style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
                                         -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
                                         <graphic>
                                             <ImageView fitHeight="23.0" fitWidth="15.0">
@@ -76,8 +77,9 @@
                                         </graphic>
                                     </JFXButton>
                                     <Separator HBox.hgrow="ALWAYS" visible="false"/>
-                                    <JFXButton fx:id="nextImage" id="nextImage" prefWidth="25" prefHeight="25" onAction="#switchNextImage"
-                                            style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
+                                    <JFXButton fx:id="nextImage" id="nextImage" prefWidth="25" prefHeight="25"
+                                               onAction="#switchNextImage"
+                                               style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
                                         -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
                                         <graphic>
                                             <ImageView fitHeight="23.0" fitWidth="15.0">
@@ -140,7 +142,7 @@
                                     <InnerShadow/>
                                 </effect>
                                 <graphic>
-                                    <HBox  alignment="CENTER">
+                                    <HBox alignment="CENTER">
                                         <ImageView fitHeight="30.0" fitWidth="36.0"
                                                    style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                                             <image>
@@ -185,7 +187,8 @@
                         </HBox>
                         <VBox alignment="CENTER">
 
-                            <HBox spacing="20" prefHeight="55" prefWidth="500" alignment="CENTER" style="-fx-background-radius: 6; -fx-background-color: #64B5F6;">
+                            <HBox spacing="20" prefHeight="55" prefWidth="500" alignment="CENTER"
+                                  style="-fx-background-radius: 6; -fx-background-color: #64B5F6;">
                                 <effect>
                                     <InnerShadow/>
                                 </effect>
@@ -229,7 +232,7 @@
                 <Separator prefWidth="20" visible="false" GridPane.columnIndex="1"/>
 
                 <GridPane prefWidth="600" GridPane.columnIndex="2" alignment="CENTER">
-                    <VBox >
+                    <VBox>
                         <Separator prefHeight="90" visible="false"/>
                         <VBox>
                             <effect>
@@ -249,19 +252,34 @@
                                 </HBox>
 
                                 <TextArea fx:id="infoText" wrapText="true" editable="false"/>
+                                <GridPane>
+                                    <rowConstraints>
+                                        <RowConstraints/>
+                                        <RowConstraints/>
+                                    </rowConstraints>
+                                    <columnConstraints>
+                                        <ColumnConstraints/>
+                                        <ColumnConstraints/>
+                                        <ColumnConstraints/>
+                                    </columnConstraints>
 
-                                <HBox alignment="CENTER" spacing="10">
-                                    <Label text="Price:" alignment="CENTER"
+                                    <Label text="Types" alignment="CENTER" GridPane.rowIndex="0"
+                                           GridPane.columnIndex="0"
                                            style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
-                                    <Label text="               " underline="true"/>
-                                    <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;">
+                                    <Label text="Menu" alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                           style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                                    <Label text="Number of sits" alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="2"
+                                           style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+
+                                    <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;" GridPane.columnIndex="0" GridPane.rowIndex="0">
                                         <graphic>
                                             <ImageView fitHeight="25.0" fitWidth="25.0">
                                                 <Image url="/Resources/Icons/price(32px).png"/>
                                             </ImageView>
                                         </graphic>
                                     </Button>
-                                </HBox>
+                                </GridPane>
+
 
                                 <Separator/>
 
