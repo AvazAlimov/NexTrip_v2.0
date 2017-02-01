@@ -192,8 +192,8 @@
                                 <effect>
                                     <InnerShadow/>
                                 </effect>
-                                <Label text="Amenities"
-                                       style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
+                                <Label text="Amenities" underline="true"
+                                       style="-fx-font-size: 16; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
 
                                 <Button fx:id="freeWiFi" text="Free WiFi" prefHeight="50.0"
                                         style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-weight: bolder;">
@@ -252,51 +252,53 @@
                                 </HBox>
 
                                 <TextArea fx:id="infoText" wrapText="true" editable="false"/>
-                                <GridPane>
-                                    <rowConstraints>
-                                        <RowConstraints/>
-                                        <RowConstraints/>
-                                    </rowConstraints>
-                                    <columnConstraints>
-                                        <ColumnConstraints/>
-                                        <ColumnConstraints/>
-                                        <ColumnConstraints/>
-                                    </columnConstraints>
+                                <HBox alignment="CENTER">
 
-                                    <Label text="Types" alignment="CENTER" GridPane.rowIndex="0"
-                                           GridPane.columnIndex="0"
-                                           style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
-                                    <Label text="Menu" alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1"
-                                           style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
-                                    <Label text="Number of sits" alignment="CENTER" GridPane.rowIndex="0"
-                                           GridPane.columnIndex="2"
-                                           style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                                    <GridPane >
+                                        <rowConstraints>
+                                            <RowConstraints/>
+                                            <RowConstraints/>
+                                        </rowConstraints>
 
-                                    <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;"
-                                            GridPane.columnIndex="0" GridPane.rowIndex="1">
-                                        <graphic>
-                                            <ImageView fitHeight="25.0" fitWidth="25.0">
-                                                <Image url="/Resources/Icons/cuisine_icon(128px).png"/>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
-                                    <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;"
-                                            GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                        <graphic>
-                                            <ImageView fitHeight="25.0" fitWidth="25.0">
-                                                <Image url="/Resources/Icons/cuisine_icon(128px).png"/>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
-                                    <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;"
-                                            GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                        <graphic>
-                                            <ImageView fitHeight="25.0" fitWidth="25.0">
-                                                <Image url="/Resources/Icons/numberOfSeats_icon(128px).png"/>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
-                                </GridPane>
+                                        <HBox alignment="CENTER" spacing="60">
+
+                                            <Label text="Types" alignment="CENTER"
+                                                   style="-fx-font-size: 16; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+
+                                            <Label text="Menu" alignment="CENTER"
+                                                   style="-fx-font-size: 16; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+
+                                            <Label text="Number of sits" alignment="CENTER"
+                                                   style="-fx-font-size: 16; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121"/>
+                                        </HBox>
+                                        <HBox spacing="60" GridPane.rowIndex="1">
+
+                                            <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;">
+                                                <graphic>
+                                                    <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                        <Image url="/Resources/Icons/cuisine_icon(128px).png"/>
+                                                    </ImageView>
+                                                </graphic>
+                                            </Button>
+
+                                            <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;">
+                                                <graphic>
+                                                    <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                        <Image url="/Resources/Icons/menu_icon(128px).png"/>
+                                                    </ImageView>
+                                                </graphic>
+                                            </Button>
+
+                                            <Button prefHeight="45" prefWidth="45" style="-fx-background-color: transparent;">
+                                                <graphic>
+                                                    <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                        <Image url="/Resources/Icons/numberOfSeats_icon(128px).png"/>
+                                                    </ImageView>
+                                                </graphic>
+                                            </Button>
+                                        </HBox>
+                                    </GridPane>
+                                </HBox>
 
 
                                 <Separator/>
