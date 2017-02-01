@@ -71,7 +71,7 @@
 
                                 </ImageView>
                                 <HBox alignment="CENTER">
-                                    <JFXButton fx:id="prevImage" id="prevImage" prefWidth="25" prefHeight="25"
+                                    <JFXButton fx:id="prevImage" id="prevImage" prefWidth="25" prefHeight="25" onAction="#switchPrevImage"
                                             style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
                                         -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
                                         <graphic>
@@ -81,7 +81,7 @@
                                         </graphic>
                                     </JFXButton>
                                     <Separator HBox.hgrow="ALWAYS" visible="false"/>
-                                    <JFXButton fx:id="nextImage" id="nextImage" prefWidth="25" prefHeight="25"
+                                    <JFXButton fx:id="nextImage" id="nextImage" prefWidth="25" prefHeight="25" onAction="#switchNextImage"
                                             style="-fx-background-radius: 30px; -fx-effect: dropshadow(gaussian, #212121, 6, 0, 0, 0);
                                         -fx-background-color: #80DEEA; -fx-opacity: 0.3;">
                                         <graphic>
