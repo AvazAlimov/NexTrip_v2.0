@@ -189,13 +189,14 @@
 
                         </HBox>
                         <VBox alignment="CENTER">
-                            <Label text="Amenities" alignment="CENTER"
-                                   style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
 
                             <HBox spacing="20" prefHeight="55" prefWidth="500" alignment="CENTER" style="-fx-background-radius: 6; -fx-background-color: #64B5F6;">
                                 <effect>
                                     <InnerShadow/>
                                 </effect>
+                                <Label text="Amenities"
+                                       style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
+
                                 <Button visible="true" fx:id="freeWiFi" text="Free WiFi" prefHeight="50.0"
                                         style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-weight: bolder;">
                                     <graphic>
@@ -275,13 +276,28 @@
                         </VBox>
 
                         <VBox alignment="CENTER" prefWidth="500">
-                            <Separator prefHeight="30" visible="false"/>
+                            <Separator prefHeight="50" visible="false"/>
+
+                            <VBox alignment="CENTER">
+                                <Label fx:id="commentText" text="Leave your comment here" underline="true"
+                                       style="-fx-font-size: 16;"/>
+                                <HBox alignment="BOTTOM_CENTER">
+                                    <Button fx:id="CommentButton" prefWidth="100"
+                                            style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 6, 0.2, 0, 0);-fx-background-radius: 20;">
+                                        <graphic>
+                                            <ImageView fitHeight="60.0" fitWidth="60.0">
+                                                <Image url="/Resources/Icons/comments(64px).png"/>
+                                            </ImageView>
+                                        </graphic>
+                                    </Button>
+                                </HBox>
+                            </VBox>
+                            <Separator prefHeight="60" visible="false"/>
                             <HBox alignment="CENTER">
                                 <Label text="Contacts" alignment="CENTER"
                                        style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
                             </HBox>
-
-                            <HBox fx:id="contactContainer" spacing="10" alignment="CENTER" prefWidth="500">
+                            <HBox fx:id="contactContainer" spacing="10" alignment="BOTTOM_CENTER" prefWidth="500">
                                 <Button fx:id="mail_icon" prefHeight="50" prefWidth="50"
                                         style="-fx-background-color: transparent;">
                                     <graphic>
@@ -323,21 +339,8 @@
                                     </graphic>
                                 </Button>
                             </HBox>
-                            <Separator prefHeight="60" visible="false"/>
-                            <VBox alignment="BOTTOM_CENTER">
-                                <Label fx:id="commentText" text="Leave your comment here" underline="true"
-                                       style="-fx-font-size: 16;"/>
-                                <HBox alignment="BOTTOM_CENTER">
-                                    <Button fx:id="CommentButton" prefWidth="100"
-                                            style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 6, 0.2, 0, 0);-fx-background-radius: 20;">
-                                        <graphic>
-                                            <ImageView fitHeight="60.0" fitWidth="60.0">
-                                                <Image url="/Resources/Icons/comments(64px).png"/>
-                                            </ImageView>
-                                        </graphic>
-                                    </Button>
-                                </HBox>
-                            </VBox>
+
+
                         </VBox>
                     </VBox>
                 </GridPane>
