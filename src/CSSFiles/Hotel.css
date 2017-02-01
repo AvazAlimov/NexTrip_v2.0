@@ -2,6 +2,7 @@
 .root {
     -fx-background-image: url("/Resources/Pictures/Background.png");
     -fx-background-size: cover;
+
 }
 
 #textBackground {
@@ -17,6 +18,7 @@
     -fx-text-fill: #212121;
     -fx-font-family: FutureExtended;
     -fx-prompt-text-fill: #666;
+
 }
 
 #nameLabel {
