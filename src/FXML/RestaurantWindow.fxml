@@ -101,12 +101,12 @@
                                             <InnerShadow/>
                                         </effect>
                                     </Button>
-                                    <Button layoutX="56.0" layoutY="95.0" mnemonicParsing="false" prefHeight="36.0"
+                                    <Button layoutX="56.0" layoutY="94.0" mnemonicParsing="false" prefHeight="38.5"
                                             prefWidth="73.0"
                                             style="-fx-background-color: #E1F5FE; -fx-border-radius: 0;"/>
                                     <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="77.0" layoutY="97.0">
                                         <image>
-                                            <Image url="/Resources/Icons/name_(64px).png"/>
+                                            <Image url="/Resources/Icons/US Capitol_48px.png"/>
                                         </image>
                                     </ImageView>
                                 </children>
@@ -123,12 +123,12 @@
                                             <InnerShadow/>
                                         </effect>
                                     </Button>
-                                    <Button layoutX="56.0" layoutY="95.0" mnemonicParsing="false" prefHeight="36.0"
+                                    <Button layoutX="56.0" layoutY="94.0" mnemonicParsing="false" prefHeight="38.5"
                                             prefWidth="73.0"
                                             style="-fx-background-color: #E1F5FE; -fx-border-radius: 0;"/>
                                     <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="77.0" layoutY="97.0">
                                         <image>
-                                            <Image url="/Resources/Icons/location_(64px).png"/>
+                                            <Image url="/Resources/Icons/Define Location_48px.png"/>
                                         </image>
                                     </ImageView>
                                 </children>
