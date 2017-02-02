@@ -1,8 +1,6 @@
 package Activities;
 
 import com.jfoenix.controls.JFXButton;
-import com.sun.nio.sctp.Association;
-import com.sun.nio.sctp.Notification;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -11,14 +9,12 @@ import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class RestaurantActivity implements Initializable {
+public class EntertainmentActivity implements Initializable {
     public ImageView imageView;
     public JFXButton prevImage;
     public JFXButton nextImage;
     private String[] paths;
     private int index;
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -29,9 +25,8 @@ public class RestaurantActivity implements Initializable {
                 String.valueOf(getClass().getClassLoader().getResource("Resources/Pictures/f.jpg"))};
         index = 0;
         imageView.setImage(new Image(paths[index]));
-
-
     }
+
     public void switchPrevImage() {
         if (index == 0)
             index = 5;
@@ -48,10 +43,11 @@ public class RestaurantActivity implements Initializable {
 
     }
 
-    public void previousWindow(ActionEvent event) {
-
-    }
     public void closeWindow() {
         Main.closeWindow();
+    }
+
+    public void previousWindow(ActionEvent event) {
+
     }
 }
