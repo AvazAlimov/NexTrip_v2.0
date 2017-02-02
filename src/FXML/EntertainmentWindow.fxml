@@ -233,7 +233,7 @@
 
                 <GridPane prefWidth="600" GridPane.columnIndex="2" alignment="CENTER">
                     <VBox>
-                        <Separator prefHeight="110" visible="false"/>
+                        <Separator prefHeight="90" visible="false"/>
                         <VBox>
                             <effect>
                                 <InnerShadow/>
@@ -304,20 +304,20 @@
                         <VBox alignment="CENTER" prefWidth="500">
                             <Separator prefHeight="50" visible="false"/>
 
-                            <VBox alignment="CENTER">
+                            <HBox alignment="CENTER">
                                 <Label fx:id="commentText" text="Leave your comment here" underline="true"
                                        style="-fx-font-size: 16;"/>
                                 <HBox alignment="BOTTOM_CENTER">
                                     <Button fx:id="CommentButton" prefWidth="100"
                                             style="-fx-background-color: transparent; -fx-effect: dropshadow(gaussian, #212121, 6, 0.2, 0, 0);-fx-background-radius: 20;">
                                         <graphic>
-                                            <ImageView fitHeight="60.0" fitWidth="60.0">
-                                                <Image url="/Resources/Icons/comments(64px).png"/>
+                                            <ImageView fitHeight="40.0" fitWidth="40.0">
+                                                <Image url="/Resources/Icons/Comment Discussion_40px.png"/>
                                             </ImageView>
                                         </graphic>
                                     </Button>
                                 </HBox>
-                            </VBox>
+                            </HBox>
                             <Separator prefHeight="40" visible="false"/>
                             <HBox alignment="CENTER">
                                 <Label text="Contacts" alignment="CENTER"
