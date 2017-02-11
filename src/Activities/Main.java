@@ -1,5 +1,6 @@
 package Activities;
 
+import Classes.Hotel;
 import au.com.bytecode.opencsv.CSVReader;
 
 import javafx.application.Application;
@@ -12,11 +13,18 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Main extends Application {
+    static ArrayList<Hotel> hotels;
     static Stage stage;
+    private String serverHost = "127.0.0.1";
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -31,6 +39,17 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("Resources/icon.png"));
         primaryStage.show();
+
+        Runnable runnable = () -> {
+            try {
+                loadHotels();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        };
+
+        ExecutorService service = Executors.newCachedThreadPool();
+        service.submit(runnable);
     }
 
     @Override
@@ -93,4 +112,36 @@ public class Main extends Application {
             return currentTranslation.get(key);
         }
     }
+
+
+    private void loadHotels() throws IOException {
+        try {
+            Socket socket = new Socket(serverHost, 2332);
+            BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+            byte[] query = "H".getBytes();
+            wr.write(query, 0, query.length);
+            wr.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ServerSocket serverSocket = new ServerSocket(2333);
+        Socket socket = serverSocket.accept();
+
+        BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buf = new byte[1024];
+        int read;
+
+        while ((read = stream.read(buf)) != -1)
+            outputStream.write(buf, 0, read);
+        String data = outputStream.toString();
+        System.out.println(data);
+
+        outputStream.close();
+        stream.close();
+        serverSocket.close();
+    }
+
 }
