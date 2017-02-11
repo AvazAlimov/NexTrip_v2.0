@@ -25,7 +25,12 @@ public class Hotel extends Guidance {
         setRatings(content.substring(indexes[8] + 1, indexes[9]));
 
         setStartingPrice(Double.parseDouble(content.substring(indexes[9] + 1, indexes[10])));
-        setEndingPrice(Double.parseDouble(content.substring(indexes[10] + 1, indexes[11])));
+        setEndingPrice(Double.parseDouble(content.substring(indexes[10] + 1, content.length())));
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + startingPrice + "◎" + endingPrice;
     }
 
     public double getStartingPrice() {

@@ -24,7 +24,7 @@ class Guidance {
         ratings = new ArrayList<>();
     }
 
-    public String ratingsToString() {
+    String ratingsToString() {
         if (ratings.isEmpty())
             return "";
 
@@ -33,7 +33,7 @@ class Guidance {
         return string.substring(0, string.length() - 1);
     }
 
-    public void setRatings(String string) {
+    void setRatings(String string) {
         int index = 0;
         for (int i = 0; i < string.length(); i++)
             if (string.charAt(i) == '/' || i == string.length() - 1) {
@@ -62,7 +62,7 @@ class Guidance {
         comments.add(comment);
     }
 
-    public String ammenityToString() {
+    String ammenityToString() {
         if (amenties.size() == 0)
             return "";
 
@@ -72,7 +72,7 @@ class Guidance {
         return string.substring(0, string.length() - 1);
     }
 
-    public String commentsToString() {
+    String commentsToString() {
         if (comments.size() == 0)
             return "";
 
@@ -83,7 +83,7 @@ class Guidance {
         return string.substring(0, string.length() - 1);
     }
 
-    public String contactsToString() {
+    String contactsToString() {
         if (contacts.size() == 0)
             return "";
 
@@ -93,7 +93,7 @@ class Guidance {
         return string.substring(0, string.length() - 1);
     }
 
-    public String getImageLinks() {
+    String getImageLinks() {
         if (photos.size() == 0)
             return "";
         String string = "";
@@ -106,7 +106,7 @@ class Guidance {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
@@ -118,7 +118,7 @@ class Guidance {
         return info;
     }
 
-    public void setInfo(String info) {
+    void setInfo(String info) {
         this.info = info;
     }
 
@@ -126,7 +126,7 @@ class Guidance {
         return id;
     }
 
-    public void setId(int id) {
+    void setId(int id) {
         this.id = id;
     }
 
@@ -134,11 +134,11 @@ class Guidance {
         return location;
     }
 
-    public void setLocation(String location) {
+    void setLocation(String location) {
         this.location = location;
     }
 
-    public void setImages(String string) {
+    void setImages(String string) {
         int index = 0;
         for (int i = 0; i < string.length(); i++)
             if (string.charAt(i) == '■' || i == string.length() - 1) {
@@ -148,7 +148,7 @@ class Guidance {
             }
     }
 
-    public void setContacts(String string) {
+    void setContacts(String string) {
         int index = 0;
         for (int i = 0; i < string.length(); i++)
             if (string.charAt(i) == '■' || i == string.length() - 1) {
@@ -158,7 +158,7 @@ class Guidance {
             }
     }
 
-    public void setComments(String string) {
+    void setComments(String string) {
         int index = 0;
         for (int i = 0; i < string.length(); i++)
             if (string.charAt(i) == '■' || i == string.length() - 1) {
@@ -168,7 +168,7 @@ class Guidance {
             }
     }
 
-    public void setAmenities(String string) {
+    void setAmenities(String string) {
         int index = 0;
         for (int i = 0; i < string.length(); i++)
             if (string.charAt(i) == '■' || i == string.length() - 1) {

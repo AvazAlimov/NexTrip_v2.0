@@ -141,6 +141,7 @@ public class Main extends Application {
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
             if (i == data.length() - 1 || data.charAt(i) == '◍') {
+                System.out.println(i);
                 String content = data.substring(index, i);
                 hotels.add(new Hotel(content));
                 index = i + 1;
