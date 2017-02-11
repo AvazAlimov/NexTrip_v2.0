@@ -22,7 +22,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main extends Application {
-    static ArrayList<Hotel> hotels;
+    private static ArrayList<Hotel> hotels;
     static Stage stage;
     private String serverHost = "127.0.0.1";
 
@@ -137,7 +137,15 @@ public class Main extends Application {
         while ((read = stream.read(buf)) != -1)
             outputStream.write(buf, 0, read);
         String data = outputStream.toString();
-        System.out.println(data);
+
+        int index = 0;
+        for (int i = 0; i < data.length(); i++) {
+            if (i == data.length() - 1 || data.charAt(i) == '◍') {
+                String content = data.substring(index, i);
+                hotels.add(new Hotel(content));
+                index = i + 1;
+            }
+        }
 
         outputStream.close();
         stream.close();

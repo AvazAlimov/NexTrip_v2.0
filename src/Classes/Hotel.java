@@ -4,8 +4,8 @@ public class Hotel extends Guidance {
     private double startingPrice;
     private double endingPrice;
 
-    public Hotel() {
-
+    public Hotel(String content) {
+        System.out.println(content);
     }
 
     public double getStartingPrice() {
