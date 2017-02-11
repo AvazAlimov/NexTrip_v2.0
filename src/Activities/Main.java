@@ -22,7 +22,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main extends Application {
-    private static ArrayList<Hotel> hotels;
+    private static ArrayList<Hotel> hotels = new ArrayList<>();
     static Stage stage;
     private String serverHost = "127.0.0.1";
 
@@ -113,7 +113,6 @@ public class Main extends Application {
         }
     }
 
-
     private void loadHotels() throws IOException {
         try {
             Socket socket = new Socket(serverHost, 2332);
@@ -140,7 +139,7 @@ public class Main extends Application {
 
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
-            if (i == data.length() - 1 || data.charAt(i) == '◍') {
+            if (data.charAt(i) == '◍') {
                 String content = data.substring(index, i);
                 hotels.add(new Hotel(content));
                 index = i + 1;
