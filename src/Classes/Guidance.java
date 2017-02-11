@@ -209,4 +209,8 @@ class Guidance {
     public ArrayList<String> getPhotos() {
         return photos;
     }
+
+    void setRating(int rating) {
+        this.rating = rating;
+    }
 }

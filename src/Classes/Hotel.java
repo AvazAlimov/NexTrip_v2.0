@@ -13,8 +13,9 @@ public class Hotel extends Guidance {
                 indexes[index] = i;
                 index++;
             }
+
         setId(Integer.parseInt(content.substring(0, indexes[0])));
-        setRatings(content.substring(indexes[0] + 1, indexes[1]));
+        setRating(Integer.parseInt(content.substring(indexes[0] + 1, indexes[1])));
         setName(content.substring(indexes[1] + 1, indexes[2]));
         setInfo(content.substring(indexes[2] + 1, indexes[3]));
         setLocation(content.substring(indexes[3] + 1, indexes[4]));
