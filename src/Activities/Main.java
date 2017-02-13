@@ -30,7 +30,8 @@ public class Main extends Application {
     static ArrayList<Entertaining> entertainings = new ArrayList<>();
     static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
     static Stage stage;
-    private String serverHost = "127.0.0.1";
+    private String serverHost = "192.168.17.237";
+    static int count=0;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -53,6 +54,7 @@ public class Main extends Application {
                 loadRestaurants();
                 loadEntertaining();
                 loadThingsToDo();
+                System.out.println("Data were downloaded");
                 service.shutdown();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -145,7 +147,6 @@ public class Main extends Application {
         while ((read = stream.read(buf)) != -1)
             outputStream.write(buf, 0, read);
         String data = outputStream.toString();
-        System.out.println(data);
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
             if (data.charAt(i) == '◍') {
@@ -183,7 +184,6 @@ public class Main extends Application {
         while ((read = stream.read(buf)) != -1)
             outputStream.write(buf, 0, read);
         String data = outputStream.toString();
-        System.out.println(data);
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
             if (data.charAt(i) == '◍') {
@@ -221,7 +221,6 @@ public class Main extends Application {
         while ((read = stream.read(buf)) != -1)
             outputStream.write(buf, 0, read);
         String data = outputStream.toString();
-        System.out.println(data);
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
             if (data.charAt(i) == '◍') {
@@ -259,7 +258,6 @@ public class Main extends Application {
         while ((read = stream.read(buf)) != -1)
             outputStream.write(buf, 0, read);
         String data = outputStream.toString();
-        System.out.println(data);
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
             if (data.charAt(i) == '◍') {
