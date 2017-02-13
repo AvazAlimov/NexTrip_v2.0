@@ -46,22 +46,18 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image("Resources/icon.png"));
         primaryStage.show();
 
+        ExecutorService service = Executors.newCachedThreadPool();
         Runnable runnable = () -> {
             try {
                 loadHotels();
-                System.out.println("Hotels downloaded");
                 loadRestaurants();
-                System.out.println("Restaurants downloaded");
                 loadEntertaining();
-                System.out.println("Entertaining downloaded");
                 loadThingsToDo();
-                System.out.println("ThingsToDo downloaded");
+                service.shutdown();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         };
-
-        ExecutorService service = Executors.newCachedThreadPool();
         service.submit(runnable);
     }
 
