@@ -50,6 +50,7 @@ public class Main extends Application {
         Runnable runnable = () -> {
             try {
                 loadHotels();
+
                 loadRestaurants();
                 loadEntertaining();
                 loadThingsToDo();
