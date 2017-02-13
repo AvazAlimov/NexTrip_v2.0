@@ -3,6 +3,7 @@ package Activities;
 import Classes.Entertaining;
 import Classes.Hotel;
 import Classes.Restaurant;
+import Classes.ThingsToDo;
 import au.com.bytecode.opencsv.CSVReader;
 
 import javafx.application.Application;
@@ -24,9 +25,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main extends Application {
-    private static ArrayList<Hotel> hotels = new ArrayList<>();
-    private static ArrayList<Restaurant> restaurants = new ArrayList<>();
-    private static ArrayList<Entertaining> entertainings = new ArrayList<>();
+    static ArrayList<Hotel> hotels = new ArrayList<>();
+    static ArrayList<Restaurant> restaurants = new ArrayList<>();
+    static ArrayList<Entertaining> entertainings = new ArrayList<>();
+    static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
     static Stage stage;
     private String serverHost = "127.0.0.1";
 
@@ -50,6 +52,8 @@ public class Main extends Application {
                 System.out.println("Hotels downloaded");
                 loadRestaurants();
                 System.out.println("Restaurants downloaded");
+                loadEntertaining();
+                System.out.println("Entertaining downloaded");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -225,6 +229,44 @@ public class Main extends Application {
             if (data.charAt(i) == '◍') {
                 String content = data.substring(index, i);
                 entertainings.add(new Entertaining(content));
+                index = i + 1;
+            }
+        }
+
+        outputStream.close();
+        stream.close();
+        serverSocket.close();
+    }
+
+    private void loadThingsToDo() throws IOException {
+        try {
+            Socket socket = new Socket(serverHost, 2332);
+            BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+            byte[] query = "T".getBytes();
+            wr.write(query, 0, query.length);
+            wr.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ServerSocket serverSocket = new ServerSocket(2333);
+        Socket socket = serverSocket.accept();
+
+        BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buf = new byte[1024];
+        int read;
+
+        while ((read = stream.read(buf)) != -1)
+            outputStream.write(buf, 0, read);
+        String data = outputStream.toString();
+
+        int index = 0;
+        for (int i = 0; i < data.length(); i++) {
+            if (data.charAt(i) == '◍') {
+                String content = data.substring(index, i);
+                thingsToDos.add(new ThingsToDo(content));
                 index = i + 1;
             }
         }
