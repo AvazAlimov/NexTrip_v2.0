@@ -123,21 +123,19 @@ public class Main extends Application {
     }
 
     private void loadHotels() throws IOException {
-        ServerSocket serverSocket = new ServerSocket(2333);
-        Socket socket = serverSocket.accept();
-
         try {
-            Socket socket2 = new Socket(serverHost, 2332);
-            BufferedOutputStream wr = new BufferedOutputStream(socket2.getOutputStream());
+            Socket socket = new Socket(serverHost, 2332);
+            BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
             byte[] query = "H".getBytes();
             wr.write(query, 0, query.length);
             wr.close();
-            socket2.close();
+            socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
+        ServerSocket serverSocket = new ServerSocket(2333);
+        Socket socket = serverSocket.accept();
 
         BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
