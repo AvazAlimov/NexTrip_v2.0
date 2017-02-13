@@ -1,5 +1,9 @@
 package Activities;
 
+import Classes.Entertaining;
+import Classes.Hotel;
+import Classes.Restaurant;
+import Classes.ThingsToDo;
 import au.com.bytecode.opencsv.CSVReader;
 
 import javafx.application.Application;
@@ -7,19 +11,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Main extends Application {
+    static ArrayList<Hotel> hotels = new ArrayList<>();
+    static ArrayList<Restaurant> restaurants = new ArrayList<>();
+    static ArrayList<Entertaining> entertainings = new ArrayList<>();
+    static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
     static Stage stage;
-    public static int count = 0;
-    static  ImageView[] slides;
+    private String serverHost = "127.0.0.1";
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Locale.setDefault(Locale.ENGLISH);
@@ -33,6 +45,21 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("Resources/icon.png"));
         primaryStage.show();
+
+        ExecutorService service = Executors.newCachedThreadPool();
+        Runnable runnable = () -> {
+            try {
+                loadHotels();
+
+                loadRestaurants();
+                loadEntertaining();
+                loadThingsToDo();
+                service.shutdown();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        };
+        service.submit(runnable);
     }
 
     @Override
@@ -41,7 +68,7 @@ public class Main extends Application {
     }
 
     static void closeWindow() {
-        stage.close();
+        stage.hide();
     }
 
     public static void main(String[] args) {
@@ -94,5 +121,157 @@ public class Main extends Application {
                 throw new NullPointerException("Please, call setLanguage(String) before getTranslation()!");
             return currentTranslation.get(key);
         }
+    }
+
+    private void loadHotels() throws IOException {
+        try {
+            Socket socket = new Socket(serverHost, 2332);
+            BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+            byte[] query = "H".getBytes();
+            wr.write(query, 0, query.length);
+            wr.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ServerSocket serverSocket = new ServerSocket(2333);
+        Socket socket = serverSocket.accept();
+
+        BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buf = new byte[1024];
+        int read;
+
+        while ((read = stream.read(buf)) != -1)
+            outputStream.write(buf, 0, read);
+        String data = outputStream.toString();
+
+        int index = 0;
+        for (int i = 0; i < data.length(); i++) {
+            if (data.charAt(i) == '◍') {
+                String content = data.substring(index, i);
+                hotels.add(new Hotel(content));
+                index = i + 1;
+            }
+        }
+
+        outputStream.close();
+        stream.close();
+        serverSocket.close();
+    }
+
+    private void loadRestaurants() throws IOException {
+        try {
+            Socket socket = new Socket(serverHost, 2332);
+            BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+            byte[] query = "R".getBytes();
+            wr.write(query, 0, query.length);
+            wr.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ServerSocket serverSocket = new ServerSocket(2333);
+        Socket socket = serverSocket.accept();
+
+        BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buf = new byte[1024];
+        int read;
+
+        while ((read = stream.read(buf)) != -1)
+            outputStream.write(buf, 0, read);
+        String data = outputStream.toString();
+
+        int index = 0;
+        for (int i = 0; i < data.length(); i++) {
+            if (data.charAt(i) == '◍') {
+                String content = data.substring(index, i);
+                restaurants.add(new Restaurant(content));
+                index = i + 1;
+            }
+        }
+
+        outputStream.close();
+        stream.close();
+        serverSocket.close();
+    }
+
+    private void loadEntertaining() throws IOException {
+        try {
+            Socket socket = new Socket(serverHost, 2332);
+            BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+            byte[] query = "E".getBytes();
+            wr.write(query, 0, query.length);
+            wr.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ServerSocket serverSocket = new ServerSocket(2333);
+        Socket socket = serverSocket.accept();
+
+        BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buf = new byte[1024];
+        int read;
+
+        while ((read = stream.read(buf)) != -1)
+            outputStream.write(buf, 0, read);
+        String data = outputStream.toString();
+
+        int index = 0;
+        for (int i = 0; i < data.length(); i++) {
+            if (data.charAt(i) == '◍') {
+                String content = data.substring(index, i);
+                entertainings.add(new Entertaining(content));
+                index = i + 1;
+            }
+        }
+
+        outputStream.close();
+        stream.close();
+        serverSocket.close();
+    }
+
+    private void loadThingsToDo() throws IOException {
+        try {
+            Socket socket = new Socket(serverHost, 2332);
+            BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+            byte[] query = "T".getBytes();
+            wr.write(query, 0, query.length);
+            wr.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ServerSocket serverSocket = new ServerSocket(2333);
+        Socket socket = serverSocket.accept();
+
+        BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buf = new byte[1024];
+        int read;
+
+        while ((read = stream.read(buf)) != -1)
+            outputStream.write(buf, 0, read);
+        String data = outputStream.toString();
+
+        int index = 0;
+        for (int i = 0; i < data.length(); i++) {
+            if (data.charAt(i) == '◍') {
+                String content = data.substring(index, i);
+                thingsToDos.add(new ThingsToDo(content));
+                index = i + 1;
+            }
+        }
+
+        outputStream.close();
+        stream.close();
+        serverSocket.close();
     }
 }
