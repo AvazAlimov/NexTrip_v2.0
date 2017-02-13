@@ -4,7 +4,19 @@ import java.util.ArrayList;
 
 @SuppressWarnings("unused")
 public class Restaurant extends Guidance {
+    private enum Type {
+        Cafe, Fastfood, Cuisine, SitDown
+    }
+
+    private ArrayList<Type> type;
+    private Menu menu;
+    private int numberOfSeats;
+
     public Restaurant(String content) {
+        type = new ArrayList<>();
+        menu = new Menu();
+        numberOfSeats = 0;
+
         int[] indexes = new int[12];
         int index = 0;
         for (int i = 0; i < content.length(); i++)
@@ -27,20 +39,6 @@ public class Restaurant extends Guidance {
         setType(content.substring(indexes[9] + 1, indexes[10]));
         setMenu(content.substring(indexes[10] + 1, indexes[11]));
         setNumberOfSeats(Integer.parseInt(content.substring(indexes[11] + 1, content.length())));
-    }
-
-    private enum Type {
-        Cafe, Fastfood, Cuisine, SitDown
-    }
-
-    private ArrayList<Type> type;
-    private Menu menu;
-    private int numberOfSeats;
-
-    public Restaurant() {
-        type = new ArrayList<>();
-        menu = new Menu();
-        numberOfSeats = 0;
     }
 
     public int getNumberOfSeats() {

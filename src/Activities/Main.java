@@ -45,6 +45,9 @@ public class Main extends Application {
         Runnable runnable = () -> {
             try {
                 loadHotels();
+                System.out.println("Hotels downloaded");
+                loadRestaurants();
+                System.out.println("Restaurants downloaded");
             } catch (IOException e) {
                 e.printStackTrace();
             }
