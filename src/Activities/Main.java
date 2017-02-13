@@ -25,7 +25,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main extends Application {
-    static ArrayList<Hotel> hotels = new ArrayList<>();
+    static ArrayList<Hotel>hotels = new ArrayList<>();
     static ArrayList<Restaurant> restaurants = new ArrayList<>();
     static ArrayList<Entertaining> entertainings = new ArrayList<>();
     static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
@@ -50,7 +50,6 @@ public class Main extends Application {
         Runnable runnable = () -> {
             try {
                 loadHotels();
-
                 loadRestaurants();
                 loadEntertaining();
                 loadThingsToDo();
@@ -146,7 +145,7 @@ public class Main extends Application {
         while ((read = stream.read(buf)) != -1)
             outputStream.write(buf, 0, read);
         String data = outputStream.toString();
-
+        System.out.println(data);
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
             if (data.charAt(i) == '◍') {
@@ -184,7 +183,7 @@ public class Main extends Application {
         while ((read = stream.read(buf)) != -1)
             outputStream.write(buf, 0, read);
         String data = outputStream.toString();
-
+        System.out.println(data);
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
             if (data.charAt(i) == '◍') {
@@ -222,7 +221,7 @@ public class Main extends Application {
         while ((read = stream.read(buf)) != -1)
             outputStream.write(buf, 0, read);
         String data = outputStream.toString();
-
+        System.out.println(data);
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
             if (data.charAt(i) == '◍') {
@@ -260,7 +259,7 @@ public class Main extends Application {
         while ((read = stream.read(buf)) != -1)
             outputStream.write(buf, 0, read);
         String data = outputStream.toString();
-
+        System.out.println(data);
         int index = 0;
         for (int i = 0; i < data.length(); i++) {
             if (data.charAt(i) == '◍') {
