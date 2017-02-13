@@ -136,7 +136,7 @@ public class Main extends Application {
 
         ServerSocket serverSocket = new ServerSocket(2333);
         Socket socket = serverSocket.accept();
-
+        System.out.println("Data received");
         BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         byte[] buf = new byte[1024];
