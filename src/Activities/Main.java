@@ -54,6 +54,8 @@ public class Main extends Application {
                 System.out.println("Restaurants downloaded");
                 loadEntertaining();
                 System.out.println("Entertaining downloaded");
+                loadThingsToDo();
+                System.out.println("ThingsToDo downloaded");
             } catch (IOException e) {
                 e.printStackTrace();
             }
