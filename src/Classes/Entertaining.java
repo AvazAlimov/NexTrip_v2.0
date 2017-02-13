@@ -5,10 +5,12 @@ public class Entertaining extends Guidance {
     private String rules;
     private int ageLimit;
 
-    public Entertaining(){
+    public Entertaining(String content) {
         price = 0.0;
         rules = "";
         ageLimit = 0;
+
+
     }
 
     public double getPrice() {
