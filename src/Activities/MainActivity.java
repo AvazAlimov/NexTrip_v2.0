@@ -39,7 +39,6 @@ public class MainActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     public void switchTabs(ActionEvent event) {
@@ -104,7 +103,6 @@ public class MainActivity implements Initializable {
 
                 } catch (Exception ignored) {
                 }
-
                 break;
             default:
                 break;
