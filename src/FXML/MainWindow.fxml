@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
 
+<?import com.jfoenix.controls.JFXDatePicker?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.MainActivity">
     <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
@@ -50,13 +51,6 @@
                     </ImageView>
                 </graphic>
             </Button>
-            <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Log In" prefHeight="40" onAction="#switchTabs">
-                <graphic>
-                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <!--Image smooth="false" url="/Resources/logIn_icon(64px).png"/!-->
-                    </ImageView>
-                </graphic>
-            </Button>
         </HBox>
 
         <VBox GridPane.rowIndex="1" spacing="10">
@@ -80,8 +74,8 @@
             </HBox>
 
             <HBox fx:id="datePane" visible="false" alignment="CENTER" spacing="10">
-                <DatePicker fx:id="startDate" promptText="CheckIn"/>
-                <DatePicker fx:id="endDate" promptText="CheckOut"/>
+                <JFXDatePicker fx:id="startDate" promptText="CheckIn"/>
+                <JFXDatePicker fx:id="endDate" promptText="CheckOut"/>
             </HBox>
 
             <Separator prefHeight="10" visible="false"/>

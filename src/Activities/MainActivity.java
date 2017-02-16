@@ -62,16 +62,7 @@ public class MainActivity implements Initializable {
             case "Things To Do":
                 datePane.setVisible(true);
                 break;
-            case "Log In":
-                try {
-                    Parent parent = FXMLLoader.load(getClass().getResource("../FXML/SignInWindow.fxml"));
-                    Scene scene = new Scene(parent);
-                    Main.stage.hide();
-                    Main.stage.setScene(scene);
-                    Main.stage.show();
-                } catch (IOException e) {
-                    System.out.println("FXML file was not founded");
-                }
+            default:
                 break;
         }
         btn.setStyle("-fx-background-color: #FFA000;");
