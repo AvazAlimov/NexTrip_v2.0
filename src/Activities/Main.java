@@ -233,21 +233,17 @@ public class Main extends Application {
     }
 
     private void loadThingsToDo() throws IOException {
-        try {
-            Socket socket = new Socket(serverHost, 2332);
-            BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-            byte[] query = "T".getBytes();
-            wr.write(query, 0, query.length);
-            wr.close();
-            socket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Socket socket = new Socket(serverHost, 2332);
+        BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+        byte[] query = "T".getBytes();
+        wr.write(query, 0, query.length);
+        wr.close();
+        socket.close();
 
         ServerSocket serverSocket = new ServerSocket(2333);
-        Socket socket = serverSocket.accept();
+        Socket accept = serverSocket.accept();
 
-        BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
+        BufferedInputStream stream = new BufferedInputStream(accept.getInputStream());
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         byte[] buf = new byte[1024];
         int read;
@@ -266,6 +262,7 @@ public class Main extends Application {
 
         outputStream.close();
         stream.close();
+        accept.close();
         serverSocket.close();
     }
 
