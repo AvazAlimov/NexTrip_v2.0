@@ -36,6 +36,8 @@ public class MainActivity implements Initializable {
     public DatePicker startDate;
     public DatePicker endDate;
     private String choosenType = "Hotels";
+    private double xOffset;
+    private double yOffset;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -446,6 +448,20 @@ public class MainActivity implements Initializable {
         });
 
         return item;
+    }
+
+    public void closeWindow() {
+        Main.closeWindow();
+    }
+
+    public void mousePressed(MouseEvent mouseEvent) {
+        xOffset = Main.stage.getX() - mouseEvent.getScreenX();
+        yOffset = Main.stage.getY() - mouseEvent.getScreenY();
+    }
+
+    public void mouseDragged(MouseEvent mouseEvent) {
+        Main.stage.setX(mouseEvent.getScreenX() + xOffset);
+        Main.stage.setY(mouseEvent.getScreenY() + yOffset);
     }
 }
 

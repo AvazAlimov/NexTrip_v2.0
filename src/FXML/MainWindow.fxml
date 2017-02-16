@@ -6,8 +6,17 @@
 <?import javafx.scene.image.ImageView?>
 
 <?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXButton?>
+
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.MainActivity">
+
+    <HBox onMousePressed="#mousePressed" onMouseDragged="#mouseDragged">
+    <Separator HBox.hgrow="ALWAYS" visible="false"/>
+    <JFXButton prefWidth="40" prefHeight="40" text="✖"
+               onAction="#closeWindow"
+               style="-fx-background-color: transparent; -fx-text-fill: white; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';"/>
+    </HBox>
 
     <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
               AnchorPane.topAnchor="0.0">
