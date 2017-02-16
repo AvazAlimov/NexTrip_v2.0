@@ -4,7 +4,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.MainActivity">
@@ -26,35 +25,35 @@
                     style="-fx-background-color: #FFA000;">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/hotel_icon(64px).png"/>
+                        <!--Image smooth="false" url="/Resources/hotel_icon(64px).png"/!-->
                     </ImageView>
                 </graphic>
             </Button>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Restaurants" prefHeight="40" onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/restaurant_icon(64px).png "/>
+                        <!--Image smooth="false" url="/Resources/restaurant_icon(64px).png "/!-->
                     </ImageView>
                 </graphic>
             </Button>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Entertaining" prefHeight="40" onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/entertaining_icon(64px).png"/>
+                        <!--Image smooth="false" url="/Resources/entertaining_icon(64px).png"/!-->
                     </ImageView>
                 </graphic>
             </Button>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Things To Do" prefHeight="40" onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/thingsToDo_icon(64px).png"/>
+                        <!--Image smooth="false" url="/Resources/thingsToDo_icon(64px).png"/!-->
                     </ImageView>
                 </graphic>
             </Button>
             <Button maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Log In" prefHeight="40" onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <Image smooth="false" url="/Resources/logIn_icon(64px).png"/>
+                        <!--Image smooth="false" url="/Resources/logIn_icon(64px).png"/!-->
                     </ImageView>
                 </graphic>
             </Button>
@@ -73,7 +72,7 @@
                     -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);" prefWidth="40.0" onAction="#addObjects">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                            <Image smooth="false" url="/Resources/search_icon2(128px).png"/>
+                            <!--Image smooth="false" url="/Resources/search_icon2(128px).png"/-->
                         </ImageView>
                     </graphic>
                 </Button>
