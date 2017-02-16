@@ -469,7 +469,7 @@ public class MainActivity implements Initializable {
     }
 
     public void maximize() {
-
+        Main.maximizeWindow();
     }
 }
 
