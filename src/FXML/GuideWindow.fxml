@@ -89,6 +89,6 @@
         <Separator prefWidth="0" visible="false"/>
     </HBox>
 
-    <JFXButton text="SKIP" AnchorPane.bottomAnchor="25" AnchorPane.rightAnchor="20"
+    <JFXButton text="SKIP" AnchorPane.bottomAnchor="25" AnchorPane.rightAnchor="20" onAction="#nextWindow"
                style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 20; -fx-cursor: hand; -fx-background-radius: 20;"/>
 </AnchorPane>
