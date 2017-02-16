@@ -27,13 +27,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main extends Application {
-    static ArrayList<Hotel>hotels = new ArrayList<>();
+    static ArrayList<Hotel> hotels = new ArrayList<>();
     static ArrayList<Restaurant> restaurants = new ArrayList<>();
     static ArrayList<Entertaining> entertainings = new ArrayList<>();
     static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
     static Stage stage;
     private String serverHost = "127.0.0.1";
-    static int count=0;
+    static int count = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -127,21 +127,17 @@ public class Main extends Application {
     }
 
     private void loadHotels() throws IOException {
-        try {
-            Socket socket = new Socket(serverHost, 2332);
-            BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-            byte[] query = "H".getBytes();
-            wr.write(query, 0, query.length);
-            wr.close();
-            socket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Socket socket = new Socket(serverHost, 2332);
+        BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+        byte[] query = "H".getBytes();
+        wr.write(query, 0, query.length);
+        wr.close();
+        socket.close();
 
         ServerSocket serverSocket = new ServerSocket(2333);
-        Socket socket = serverSocket.accept();
-        System.out.println("Data received");
-        BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
+        Socket accept = serverSocket.accept();
+
+        BufferedInputStream stream = new BufferedInputStream(accept.getInputStream());
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         byte[] buf = new byte[1024];
         int read;
@@ -158,6 +154,7 @@ public class Main extends Application {
             }
         }
 
+        accept.close();
         outputStream.close();
         stream.close();
         serverSocket.close();
@@ -314,7 +311,7 @@ public class Main extends Application {
         return returnRestaurants;
     }
 
-    static ArrayList<Entertaining> findEntertainings(String location){
+    static ArrayList<Entertaining> findEntertainings(String location) {
         ArrayList<Entertaining> returnEntertainings = new ArrayList<>();
         for (Entertaining entertaining : entertainings)
             if (contains(entertaining.getLocation().toLowerCase(), location.toLowerCase()))
