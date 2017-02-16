@@ -8,6 +8,7 @@
 <?import com.jfoenix.controls.JFXDatePicker?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.MainActivity">
+
     <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
               AnchorPane.topAnchor="0.0">
 
@@ -86,7 +87,6 @@
         </ScrollPane>
 
     </GridPane>
-
 
     <stylesheets>
         <URL value="@../CSSFiles/Main.css"/>
