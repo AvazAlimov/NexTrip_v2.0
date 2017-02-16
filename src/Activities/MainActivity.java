@@ -463,5 +463,9 @@ public class MainActivity implements Initializable {
         Main.stage.setX(mouseEvent.getScreenX() + xOffset);
         Main.stage.setY(mouseEvent.getScreenY() + yOffset);
     }
+
+    public void minimize() {
+        Main.minimizeWindow();
+    }
 }
 

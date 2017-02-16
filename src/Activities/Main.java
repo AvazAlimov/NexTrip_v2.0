@@ -74,6 +74,10 @@ public class Main extends Application {
         stage.hide();
     }
 
+    static void minimizeWindow() {
+        stage.setIconified(true);
+    }
+
     public static void main(String[] args) {
         try {
             Language.init(new BufferedReader(new FileReader("src/Translations.csv")));
