@@ -173,9 +173,9 @@ public class Main extends Application {
         }
 
         ServerSocket serverSocket = new ServerSocket(2333);
-        Socket socket = serverSocket.accept();
+        Socket accept = serverSocket.accept();
 
-        BufferedInputStream stream = new BufferedInputStream(socket.getInputStream());
+        BufferedInputStream stream = new BufferedInputStream(accept.getInputStream());
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         byte[] buf = new byte[1024];
         int read;
@@ -194,6 +194,7 @@ public class Main extends Application {
 
         outputStream.close();
         stream.close();
+        accept.close();
         serverSocket.close();
     }
 
