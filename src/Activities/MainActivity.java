@@ -467,5 +467,9 @@ public class MainActivity implements Initializable {
     public void minimize() {
         Main.minimizeWindow();
     }
+
+    public void maximize() {
+
+    }
 }
 
