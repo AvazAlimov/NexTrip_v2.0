@@ -78,6 +78,13 @@ public class Main extends Application {
         stage.setIconified(true);
     }
 
+    static void maximizeWindow() {
+        if (stage.maximizedProperty().getValue())
+            stage.setMaximized(false);
+        else
+            stage.setMaximized(true);
+    }
+
     public static void main(String[] args) {
         try {
             Language.init(new BufferedReader(new FileReader("src/Translations.csv")));
