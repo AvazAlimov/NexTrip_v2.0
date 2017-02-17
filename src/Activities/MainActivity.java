@@ -224,8 +224,7 @@ public class MainActivity implements Initializable {
         Image value = null;
         try {
             value = loadImage(hotel.getPhotos().get(0));
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
 
         ImageView image = new ImageView(value);
