@@ -4,6 +4,9 @@ import Classes.Entertaining;
 import Classes.Hotel;
 import Classes.Restaurant;
 import Classes.ThingsToDo;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -20,11 +23,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -138,29 +143,69 @@ public class MainActivity implements Initializable {
     private void addHotels() {
         ArrayList<Hotel> hotels = Main.findHotel(searchText.getEditor().getText());
         container.getChildren().clear();
-        for (Hotel hotel : hotels)
-            container.getChildren().add(fillHotelItem(hotel));
+        for (Hotel hotel : hotels) {
+            GridPane pane = fillHotelItem(hotel);
+            pane.setScaleX(0.0);
+            pane.setScaleY(0.0);
+            container.getChildren().add(pane);
+            KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
+            KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
+            KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
+            Timeline anim = new Timeline(frame);
+            anim.setCycleCount(1);
+            anim.play();
+        }
     }
 
     private void addRestaurants() {
         ArrayList<Restaurant> restaurants = Main.findRestaurants(searchText.getEditor().getText());
         container.getChildren().clear();
-        for (Restaurant restaurant : restaurants)
-            container.getChildren().add(fillRestaurantItem(restaurant));
+        for (Restaurant restaurant : restaurants) {
+            GridPane pane = fillRestaurantItem(restaurant);
+            pane.setScaleX(0.0);
+            pane.setScaleY(0.0);
+            container.getChildren().add(pane);
+            KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
+            KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
+            KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
+            Timeline anim = new Timeline(frame);
+            anim.setCycleCount(1);
+            anim.play();
+        }
     }
 
     private void addThingsToDo() {
         ArrayList<ThingsToDo> thingsToDos = Main.findThingsToDo(searchText.getEditor().getText(), startDate, endDate);
         container.getChildren().clear();
-        for (ThingsToDo thingsToDo : thingsToDos)
-            container.getChildren().add(fillThingsToDoItem(thingsToDo));
+        for (ThingsToDo thingsToDo : thingsToDos) {
+            GridPane pane = fillThingsToDoItem(thingsToDo);
+            pane.setScaleX(0.0);
+            pane.setScaleY(0.0);
+            container.getChildren().add(pane);
+            KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
+            KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
+            KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
+            Timeline anim = new Timeline(frame);
+            anim.setCycleCount(1);
+            anim.play();
+        }
     }
 
     private void addEntertaining() {
         ArrayList<Entertaining> entertainings = Main.findEntertainings(searchText.getEditor().getText());
         container.getChildren().clear();
-        for (Entertaining entertaining : entertainings)
-            container.getChildren().add(fillEntertainingItem(entertaining));
+        for (Entertaining entertaining : entertainings) {
+            GridPane pane = fillEntertainingItem(entertaining);
+            pane.setScaleX(0.0);
+            pane.setScaleY(0.0);
+            container.getChildren().add(pane);
+            KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
+            KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
+            KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
+            Timeline anim = new Timeline(frame);
+            anim.setCycleCount(1);
+            anim.play();
+        }
     }
 
     private GridPane fillHotelItem(Hotel hotel) {
