@@ -99,7 +99,7 @@
         </VBox>
 
         <ScrollPane fitToWidth="true" GridPane.rowIndex="2" GridPane.rowSpan="2">
-            <VBox fx:id="container" spacing="2.5"/>
+            <VBox fx:id="container" spacing="4" style="-fx-padding: 4;"/>
         </ScrollPane>
 
     </GridPane>
