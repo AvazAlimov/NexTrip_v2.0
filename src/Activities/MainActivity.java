@@ -21,17 +21,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 @SuppressWarnings("Duplicates")
@@ -119,25 +117,31 @@ public class MainActivity implements Initializable {
     }
 
     public void addObjects() {
-        switch (choosenType) {
-            case "Hotels":
-                addHotels();
-                break;
-            case "Restaurants":
-                addRestaurants();
-                break;
-            case "Entertaining":
-                addEntertaining();
-                break;
-            case "Things To Do":
-                try {
-                    addThingsToDo();
-                } catch (Exception ignored) {
-                }
-                break;
-            default:
-                break;
-        }
+        ExecutorService service = Executors.newCachedThreadPool();
+        Runnable runnable = () -> {
+
+            switch (choosenType) {
+                case "Hotels":
+                    addHotels();
+                    break;
+                case "Restaurants":
+                    addRestaurants();
+                    break;
+                case "Entertaining":
+                    addEntertaining();
+                    break;
+                case "Things To Do":
+                    try {
+                        addThingsToDo();
+                    } catch (Exception ignored) {
+                    }
+                    break;
+                default:
+                    break;
+            }
+            service.shutdown();
+        };
+        service.submit(runnable);
     }
 
     private void addHotels() {
