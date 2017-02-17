@@ -83,30 +83,17 @@ public class MainActivity implements Initializable {
 
         switch (choosenType) {
             case "Hotels":
-                for (Hotel hotel : Main.hotels) {
-                    if (Main.contains(hotel.getLocation().toLowerCase(), text.toLowerCase())) {
-                        searchText.getItems().add(hotel.getLocation());
-                    }
-                }
+                Main.hotels.stream().filter(hotel -> Main.contains(hotel.getLocation().toLowerCase(), text.toLowerCase())).forEach(hotel -> searchText.getItems().add(hotel.getLocation()));
                 break;
             case "Entertaining":
-                for (Entertaining entertaining : Main.entertainings)
-                    if (Main.contains(entertaining.getLocation().toLowerCase(), text.toLowerCase())) {
-                        searchText.getItems().add(entertaining.getLocation());
-                    }
+                Main.entertainings.stream().filter(entertaining -> Main.contains(entertaining.getLocation().toLowerCase(), text.toLowerCase())).forEach(entertaining -> searchText.getItems().add(entertaining.getLocation()));
                 break;
             case "Restaurants":
-                for (Restaurant restaurant : Main.restaurants) {
-                    if (Main.contains(restaurant.getLocation().toLowerCase(), text.toLowerCase())) {
-                        searchText.getItems().add(restaurant.getLocation());
-                    }
-                }
+                Main.restaurants.stream().filter(restaurant -> Main.contains(restaurant.getLocation().toLowerCase(), text.toLowerCase())).forEach(restaurant -> searchText.getItems().add(restaurant.getLocation()));
                 break;
             case "Things To Do":
                 try {
-                    for (ThingsToDo thingsToDo : Main.thingsToDos)
-                        if (Main.contains(thingsToDo.getLocation().toLowerCase(), text.toLowerCase()) && Main.checkDate(startDate, endDate, thingsToDo))
-                            searchText.getItems().add(thingsToDo.getLocation());
+                    Main.thingsToDos.stream().filter(thingsToDo -> Main.contains(thingsToDo.getLocation().toLowerCase(), text.toLowerCase()) && Main.checkDate(startDate, endDate, thingsToDo)).forEach(thingsToDo -> searchText.getItems().add(thingsToDo.getLocation()));
 
                 } catch (Exception ignored) {
                 }
