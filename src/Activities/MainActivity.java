@@ -4,6 +4,7 @@ import Classes.Entertaining;
 import Classes.Hotel;
 import Classes.Restaurant;
 import Classes.ThingsToDo;
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -130,10 +131,14 @@ public class MainActivity implements Initializable {
         ArrayList<Hotel> hotels = Main.findHotel(searchText.getEditor().getText());
         container.getChildren().clear();
         for (Hotel hotel : hotels) {
+            JFXButton button = new JFXButton();
+            button.setMaxWidth(Double.MAX_VALUE);
+            button.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-fit-to-width: true;");
             GridPane pane = fillHotelItem(hotel);
+            button.setGraphic(pane);
             pane.setScaleX(0.0);
             pane.setScaleY(0.0);
-            container.getChildren().add(pane);
+            container.getChildren().add(button);
             KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
             KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
             KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
@@ -147,10 +152,14 @@ public class MainActivity implements Initializable {
         ArrayList<Restaurant> restaurants = Main.findRestaurants(searchText.getEditor().getText());
         container.getChildren().clear();
         for (Restaurant restaurant : restaurants) {
+            JFXButton button = new JFXButton();
+            button.setMaxWidth(Double.MAX_VALUE);
+            button.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-fit-to-width: true;");
             GridPane pane = fillRestaurantItem(restaurant);
+            button.setGraphic(pane);
             pane.setScaleX(0.0);
             pane.setScaleY(0.0);
-            container.getChildren().add(pane);
+            container.getChildren().add(button);
             KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
             KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
             KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
@@ -164,10 +173,14 @@ public class MainActivity implements Initializable {
         ArrayList<ThingsToDo> thingsToDos = Main.findThingsToDo(searchText.getEditor().getText(), startDate, endDate);
         container.getChildren().clear();
         for (ThingsToDo thingsToDo : thingsToDos) {
+            JFXButton button = new JFXButton();
+            button.setMaxWidth(Double.MAX_VALUE);
+            button.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-fit-to-width: true;");
             GridPane pane = fillThingsToDoItem(thingsToDo);
+            button.setGraphic(pane);
             pane.setScaleX(0.0);
             pane.setScaleY(0.0);
-            container.getChildren().add(pane);
+            container.getChildren().add(button);
             KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
             KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
             KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
@@ -181,10 +194,14 @@ public class MainActivity implements Initializable {
         ArrayList<Entertaining> entertainings = Main.findEntertainings(searchText.getEditor().getText());
         container.getChildren().clear();
         for (Entertaining entertaining : entertainings) {
+            JFXButton button = new JFXButton();
+            button.setMaxWidth(Double.MAX_VALUE);
+            button.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-fit-to-width: true;");
             GridPane pane = fillEntertainingItem(entertaining);
+            button.setGraphic(pane);
             pane.setScaleX(0.0);
             pane.setScaleY(0.0);
-            container.getChildren().add(pane);
+            container.getChildren().add(button);
             KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
             KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
             KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
@@ -202,7 +219,7 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
         try {
@@ -268,7 +285,7 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
         try {
@@ -336,7 +353,7 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
         try {
@@ -404,7 +421,7 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
         try {
