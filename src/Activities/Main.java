@@ -32,14 +32,14 @@ public class Main extends Application {
     static ArrayList<Entertaining> entertainings = new ArrayList<>();
     static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
     static Stage stage;
-    static String serverHost = "127.0.0.1";
+    static String serverHost = "192.168.18.101";
     static int count = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         Locale.setDefault(Locale.ENGLISH);
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/StartWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/GuideWindow.fxml"));
         Scene scene = new Scene(root, 1280, 720);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
