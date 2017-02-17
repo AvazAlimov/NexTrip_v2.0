@@ -493,7 +493,7 @@ public class MainActivity implements Initializable {
 
         BufferedInputStream stream = new BufferedInputStream(accept.getInputStream());
 
-        File file = File.createTempFile("temp", ".scs", new File("C:\\Users\\Asus\\Desktop\\"));
+        File file = File.createTempFile("temp", ".nxtp", new File("C:\\Users\\Asus\\Desktop\\"));
         FileOutputStream fil2 = new FileOutputStream(file);
 
         byte[] buf = new byte[1024];
