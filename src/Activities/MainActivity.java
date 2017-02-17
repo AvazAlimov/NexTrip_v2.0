@@ -4,6 +4,10 @@ import Classes.Entertaining;
 import Classes.Hotel;
 import Classes.Restaurant;
 import Classes.ThingsToDo;
+import com.jfoenix.controls.JFXButton;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -20,16 +24,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 
 @SuppressWarnings("Duplicates")
@@ -82,30 +84,17 @@ public class MainActivity implements Initializable {
 
         switch (choosenType) {
             case "Hotels":
-                for (Hotel hotel : Main.hotels) {
-                    if (Main.contains(hotel.getLocation().toLowerCase(), text.toLowerCase())) {
-                        searchText.getItems().add(hotel.getLocation());
-                    }
-                }
+                Main.hotels.stream().filter(hotel -> Main.contains(hotel.getLocation().toLowerCase(), text.toLowerCase())).forEach(hotel -> searchText.getItems().add(hotel.getLocation()));
                 break;
             case "Entertaining":
-                for (Entertaining entertaining : Main.entertainings)
-                    if (Main.contains(entertaining.getLocation().toLowerCase(), text.toLowerCase())) {
-                        searchText.getItems().add(entertaining.getLocation());
-                    }
+                Main.entertainings.stream().filter(entertaining -> Main.contains(entertaining.getLocation().toLowerCase(), text.toLowerCase())).forEach(entertaining -> searchText.getItems().add(entertaining.getLocation()));
                 break;
             case "Restaurants":
-                for (Restaurant restaurant : Main.restaurants) {
-                    if (Main.contains(restaurant.getLocation().toLowerCase(), text.toLowerCase())) {
-                        searchText.getItems().add(restaurant.getLocation());
-                    }
-                }
+                Main.restaurants.stream().filter(restaurant -> Main.contains(restaurant.getLocation().toLowerCase(), text.toLowerCase())).forEach(restaurant -> searchText.getItems().add(restaurant.getLocation()));
                 break;
             case "Things To Do":
                 try {
-                    for (ThingsToDo thingsToDo : Main.thingsToDos)
-                        if (Main.contains(thingsToDo.getLocation().toLowerCase(), text.toLowerCase()) && Main.checkDate(startDate, endDate, thingsToDo))
-                            searchText.getItems().add(thingsToDo.getLocation());
+                    Main.thingsToDos.stream().filter(thingsToDo -> Main.contains(thingsToDo.getLocation().toLowerCase(), text.toLowerCase()) && Main.checkDate(startDate, endDate, thingsToDo)).forEach(thingsToDo -> searchText.getItems().add(thingsToDo.getLocation()));
 
                 } catch (Exception ignored) {
                 }
@@ -117,59 +106,109 @@ public class MainActivity implements Initializable {
     }
 
     public void addObjects() {
-        ExecutorService service = Executors.newCachedThreadPool();
-        Runnable runnable = () -> {
-
-            switch (choosenType) {
-                case "Hotels":
-                    addHotels();
-                    break;
-                case "Restaurants":
-                    addRestaurants();
-                    break;
-                case "Entertaining":
-                    addEntertaining();
-                    break;
-                case "Things To Do":
-                    try {
-                        addThingsToDo();
-                    } catch (Exception ignored) {
-                    }
-                    break;
-                default:
-                    break;
-            }
-            service.shutdown();
-        };
-        service.submit(runnable);
+        switch (choosenType) {
+            case "Hotels":
+                addHotels();
+                break;
+            case "Restaurants":
+                addRestaurants();
+                break;
+            case "Entertaining":
+                addEntertaining();
+                break;
+            case "Things To Do":
+                try {
+                    addThingsToDo();
+                } catch (Exception ignored) {
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     private void addHotels() {
         ArrayList<Hotel> hotels = Main.findHotel(searchText.getEditor().getText());
         container.getChildren().clear();
-        for (Hotel hotel : hotels)
-            container.getChildren().add(fillHotelItem(hotel));
+        for (Hotel hotel : hotels) {
+            JFXButton button = new JFXButton();
+            button.setMaxWidth(Double.MAX_VALUE);
+            button.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-fit-to-width: true;");
+            GridPane pane = fillHotelItem(hotel);
+            button.setGraphic(pane);
+            pane.setScaleX(0.0);
+            pane.setScaleY(0.0);
+            container.getChildren().add(button);
+            KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
+            KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
+            KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
+            Timeline anim = new Timeline(frame);
+            anim.setCycleCount(1);
+            anim.play();
+        }
     }
 
     private void addRestaurants() {
         ArrayList<Restaurant> restaurants = Main.findRestaurants(searchText.getEditor().getText());
         container.getChildren().clear();
-        for (Restaurant restaurant : restaurants)
-            container.getChildren().add(fillRestaurantItem(restaurant));
+        for (Restaurant restaurant : restaurants) {
+            JFXButton button = new JFXButton();
+            button.setMaxWidth(Double.MAX_VALUE);
+            button.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-fit-to-width: true;");
+            GridPane pane = fillRestaurantItem(restaurant);
+            button.setGraphic(pane);
+            pane.setScaleX(0.0);
+            pane.setScaleY(0.0);
+            container.getChildren().add(button);
+            KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
+            KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
+            KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
+            Timeline anim = new Timeline(frame);
+            anim.setCycleCount(1);
+            anim.play();
+        }
     }
 
     private void addThingsToDo() {
         ArrayList<ThingsToDo> thingsToDos = Main.findThingsToDo(searchText.getEditor().getText(), startDate, endDate);
         container.getChildren().clear();
-        for (ThingsToDo thingsToDo : thingsToDos)
-            container.getChildren().add(fillThingsToDoItem(thingsToDo));
+        for (ThingsToDo thingsToDo : thingsToDos) {
+            JFXButton button = new JFXButton();
+            button.setMaxWidth(Double.MAX_VALUE);
+            button.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-fit-to-width: true;");
+            GridPane pane = fillThingsToDoItem(thingsToDo);
+            button.setGraphic(pane);
+            pane.setScaleX(0.0);
+            pane.setScaleY(0.0);
+            container.getChildren().add(button);
+            KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
+            KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
+            KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
+            Timeline anim = new Timeline(frame);
+            anim.setCycleCount(1);
+            anim.play();
+        }
     }
 
     private void addEntertaining() {
         ArrayList<Entertaining> entertainings = Main.findEntertainings(searchText.getEditor().getText());
         container.getChildren().clear();
-        for (Entertaining entertaining : entertainings)
-            container.getChildren().add(fillEntertainingItem(entertaining));
+        for (Entertaining entertaining : entertainings) {
+            JFXButton button = new JFXButton();
+            button.setMaxWidth(Double.MAX_VALUE);
+            button.setStyle("-fx-background-color: transparent; -fx-padding: 0; -fx-fit-to-width: true;");
+            GridPane pane = fillEntertainingItem(entertaining);
+            button.setGraphic(pane);
+            pane.setScaleX(0.0);
+            pane.setScaleY(0.0);
+            container.getChildren().add(button);
+            KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
+            KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
+            KeyFrame frame = new KeyFrame(new Duration(400), value, value1);
+            Timeline anim = new Timeline(frame);
+            anim.setCycleCount(1);
+            anim.play();
+        }
     }
 
     private GridPane fillHotelItem(Hotel hotel) {
@@ -180,16 +219,7 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
-
-
-//        URL url = null;
-//        try {
-//            url = new File(hotel.getPhotos().get(0)).toURI().toURL();
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
         try {
@@ -236,16 +266,14 @@ public class MainActivity implements Initializable {
                 try {
                     Main.hotel = hotel;
                     Parent parent = FXMLLoader.load(getClass().getResource("../FXML/HotelWindow.fxml"));
-                    Scene scene = new Scene(parent);
+                    Scene scene = new Scene(parent, 1280, 720);
                     Main.stage.hide();
                     Main.stage.setScene(scene);
                     Main.stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException ignored) {
                 }
             }
         });
-
         return item;
     }
 
@@ -257,18 +285,14 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
-
-        URL url = null;
-        try {
-            url = new File(restaurant.getPhotos().get(0)).toURI().toURL();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
-        if (url != null)
-            value = new Image(url.toString(), 100.0, 100.0, false, true);
+        try {
+            value = loadImage(restaurant.getPhotos().get(0));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
@@ -329,18 +353,14 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
-
-        URL url = null;
-        try {
-            url = new File(thingsToDo.getPhotos().get(0)).toURI().toURL();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
-        if (url != null)
-            value = new Image(url.toString(), 100.0, 100.0, false, true);
+        try {
+            value = loadImage(thingsToDo.getPhotos().get(0));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
@@ -401,18 +421,14 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
-
-        URL url = null;
-        try {
-            url = new File(entertaining.getPhotos().get(0)).toURI().toURL();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
-        if (url != null)
-            value = new Image(url.toString(), 100.0, 100.0, false, true);
+        try {
+            value = loadImage(entertaining.getPhotos().get(0));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
