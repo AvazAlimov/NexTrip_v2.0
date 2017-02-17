@@ -28,8 +28,6 @@ import java.net.Socket;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 
 @SuppressWarnings("Duplicates")
@@ -117,31 +115,25 @@ public class MainActivity implements Initializable {
     }
 
     public void addObjects() {
-        ExecutorService service = Executors.newCachedThreadPool();
-        Runnable runnable = () -> {
-
-            switch (choosenType) {
-                case "Hotels":
-                    addHotels();
-                    break;
-                case "Restaurants":
-                    addRestaurants();
-                    break;
-                case "Entertaining":
-                    addEntertaining();
-                    break;
-                case "Things To Do":
-                    try {
-                        addThingsToDo();
-                    } catch (Exception ignored) {
-                    }
-                    break;
-                default:
-                    break;
-            }
-            service.shutdown();
-        };
-        service.submit(runnable);
+        switch (choosenType) {
+            case "Hotels":
+                addHotels();
+                break;
+            case "Restaurants":
+                addRestaurants();
+                break;
+            case "Entertaining":
+                addEntertaining();
+                break;
+            case "Things To Do":
+                try {
+                    addThingsToDo();
+                } catch (Exception ignored) {
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     private void addHotels() {
@@ -181,15 +173,6 @@ public class MainActivity implements Initializable {
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
         item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
-
-
-//        URL url = null;
-//        try {
-//            url = new File(hotel.getPhotos().get(0)).toURI().toURL();
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-
 
         Image value = null;
         try {
@@ -236,7 +219,7 @@ public class MainActivity implements Initializable {
                 try {
                     Main.hotel = hotel;
                     Parent parent = FXMLLoader.load(getClass().getResource("../FXML/HotelWindow.fxml"));
-                    Scene scene = new Scene(parent);
+                    Scene scene = new Scene(parent, 1280, 720);
                     Main.stage.hide();
                     Main.stage.setScene(scene);
                     Main.stage.show();
