@@ -32,7 +32,7 @@ public class Main extends Application {
     static ArrayList<Entertaining> entertainings = new ArrayList<>();
     static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
     static Stage stage;
-    private String serverHost = "127.0.0.1";
+    static String serverHost = "127.0.0.1";
     static int count = 0;
 
     @Override

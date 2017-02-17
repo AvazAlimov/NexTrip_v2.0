@@ -21,9 +21,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.MalformedURLException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -172,16 +173,22 @@ public class MainActivity implements Initializable {
         item.setHgap(10);
         item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
 
-        URL url = null;
-        try {
-            url = new File(hotel.getPhotos().get(0)).toURI().toURL();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
+
+//        URL url = null;
+//        try {
+//            url = new File(hotel.getPhotos().get(0)).toURI().toURL();
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+
 
         Image value = null;
-        if (url != null)
-            value = new Image(url.toString(), 100.0, 100.0, false, true);
+        try {
+            value = loadImage(hotel.getPhotos().get(0));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
@@ -470,6 +477,35 @@ public class MainActivity implements Initializable {
 
     public void maximize() {
         Main.maximizeWindow();
+    }
+
+    private Image loadImage(String path) throws IOException {
+        Socket socket = new Socket(Main.serverHost, 2332);
+        BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+        byte[] query = ("I" + path).getBytes();
+        wr.write(query, 0, query.length);
+        wr.close();
+        socket.close();
+
+        ServerSocket serverSocket = new ServerSocket(2333);
+        Socket accept = serverSocket.accept();
+
+        BufferedInputStream stream = new BufferedInputStream(accept.getInputStream());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buf = new byte[1024];
+        int read;
+
+        while ((read = stream.read(buf)) != -1)
+            outputStream.write(buf, 0, read);
+
+        outputStream.close();
+
+        Image image = new Image(new ByteArrayInputStream(buf), 100.0, 100.0, false, true);
+        stream.close();
+        accept.close();
+        serverSocket.close();
+
+        return image;
     }
 }
 
