@@ -64,8 +64,8 @@ public class GuideActivity implements Initializable {
 
     public void transformContainer(MouseEvent actionEvent) {
         for (int i = 0; i < pageContainer.getChildren().size(); i++)
-            pageContainer.getChildren().get(i).setStyle("-fx-fill: white; -fx-cursor: hand;");
-        ((Circle) actionEvent.getSource()).setStyle("-fx-fill: cyan; -fx-cursor: hand;");
+            pageContainer.getChildren().get(i).setStyle("-fx-fill: #4AF0F1; -fx-cursor: hand;");
+        ((Circle) actionEvent.getSource()).setStyle("-fx-fill: #00BCD4; -fx-cursor: hand;");
 
         int value = Integer.parseInt(((Circle) actionEvent.getSource()).getId());
         int firstFadeObject = 0;
