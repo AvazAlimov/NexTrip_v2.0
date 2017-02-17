@@ -504,6 +504,8 @@ public class MainActivity implements Initializable {
 
         Image image = new Image(String.valueOf(file.toURI().toURL()), 100.0, 100.0, false, true);
 
+        fil2.close();
+        file.deleteOnExit();
         stream.close();
         accept.close();
         serverSocket.close();
