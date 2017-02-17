@@ -22,7 +22,6 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
@@ -223,12 +222,10 @@ public class MainActivity implements Initializable {
                     Main.stage.hide();
                     Main.stage.setScene(scene);
                     Main.stage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException ignored) {
                 }
             }
         });
-
         return item;
     }
 
@@ -242,16 +239,12 @@ public class MainActivity implements Initializable {
         item.setHgap(10);
         item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
 
-        URL url = null;
+        Image value = null;
         try {
-            url = new File(restaurant.getPhotos().get(0)).toURI().toURL();
-        } catch (MalformedURLException e) {
+            value = loadImage(restaurant.getPhotos().get(0));
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Image value = null;
-        if (url != null)
-            value = new Image(url.toString(), 100.0, 100.0, false, true);
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
@@ -314,16 +307,12 @@ public class MainActivity implements Initializable {
         item.setHgap(10);
         item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
 
-        URL url = null;
+        Image value = null;
         try {
-            url = new File(thingsToDo.getPhotos().get(0)).toURI().toURL();
-        } catch (MalformedURLException e) {
+            value = loadImage(thingsToDo.getPhotos().get(0));
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Image value = null;
-        if (url != null)
-            value = new Image(url.toString(), 100.0, 100.0, false, true);
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
@@ -386,16 +375,12 @@ public class MainActivity implements Initializable {
         item.setHgap(10);
         item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5);");
 
-        URL url = null;
+        Image value = null;
         try {
-            url = new File(entertaining.getPhotos().get(0)).toURI().toURL();
-        } catch (MalformedURLException e) {
+            value = loadImage(entertaining.getPhotos().get(0));
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Image value = null;
-        if (url != null)
-            value = new Image(url.toString(), 100.0, 100.0, false, true);
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
