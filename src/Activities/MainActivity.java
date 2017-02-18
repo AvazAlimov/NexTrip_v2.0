@@ -32,6 +32,10 @@ import java.net.Socket;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 @SuppressWarnings("Duplicates")
 public class MainActivity implements Initializable {
@@ -105,6 +109,7 @@ public class MainActivity implements Initializable {
     }
 
     public void addObjects() {
+        
         switch (choosenType) {
             case "Hotels":
                 addHotels();
