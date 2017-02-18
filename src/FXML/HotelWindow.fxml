@@ -83,7 +83,7 @@
             <Label fx:id="location" GridPane.rowIndex="2" text="MARINA MANDARIN SINGAPORE" wrapText="true"/>
         </VBox>
 
-        <VBox GridPane.columnIndex="1" style="-fx-padding: 40; -fx-background-color: lightgrey;">
+        <VBox GridPane.columnIndex="1" style="-fx-padding: 40; -fx-background-color: whitesmoke;">
 
             <HBox fx:id="stars" spacing="5" onMouseExited="#restoreStars" alignment="CENTER">
                 <Button id="1" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"

@@ -87,7 +87,7 @@ public class HotelActivity implements Initializable {
         for (int i = 4; i >= hotel.getRating(); i--)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107;");
         rate_number.setText("based on " + hotel.getRatings().size() + " reviews");
-        rate.setText(rating + "");
+        rate.setText((rating == 0 ? 0 : (rating + 1)) + "");
         rate_text.setText(Rating[(int) (rating > -1 ? rating : 0)]);
     }
 
