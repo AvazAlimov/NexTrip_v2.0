@@ -1,7 +1,7 @@
 package Classes;
 
 @SuppressWarnings("unused")
-class Hotel extends Guidance {
+public class Hotel extends Guidance {
     private double startingPrice;
     private double endingPrice;
 

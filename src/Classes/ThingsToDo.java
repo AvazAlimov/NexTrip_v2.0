@@ -1,7 +1,7 @@
 package Classes;
 
 @SuppressWarnings("unused")
-class ThingsToDo extends Guidance {
+public class ThingsToDo extends Guidance {
     private Date startDate;
     private Date endDate;
     private double price;

@@ -1,6 +1,6 @@
 package Classes;
 
-class Date {
+public class Date {
     private int day = -1;
     private int month = -1;
     private int upperLimit = 31;
