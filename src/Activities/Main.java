@@ -33,7 +33,7 @@ public class Main extends Application {
     static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
     static Stage stage;
     static String serverHost = "127.0.0.1";
-    static int count = 0;
+    static String Rating[] = {"Bad", "Normal", "Good", "Excellent", "Fantastic"};
 
     @Override
     public void start(Stage primaryStage) throws Exception {

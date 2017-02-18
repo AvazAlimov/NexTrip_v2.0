@@ -15,11 +15,18 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import static Activities.Main.hotels;
 
 public class HotelActivity implements Initializable {
     public ImageView image;
@@ -88,18 +95,22 @@ public class HotelActivity implements Initializable {
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107;");
         rate_number.setText("based on " + hotel.getRatings().size() + " reviews");
         rate.setText((rating == 0 ? 0 : (rating + 1)) + "");
-        rate_text.setText(Rating[(int) (rating > -1 ? rating : 0)]);
+        rate_text.setText(Main.Rating[(int) (rating > -1 ? rating : 0)]);
     }
-
-    private String Rating[] = {"Bad", "Normal", "Good", "Excellent", "Fantastic"};
 
     public void restoreStars() {
         loadRating();
     }
 
-    public void rateHotel(ActionEvent event) {
+    public void rateHotel(ActionEvent event) throws IOException {
         int rating = Integer.parseInt(((Button) event.getSource()).getId());
         hotel.addRating(rating);
         stars.setDisable(true);
+        Socket socket = new Socket(Main.serverHost, 2332);
+        BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+        byte[] query = ("OH" + hotel.getId() + "/" + rating).getBytes();
+        wr.write(query, 0, query.length);
+        wr.close();
+        socket.close();
     }
 }
