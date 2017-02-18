@@ -40,6 +40,18 @@ public class HotelActivity implements Initializable {
     public Label your_rate;
     public Label price;
     public JFXButton info_button;
+    public Label overall_rating;
+    public Label excellent_text;
+    public Label excellent_number;
+    public Label bad_number;
+    public Label bad_text;
+    public Label normal_number;
+    public Label normal_text;
+    public Label good_number;
+    public Label good_text;
+    public Label fantastic_text;
+    public Label fantastic_number;
+    public Label amenities_text;
     private double xOffset;
     private double yOffset;
     public VBox main_image;
@@ -87,20 +99,20 @@ public class HotelActivity implements Initializable {
     }
 
     private void loadRating() {
-        int sum = 0;
-        double rating = 0;
+        float sum = 0;
+        float rating = 0;
         for (int i = 0; i < hotel.getRatings().size(); i++)
             sum += hotel.getRatings().get(i);
 
         if (hotel.getRatings().size() > 0)
-            rating = (sum / hotel.getRatings().size()) - 1;
+            rating = (sum / hotel.getRatings().size()) - 1.0f;
 
         for (int i = 0; i < hotel.getRating(); i++)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107;");
         for (int i = 4; i >= hotel.getRating(); i--)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107;");
         rate_number.setText("based on " + hotel.getRatings().size() + " reviews");
-        rate.setText((rating == 0 ? 0 : (rating + 1)) + "");
+        rate.setText(String.format("%.01f",(rating == 0.0f ? 0.0f : (rating + 1.0f))));
         rate_text.setText(Main.Rating[(int) (rating > -1 ? rating : 0)]);
     }
 

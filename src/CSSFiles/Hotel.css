@@ -74,13 +74,23 @@
     -fx-cursor: hand;
 }
 
+#overall_rating {
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
 
+#amenities_text {
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
 
-
-
-
-
-
+.label {
+    -fx-text-fill: #212121;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
 
 .text-field {
     -fx-effect: dropshadow(two-pass-box, black, 10, 0.2, 0, 0);
