@@ -1,6 +1,8 @@
 package Activities;
 
+import Classes.Hotel;
 import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,29 +28,17 @@ public class HotelActivity implements Initializable {
     public Label rate_text;
     public Label rate_number;
     public Label name;
-    //    public ImageView imageView;
-//    public JFXButton prevImage;
-//    public JFXButton nextImage;
-//    public Button freeWiFi;
-//    public Button freeParking;
-//    public Button freeYard;
-//    public TextArea infoText;
-//    public Label commentText;
-//    public Button CommentButton;
-//    public HBox contactContainer;
-//    public Button mail_icon;
-//    public Button phone_icon;
-//    public Button facebook_icon;
-//    public Button telegram_icon;
-//    public Button web_icon;
+    public Label location;
+    public HBox stars;
     private double xOffset;
     private double yOffset;
     public VBox main_image;
-
+    private Hotel hotel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        hotel = Main.hotel;
+        loadRating();
     }
 
     public void closeWindow() {
@@ -71,5 +61,45 @@ public class HotelActivity implements Initializable {
 
     public void maximize() {
         Main.maximizeWindow();
+    }
+
+    public void fillStars(MouseEvent mouseEvent) {
+        int limit = Integer.parseInt(((Button) mouseEvent.getSource()).getId());
+
+        for (int i = 0; i < limit; i++)
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107;");
+
+        for (int i = 4; i >= limit; i--)
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107;");
+    }
+
+    private void loadRating() {
+        int sum = 0;
+        double rating = 0;
+        for (int i = 0; i < hotel.getRatings().size(); i++)
+            sum += hotel.getRatings().get(i);
+
+        if (hotel.getRatings().size() > 0)
+            rating = (sum / hotel.getRatings().size()) - 1;
+
+        for (int i = 0; i < hotel.getRating(); i++)
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107;");
+        for (int i = 4; i >= hotel.getRating(); i--)
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107;");
+        rate_number.setText("based on " + hotel.getRatings().size() + " reviews");
+        rate.setText(rating + "");
+        rate_text.setText(Rating[(int) (rating > -1 ? rating : 0)]);
+    }
+
+    private String Rating[] = {"Bad", "Normal", "Good", "Excellent", "Fantastic"};
+
+    public void restoreStars() {
+        loadRating();
+    }
+
+    public void rateHotel(ActionEvent event) {
+        int rating = Integer.parseInt(((Button) event.getSource()).getId());
+        hotel.addRating(rating);
+        stars.setDisable(true);
     }
 }

@@ -270,6 +270,7 @@ public class MainActivity implements Initializable {
                     Main.stage.setScene(scene);
                     Main.stage.show();
                 } catch (IOException ignored) {
+                    ignored.printStackTrace();
                 }
             }
         });

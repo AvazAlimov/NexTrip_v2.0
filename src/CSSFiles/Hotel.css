@@ -3,7 +3,7 @@
     -fx-background-size: cover;
 }
 
-#rate_layout{
+#rate_layout {
     -fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);
 }
 
@@ -48,11 +48,11 @@
     -fx-font-weight: bold;
 }
 
-
-
-
-
-
+#location {
+    -fx-text-fill: white;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
 
 
 
