@@ -25,6 +25,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -136,6 +137,7 @@ public class MainActivity implements Initializable {
             button.setGraphic(pane);
             pane.setScaleX(0.0);
             pane.setScaleY(0.0);
+            button.setOnMouseClicked(pane.getOnMouseClicked());
             container.getChildren().add(button);
             KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
             KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
