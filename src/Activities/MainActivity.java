@@ -33,7 +33,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-
 @SuppressWarnings("Duplicates")
 public class MainActivity implements Initializable {
     public VBox container;
@@ -224,8 +223,7 @@ public class MainActivity implements Initializable {
         Image value = null;
         try {
             value = loadImage(hotel.getPhotos().get(0));
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
 
         ImageView image = new ImageView(value);
@@ -290,8 +288,7 @@ public class MainActivity implements Initializable {
         Image value = null;
         try {
             value = loadImage(restaurant.getPhotos().get(0));
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
 
         ImageView image = new ImageView(value);
@@ -358,8 +355,7 @@ public class MainActivity implements Initializable {
         Image value = null;
         try {
             value = loadImage(thingsToDo.getPhotos().get(0));
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
 
         ImageView image = new ImageView(value);
@@ -426,8 +422,7 @@ public class MainActivity implements Initializable {
         Image value = null;
         try {
             value = loadImage(entertaining.getPhotos().get(0));
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
 
         ImageView image = new ImageView(value);
