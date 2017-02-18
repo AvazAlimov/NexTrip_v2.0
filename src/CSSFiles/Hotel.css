@@ -1,6 +1,6 @@
 
 .root {
-    -fx-background-image: url("/Resources/Pictures/123.jpg");
+    -fx-background-image: url("/Resources/Pictures/tropiki_basseyn_bungalo_otel_53974_1920x1080.jpg");
     -fx-background-size: cover;
 
 }
@@ -71,7 +71,7 @@
 }
 
 #commentText:hover{
-    -fx-text-fill: darkblue;
+    -fx-text-fill: white;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, #212121, 8, 0, 0, 0);
 }

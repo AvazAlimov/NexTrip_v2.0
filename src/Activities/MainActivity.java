@@ -25,7 +25,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
