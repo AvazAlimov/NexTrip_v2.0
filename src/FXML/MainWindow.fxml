@@ -8,6 +8,7 @@
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXButton?>
 
+<?import javafx.scene.image.Image?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.MainActivity">
 
@@ -38,36 +39,36 @@
             <RowConstraints vgrow="SOMETIMES"/>
         </rowConstraints>
 
-        <HBox style="-fx-effect: dropshadow(gaussian, #212121, 4, 0, 0, 0);">
+        <HBox style="-fx-effect: dropshadow(gaussian, #212121, 4, 0, 0, 0); -fx-border-width: 0 0 7 0; -fx-border-color: #FFA000;">
             <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Hotels" prefHeight="40" onAction="#switchTabs"
                        style="-fx-background-color: #FFA000;">
                 <graphic>
-                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <!--Image smooth="false" url="/Resources/hotel_icon(64px).png"/!-->
+                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/Icons/Building_40px.png"/>
                     </ImageView>
                 </graphic>
             </JFXButton>
             <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Restaurants" prefHeight="40"
                        onAction="#switchTabs">
                 <graphic>
-                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <!--Image smooth="false" url="/Resources/restaurant_icon(64px).png "/!-->
+                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/Icons/Food And Wine_48px.png"/>
                     </ImageView>
                 </graphic>
             </JFXButton>
             <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Entertaining" prefHeight="40"
                        onAction="#switchTabs">
                 <graphic>
-                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <!--Image smooth="false" url="/Resources/entertaining_icon(64px).png"/!-->
+                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/Icons/Party_Baloons_48px.png"/>
                     </ImageView>
                 </graphic>
             </JFXButton>
             <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Things To Do" prefHeight="40"
                        onAction="#switchTabs">
                 <graphic>
-                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <!--Image smooth="false" url="/Resources/thingsToDo_icon(64px).png"/!-->
+                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <Image smooth="false" url="/Resources/Icons/Dossier_48px.png"/>
                     </ImageView>
                 </graphic>
             </JFXButton>
