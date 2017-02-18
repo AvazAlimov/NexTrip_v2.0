@@ -4,8 +4,12 @@ import com.jfoenix.controls.JFXButton;
 import javafx.animation.SequentialTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,6 +23,18 @@ public class HotelActivity implements Initializable {
     public ImageView imageView;
     public JFXButton prevImage;
     public JFXButton nextImage;
+    public Button freeWiFi;
+    public Button freeParking;
+    public Button freeYard;
+    public TextArea infoText;
+    public Label commentText;
+    public Button CommentButton;
+    public HBox contactContainer;
+    public Button mail_icon;
+    public Button phone_icon;
+    public Button facebook_icon;
+    public Button telegram_icon;
+    public Button web_icon;
     private String[] paths;
     private int index;
 
