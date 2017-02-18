@@ -38,6 +38,8 @@ public class HotelActivity implements Initializable {
     public Label location;
     public HBox stars;
     public Label your_rate;
+    public Label price;
+    public JFXButton info_button;
     private double xOffset;
     private double yOffset;
     public VBox main_image;
@@ -47,6 +49,9 @@ public class HotelActivity implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         hotel = Main.hotel;
         loadRating();
+        name.setText(hotel.getName());
+        this.location.setText(hotel.getLocation());
+        price.setText(hotel.getStartingPrice() + " - " + hotel.getEndingPrice());
     }
 
     public void closeWindow() {
