@@ -158,6 +158,7 @@
                         <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
                               style="-fx-background-color: #212121;"/>
                     </HBox>
+
                 </VBox>
             </VBox>
 
