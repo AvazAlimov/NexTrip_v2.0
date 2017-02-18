@@ -277,7 +277,7 @@
                                                     style="-fx-background-color: transparent;">
                                                 <graphic>
                                                     <ImageView fitHeight="22.0" fitWidth="22.0">
-                                                        <Image url="/Resources/Icons/cuisine_icon(128px).png"/>
+                                                        <Image url="/Resources/Icons/Noodles_48px.png"/>
                                                     </ImageView>
                                                 </graphic>
                                             </Button>
@@ -286,20 +286,23 @@
                                                     style="-fx-background-color: transparent;">
                                                 <graphic>
                                                     <ImageView fitHeight="22.0" fitWidth="22.0">
-                                                        <Image url="/Resources/Icons/menu_icon(128px).png"/>
+                                                        <Image url="/Resources/Icons/Restaurant Menu_48px.png"/>
                                                     </ImageView>
                                                 </graphic>
                                             </Button>
                                             <Separator prefWidth="60" visible="false"/>
-                                            <Label text="234" style="-fx-font-weight: bolder; -fx-font-size: 12;"/>
-                                            <Button prefHeight="45" prefWidth="45"
-                                                    style="-fx-background-color: transparent;">
-                                                <graphic>
-                                                    <ImageView fitHeight="22.0" fitWidth="22.0">
-                                                        <Image url="/Resources/Icons/numberOfSeats_icon(128px).png"/>
-                                                    </ImageView>
-                                                </graphic>
-                                            </Button>
+                                            <HBox>
+                                                <Label text="234" style="-fx-font-weight: bolder; -fx-font-size: 12;"/>
+                                                <Button prefHeight="45" prefWidth="45"
+                                                        style="-fx-background-color: transparent;">
+                                                    <graphic>
+                                                        <ImageView fitHeight="22.0" fitWidth="22.0">
+                                                            <Image url="/Resources/Icons/Restaurant Table1_50px.png"/>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+
+                                            </HBox>
                                         </HBox>
                                     </GridPane>
                                 </HBox>
@@ -331,7 +334,8 @@
                                 <Label text="Contacts" alignment="CENTER"
                                        style="-fx-font-size: 20; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);-fx-text-fill: #212121;-fx-font-weight: bolder;"/>
                             </HBox>
-                            <HBox fx:id="contactContainer" spacing="10" alignment="CENTER" prefWidth="500">
+                            <HBox fx:id="contactContainer" spacing="10" alignment="CENTER" prefWidth="200"
+                                  style="-fx-background-color: teal; -fx-opacity: 0.83; -fx-background-radius: 20;">
                                 <Button fx:id="mail_icon" prefHeight="50" prefWidth="50"
                                         style="-fx-background-color: transparent;">
                                     <graphic>
