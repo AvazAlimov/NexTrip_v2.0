@@ -54,8 +54,12 @@
     -fx-font-weight: bold;
 }
 
-
-
+#your_rate {
+    -fx-padding: 16;
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
 
 .text-field {
     -fx-effect: dropshadow(two-pass-box, black, 10, 0.2, 0, 0);

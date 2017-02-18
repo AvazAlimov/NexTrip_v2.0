@@ -37,6 +37,7 @@ public class HotelActivity implements Initializable {
     public Label name;
     public Label location;
     public HBox stars;
+    public Label your_rate;
     private double xOffset;
     private double yOffset;
     public VBox main_image;
@@ -105,6 +106,7 @@ public class HotelActivity implements Initializable {
     public void rateHotel(ActionEvent event) throws IOException {
         int rating = Integer.parseInt(((Button) event.getSource()).getId());
         hotel.addRating(rating);
+        your_rate.setText("You Rated");
         stars.setDisable(true);
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
