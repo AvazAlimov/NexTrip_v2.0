@@ -105,6 +105,7 @@ public class MainActivity implements Initializable {
     }
 
     public void addObjects() {
+
         switch (choosenType) {
             case "Hotels":
                 addHotels();

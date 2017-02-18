@@ -30,8 +30,8 @@
             <RowConstraints/>
             <RowConstraints vgrow="ALWAYS"/>
             <RowConstraints valignment="CENTER"/>
-            <RowConstraints prefHeight="10"/>
-            <RowConstraints/>
+            <RowConstraints prefHeight="10" valignment="CENTER"/>
+            <RowConstraints prefHeight="20"/>
         </rowConstraints>
 
         <HBox onMousePressed="#mousePressed" onMouseDragged="#mouseDragged">
@@ -44,23 +44,29 @@
                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';"/>
         </HBox>
 
-        <HBox fx:id="pageContainer" GridPane.rowIndex="2" spacing="10" alignment="CENTER">
-            <Circle id="0" radius="8" style="-fx-fill: #00BCD4; -fx-cursor: hand;" onMousePressed="#transformContainer"/>
-            <Circle id="-896" radius="8" style="-fx-fill: #4AF0F1; -fx-cursor: hand;"
-                    onMousePressed="#transformContainer"/>
-            <Circle id="-1792" radius="8" style="-fx-fill: #4AF0F1; -fx-cursor: hand;"
-                    onMousePressed="#transformContainer"/>
-        </HBox>
+        <VBox alignment="BOTTOM_CENTER" GridPane.rowIndex="3" spacing="10">
+            <HBox fx:id="pageContainer" spacing="10" alignment="CENTER">
+                <Circle id="0" radius="8" style="-fx-fill: #00BCD4; -fx-cursor: hand;"
+                        onMousePressed="#transformContainer"/>
+                <Circle id="-896" radius="8" style="-fx-fill: #4AF0F1; -fx-cursor: hand;"
+                        onMousePressed="#transformContainer"/>
+                <Circle id="-1792" radius="8" style="-fx-fill: #4AF0F1; -fx-cursor: hand;"
+                        onMousePressed="#transformContainer"/>
+            </HBox>
 
-        <JFXButton GridPane.rowIndex="3" text="SKIP" AnchorPane.bottomAnchor="25" onAction="#nextWindow" alignment="CENTER"
-                   style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 20; -fx-cursor: hand; -fx-background-radius: 20;"/>
+            <JFXButton GridPane.rowIndex="3" text="SKIP" onAction="#nextWindow"
+                       alignment="CENTER"
+                       style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 20; -fx-cursor: hand; -fx-background-radius: 20;"/>
+
+        </VBox>
     </GridPane>
 
     <HBox AnchorPane.topAnchor="100" AnchorPane.bottomAnchor="100" alignment="CENTER" spacing="384" fx:id="container"
           style="-fx-font-family: 'Trebuchet MS';">
         <Separator prefWidth="0" visible="false"/>
 
-        <VBox spacing="20" alignment="CENTER" style="-fx-background-color: rgba(0,96,100,0.4); -fx-background-radius: 30;">
+        <VBox spacing="20" alignment="CENTER"
+              style="-fx-background-color: rgba(0,96,100,0.4); -fx-background-radius: 30;">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);">
                 <Image url="/Resources/Pictures/first_guide.png"/>
             </ImageView>
@@ -70,7 +76,8 @@
                    style="-fx-font-size: 24; -fx-wrap-text: true; -fx-text-alignment: center; -fx-pref-width: 512;  -fx-text-fill: white; -fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);"/>
         </VBox>
 
-        <VBox spacing="20" alignment="CENTER" opacity="0.0" scaleX="0.0" scaleY="0.0" style="-fx-background-color: rgba(0,96,100,0.4); -fx-background-radius: 30;">
+        <VBox spacing="20" alignment="CENTER" opacity="0.0" scaleX="0.0" scaleY="0.0"
+              style="-fx-background-color: rgba(0,96,100,0.4); -fx-background-radius: 30;">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);">
                 <Image url="/Resources/Pictures/second_guide.png"/>
             </ImageView>
@@ -80,7 +87,8 @@
                    style="-fx-font-size: 24; -fx-wrap-text: true; -fx-text-alignment: center; -fx-pref-width: 512; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);"/>
         </VBox>
 
-        <VBox spacing="20" alignment="CENTER" opacity="0.0" scaleX="0.0" scaleY="0.0" style="-fx-background-color: rgba(0,96,100,0.4); -fx-background-radius: 30;">
+        <VBox spacing="20" alignment="CENTER" opacity="0.0" scaleX="0.0" scaleY="0.0"
+              style="-fx-background-color: rgba(0,96,100,0.4); -fx-background-radius: 30;">
             <ImageView fitWidth="256" fitHeight="256" style="-fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);">
                 <Image url="/Resources/Pictures/third_guide.png"/>
             </ImageView>
@@ -92,6 +100,4 @@
 
         <Separator prefWidth="0" visible="false"/>
     </HBox>
-
-
 </AnchorPane>
