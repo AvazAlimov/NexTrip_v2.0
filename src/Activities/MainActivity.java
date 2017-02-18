@@ -26,7 +26,9 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
@@ -109,7 +111,6 @@ public class MainActivity implements Initializable {
     }
 
     public void addObjects() {
-        
         switch (choosenType) {
             case "Hotels":
                 addHotels();
