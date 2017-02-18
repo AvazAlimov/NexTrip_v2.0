@@ -33,7 +33,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-
 @SuppressWarnings("Duplicates")
 public class MainActivity implements Initializable {
     public VBox container;
