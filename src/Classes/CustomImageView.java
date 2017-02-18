@@ -3,7 +3,7 @@ package Classes;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class CustomImageView extends ImageView {
+class CustomImageView extends ImageView {
     private String path;
 
     public CustomImageView(String path, String url){

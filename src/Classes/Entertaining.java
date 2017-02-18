@@ -1,6 +1,6 @@
 package Classes;
 
-public class Entertaining extends Guidance {
+class Entertaining extends Guidance {
     private double price;
     private String rules;
     private int ageLimit;
