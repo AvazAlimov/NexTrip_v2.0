@@ -57,9 +57,10 @@ public class Main extends Application {
                 loadEntertaining();
                 loadThingsToDo();
                 System.out.println("Data were downloaded");
-                service.shutdown();
             } catch (IOException e) {
                 e.printStackTrace();
+            } finally {
+                service.shutdown();
             }
         };
         service.submit(runnable);
