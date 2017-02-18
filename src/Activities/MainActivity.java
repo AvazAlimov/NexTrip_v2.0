@@ -530,4 +530,3 @@ public class MainActivity implements Initializable {
         return image;
     }
 }
-
