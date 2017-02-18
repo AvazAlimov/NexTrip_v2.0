@@ -18,15 +18,33 @@
     <HBox onMousePressed="#mousePressed" onMouseDragged="#mouseDragged" AnchorPane.topAnchor="0.0"
           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <Separator HBox.hgrow="ALWAYS" visible="false"/>
-        <JFXButton prefWidth="42" prefHeight="42" text="-"
+        <JFXButton prefWidth="42" prefHeight="42"
                    onAction="#minimize"
-                   style="-fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: white; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';"/>
-        <JFXButton prefWidth="42" prefHeight="42" text="🗖"
+                   style="-fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: #B2EBF2; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
+            <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0">
+                    <Image url="/Resources/Icons/Horizontal Line1_52px.png"/>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton prefWidth="42" prefHeight="42"
                    onAction="#maximize"
-                   style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: white; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';"/>
-        <JFXButton prefWidth="42" prefHeight="42" text="✖"
+                   style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: #B2EBF2; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
+            <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0">
+                    <Image url="/Resources/Icons/Minimize Window_64px.png"/>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton prefWidth="42" prefHeight="42"
                    onAction="#closeWindow"
-                   style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: white; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';"/>
+                   style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: #B2EBF2; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
+            <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0">
+                    <Image url="/Resources/Icons/Multiply_64px.png"/>
+                </ImageView>
+            </graphic>
+        </JFXButton>
     </HBox>
 
     <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
@@ -44,7 +62,7 @@
 
         <HBox style="-fx-effect: dropshadow(gaussian, #212121, 4, 0, 0, 0); -fx-border-width: 0 0 7 0; -fx-border-color: #FFA000;">
             <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Hotels" prefHeight="40" onAction="#switchTabs"
-                    style="-fx-background-color: #FFA000;">
+                       style="-fx-background-color: #FFA000;">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                         <Image smooth="false" url="/Resources/Icons/Building_40px.png"/>
@@ -52,7 +70,7 @@
                 </graphic>
             </JFXButton>
             <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Restaurants" prefHeight="40"
-                    onAction="#switchTabs">
+                       onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                         <Image smooth="false" url="/Resources/Icons/Food And Wine_48px.png"/>
@@ -60,7 +78,7 @@
                 </graphic>
             </JFXButton>
             <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Entertaining" prefHeight="40"
-                    onAction="#switchTabs">
+                       onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                         <Image smooth="false" url="/Resources/Icons/Party_Baloons_48px.png"/>
@@ -68,7 +86,7 @@
                 </graphic>
             </JFXButton>
             <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Things To Do" prefHeight="40"
-                    onAction="#switchTabs">
+                       onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                         <Image smooth="false" url="/Resources/Icons/Dossier_48px.png"/>
@@ -79,13 +97,15 @@
 
         <VBox GridPane.rowIndex="1" spacing="10">
             <Separator prefHeight="10" visible="false"/>
-            <HBox alignment="CENTER" spacing="10" >
+            <HBox alignment="CENTER" spacing="10">
 
                 <ComboBox fx:id="searchText" editable="true" prefWidth="1000.0" promptText="Location"
-                          onKeyReleased="#searchObject" onAction="#addObjects" style="-fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)"/>
+                          onKeyReleased="#searchObject" onAction="#addObjects"
+                          style="-fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)"/>
 
                 <JFXButton style="-fx-font-size: 18;
-                    -fx-label-padding: -5;-fx-background-radius: 4; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)" prefWidth="40.0" onAction="#addObjects">
+                    -fx-label-padding: -5;-fx-background-radius: 4; -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0)"
+                           prefWidth="40.0" onAction="#addObjects">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <!--Image smooth="false" url="/Resources/search_icon2(128px).png"/-->
