@@ -3,7 +3,7 @@ package Classes;
 import java.util.ArrayList;
 
 @SuppressWarnings("unused")
-public class Restaurant extends Guidance {
+class Restaurant extends Guidance {
     private enum Type {
         Cafe, Fastfood, Cuisine, SitDown
     }
