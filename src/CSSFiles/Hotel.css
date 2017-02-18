@@ -1,6 +1,6 @@
 
 .root {
-    -fx-background-image: url("/Resources/Pictures/tropiki_basseyn_bungalo_otel_53974_1920x1080.jpg");
+    -fx-background-image: url("/Resources/Pictures/world-superb-resort-tree-pool-hotel-wide-screen-1920x1080.jpg");
     -fx-background-size: cover;
 
 }
@@ -16,7 +16,6 @@
     -fx-effect: dropshadow(two-pass-box, black, 10, 0.2, 0, 0);
     -fx-font-size: 18;
     -fx-text-fill: #212121;
-    -fx-font-family: FutureExtended;
     -fx-prompt-text-fill: #666;
 
 }
