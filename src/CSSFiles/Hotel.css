@@ -86,71 +86,14 @@
     -fx-font-weight: bold;
 }
 
+#contact_text {
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
 .label {
     -fx-text-fill: #212121;
     -fx-font-size: 20;
     -fx-font-weight: bold;
 }
-
-.text-field {
-    -fx-effect: dropshadow(two-pass-box, black, 10, 0.2, 0, 0);
-    -fx-font-size: 18;
-    -fx-text-fill: #212121;
-    -fx-prompt-text-fill: #666;
-}
-
-#prevImage:hover {
-    -fx-cursor: hand;
-}
-
-#nextImage:hover {
-    -fx-cursor: hand;
-}
-
-#nameLabel {
-    -fx-font-size: 22;
-    -fx-text-fill: #212121;
-    -fx-background-color: white;
-    -fx-background-radius: 10;
-    -fx-effect: dropshadow(gaussian, #212121, 5, 0, 0, 0);
-}
-
-#locationLabel {
-    -fx-background-color: white;
-    -fx-background-radius: 6;
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-pref-height: 25;
-    -fx-pref-width: 400;
-}
-
-#mail_icon:hover {
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-
-#facebook_icon:hover {
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-
-#telegram_icon:hover {
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-
-#phone_icon:hover {
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-
-#web_icon:hover {
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-
-#commentText:hover {
-    -fx-text-fill: white;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #212121, 8, 0, 0, 0);
-}
-

@@ -43,6 +43,8 @@ public class HotelActivity implements Initializable {
     public Label fantastic_number;
     public Label amenities_text;
     public HBox amenity_container;
+    public HBox contact_container;
+    public Label contact_text;
     private double xOffset;
     private double yOffset;
     public VBox main_image;

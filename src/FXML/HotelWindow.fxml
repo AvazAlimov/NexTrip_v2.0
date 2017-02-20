@@ -161,7 +161,23 @@
                     <HBox fx:id="amenity_container" spacing="20" alignment="CENTER_LEFT"/>
                 </VBox>
 
-
+                <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
+                    <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
+                        <Label fx:id="contact_text" text="CONTACTS"/>
+                        <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
+                              style="-fx-background-color: #212121;"/>
+                    </HBox>
+                    <HBox fx:id="contact_container" spacing="20" alignment="CENTER_LEFT">
+                        <JFXButton
+                                style="-fx-padding: 5; -fx-background-color: transparent; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
+                            <graphic>
+                                <ImageView fitHeight="56" fitWidth="56">
+                                    <Image url="/Resources/Icons/facebook.png"/>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                    </HBox>
+                </VBox>
             </VBox>
 
         </ScrollPane>
