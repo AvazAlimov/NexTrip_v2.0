@@ -194,7 +194,7 @@
                 <Label fx:id="contact_source_type"/>
             </HBox>
             <HBox maxWidth="Infinity" prefHeight="2" style="-fx-background-color: #212121;"/>
-            <Hyperlink fx:id="contact_source_text"/>
+            <Hyperlink fx:id="contact_source_text" onAction="#openBrowser"/>
         </VBox>
     </GridPane>
 

@@ -3,9 +3,12 @@ package Activities;
 import Classes.Contact;
 import Classes.Hotel;
 import com.jfoenix.controls.JFXButton;
+import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
+import com.sun.javafx.application.HostServicesDelegate;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -19,6 +22,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -207,5 +211,9 @@ public class HotelActivity implements Initializable {
         timeline.setOnFinished(event -> contact_layout.setVisible(false));
         contact_layout.setScaleX(1.0);
         contact_layout.setScaleY(1.0);
+    }
+
+    public void openBrowser() {
+        Main.hostServices.showDocument(contact_source_text.getText());
     }
 }
