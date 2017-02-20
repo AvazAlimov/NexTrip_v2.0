@@ -158,10 +158,10 @@
                         <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
                               style="-fx-background-color: #212121;"/>
                     </HBox>
-
-
-
+                    <HBox fx:id="amenity_container" spacing="20" alignment="CENTER_LEFT"/>
                 </VBox>
+
+
             </VBox>
 
         </ScrollPane>

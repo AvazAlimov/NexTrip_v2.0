@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -41,6 +42,7 @@ public class HotelActivity implements Initializable {
     public Label fantastic_text;
     public Label fantastic_number;
     public Label amenities_text;
+    public HBox amenity_container;
     private double xOffset;
     private double yOffset;
     public VBox main_image;
@@ -54,6 +56,7 @@ public class HotelActivity implements Initializable {
         this.location.setText(hotel.getLocation());
         price.setText(hotel.getStartingPrice() + " - " + hotel.getEndingPrice());
         countRates();
+        addAmenities();
     }
 
     public void closeWindow() {
@@ -133,5 +136,19 @@ public class HotelActivity implements Initializable {
         good_number.setText(ratings[2] + "");
         excellent_number.setText(ratings[3] + "");
         fantastic_number.setText(ratings[4] + "");
+    }
+
+    private void addAmenities() {
+        for (String amenity : hotel.getAmenties()) {
+            HBox box = new HBox(20);
+            box.setStyle("-fx-padding: 5; -fx-spacing: 10;");
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("../Resources/Icons/checked.png"))));
+            imageView.setFitHeight(32);
+            imageView.setFitWidth(32);
+            Label label = new Label(amenity);
+            box.getChildren().add(imageView);
+            box.getChildren().add(label);
+            amenity_container.getChildren().add(box);
+        }
     }
 }
