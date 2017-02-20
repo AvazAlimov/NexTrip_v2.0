@@ -1,7 +1,7 @@
 package Classes;
 
 @SuppressWarnings("unused")
-class Comment {
+public class Comment {
     private String comment;
     private Date writtenDate;
     private Guest guest;
@@ -20,15 +20,15 @@ class Comment {
         setGuest(guest);
     }
 
-    private void setComment(String comment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 
-    private void setGuest(Guest guest) {
+    public void setGuest(Guest guest) {
         this.guest = guest;
     }
 
-    private void setWrittenDate(Date writtenDate) {
+    public void setWrittenDate(Date writtenDate) {
         this.writtenDate = writtenDate;
     }
 

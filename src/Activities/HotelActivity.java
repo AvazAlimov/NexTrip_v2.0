@@ -1,7 +1,6 @@
 package Activities;
 
-import Classes.Contact;
-import Classes.Hotel;
+import Classes.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -27,6 +26,7 @@ import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class HotelActivity implements Initializable {
@@ -255,5 +255,35 @@ public class HotelActivity implements Initializable {
         Main.stage.getIcons().add(new Image("Resources/icon.png"));
         Main.stage.setScene(scene);
         Main.stage.show();
+    }
+
+    public void addComment() {
+        if (comment_text.getText().isEmpty())
+            return;
+
+        Comment comment = new Comment();
+        comment.setGuest(new Guest("", "", "Guest"));
+        comment.setWrittenDate(new Date(LocalDateTime.now().getDayOfMonth(), LocalDateTime.now().getMonth().getValue(), LocalDateTime.now().getYear()));
+        comment.setComment(comment_text.getText());
+        addCommentItem(comment);
+        hotel.addComment(comment);
+
+
+    }
+
+    private void addCommentItem(Comment comment) {
+        VBox item = new VBox();
+        Label username = new Label(comment.getGuest().getUsername());
+        username.setStyle("-fx-font-size: 20; -fx-font-weight: bolder; -fx-text-fill: #FFC107;");
+        Label source = new Label(comment.getComment());
+        source.setStyle("-fx-font-size: 20;");
+        Label date = new Label(comment.getWrittenDate().toString());
+        date.setStyle("-fx-font-size: 18; -fx-alignment: bottom-right;");
+        item.getChildren().add(username);
+        item.getChildren().add(source);
+        item.getChildren().add(date);
+        item.setStyle("-fx-background-color: rgba(200, 255, 100, 0.8); -fx-padding: 10;");
+        comments_container.getChildren().add(item);
+        comment_text.setText("");
     }
 }
