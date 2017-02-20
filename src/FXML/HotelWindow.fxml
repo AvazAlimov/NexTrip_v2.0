@@ -188,7 +188,7 @@
         </rowConstraints>
 
         <VBox fx:id="contact_source" alignment="CENTER" spacing="10"
-              style=" -fx-padding: 16; -fx-background-color: #80DEEA; -fx-background-radius: 8;">
+              style=" -fx-padding: 16; -fx-background-color: lightsteelblue; -fx-background-radius: 8;">
             <HBox alignment="CENTER" spacing="10">
                 <ImageView fx:id="contact_source_image" fitHeight="56" fitWidth="56" style="-fx-effect: dropshadow(gaussian, black, 2, 0, 0, 0)"/>
                 <Label fx:id="contact_source_type"/>
