@@ -61,6 +61,8 @@ public class HotelActivity implements Initializable {
     public GridPane info_layout;
     public Label info_text;
     public Label information;
+    public VBox comments_container;
+    public Label comment_text;
     private double xOffset;
     private double yOffset;
     public VBox main_image;

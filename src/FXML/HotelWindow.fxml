@@ -17,6 +17,7 @@
 <?import javafx.scene.control.ScrollPane?>
 
 <?import javafx.scene.control.Hyperlink?>
+<?import com.jfoenix.controls.JFXTextField?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
             prefWidth="600.0"
             xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
@@ -171,6 +172,23 @@
                     </HBox>
                     <HBox fx:id="contact_container" spacing="20" alignment="CENTER_LEFT"/>
                 </VBox>
+
+                <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
+                    <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
+                        <Label fx:id="comment_text" text="COMMENTS"/>
+                        <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
+                              style="-fx-background-color: #212121;"/>
+                    </HBox>
+                    <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-border-width: 0;">
+                        <VBox spacing="20">
+                            <VBox fx:id="comments_container" maxHeight="400" spacing="10"/>
+                        </VBox>
+                    </ScrollPane>
+                    <HBox alignment="CENTER" maxWidth="Infinity">
+                        <JFXTextField HBox.hgrow="ALWAYS"/>
+                        <JFXButton/>
+                    </HBox>
+                </VBox>
             </VBox>
 
         </ScrollPane>
@@ -178,7 +196,7 @@
 
     <GridPane alignment="CENTER" visible="false" fx:id="info_layout" AnchorPane.bottomAnchor="0"
               AnchorPane.topAnchor="45" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
-              onMouseClicked="#closeInfo">
+              onMouseClicked="#closeInfo" style="-fx-padding: 40;">
         <columnConstraints>
             <ColumnConstraints/>
         </columnConstraints>
@@ -188,12 +206,14 @@
 
         <VBox alignment="CENTER" spacing="10"
               style="-fx-padding: 16; -fx-background-color: lightskyblue; -fx-background-radius: 8;">
-            <HBox spacing="20">
+            <HBox spacing="20" alignment="CENTER_LEFT">
                 <ImageView fitHeight="56" fitWidth="56">
                     <Image url="/Resources/Icons/info1_(64px).png"/>
                 </ImageView>
                 <Label fx:id="information" text="Information"/>
             </HBox>
+
+            <HBox maxWidth="Infinity" prefHeight="2" style="-fx-background-color: #212121;"/>
 
             <Label fx:id="info_text" wrapText="true"/>
         </VBox>
