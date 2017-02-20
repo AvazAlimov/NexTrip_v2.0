@@ -101,10 +101,10 @@ public class HotelActivity implements Initializable {
         int limit = Integer.parseInt(((Button) mouseEvent.getSource()).getId());
 
         for (int i = 0; i < limit; i++)
-            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107;");
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
 
         for (int i = 4; i >= limit; i--)
-            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107;");
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
     }
 
     private void loadRating() {
@@ -118,9 +118,9 @@ public class HotelActivity implements Initializable {
             rating = (sum / hotel.getRatings().size()) - 1.0f;
 
         for (int i = 0; i < hotel.getRating(); i++)
-            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107;");
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
         for (int i = 4; i >= hotel.getRating(); i--)
-            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107;");
+            stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
         rate_number.setText("based on " + hotel.getRatings().size() + " reviews");
         rate.setText(String.format("%.01f", (rating == 0.0f ? 0.0f : (rating + 1.0f))));
         rate_text.setText(Main.Rating[(int) (rating > -1 ? rating : 0)]);
