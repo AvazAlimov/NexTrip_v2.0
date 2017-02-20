@@ -3,15 +3,21 @@ package Activities;
 import Classes.Contact;
 import Classes.Hotel;
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -46,6 +52,12 @@ public class HotelActivity implements Initializable {
     public HBox amenity_container;
     public HBox contact_container;
     public Label contact_text;
+    public GridPane main_layout;
+    public GridPane contact_layout;
+    public VBox contact_source;
+    public Label contact_source_type;
+    public ImageView contact_source_image;
+    public Hyperlink contact_source_text;
     private double xOffset;
     private double yOffset;
     public VBox main_image;
@@ -165,8 +177,32 @@ public class HotelActivity implements Initializable {
             imageView.setFitWidth(56);
             imageView.setFitHeight(56);
             button.setGraphic(imageView);
-            button.setId(contact.getSource());
+            button.setId(contact.getType() + "☼" + contact.getSource());
+            button.setOnAction(event -> {
+                contact_source_type.setText(button.getId().substring(0, button.getId().indexOf("☼")));
+                contact_source_image.setImage(((ImageView) button.getGraphic()).getImage());
+                contact_source_text.setText(button.getId().substring(button.getId().indexOf("☼") + 1, button.getId().length()));
+                contact_layout.setVisible(true);
+                contact_layout.setScaleX(0.0);
+                contact_layout.setScaleY(0.0);
+                KeyValue valueX = new KeyValue(contact_layout.scaleXProperty(), 1.0);
+                KeyValue valueY = new KeyValue(contact_layout.scaleYProperty(), 1.0);
+                Timeline timeline = new Timeline(new KeyFrame(new Duration(500), valueX, valueY));
+                timeline.setCycleCount(1);
+                timeline.play();
+            });
             contact_container.getChildren().add(button);
         }
+    }
+
+    public void showMainLayout() {
+        KeyValue valueX = new KeyValue(contact_layout.scaleXProperty(), 0.0);
+        KeyValue valueY = new KeyValue(contact_layout.scaleYProperty(), 0.0);
+        Timeline timeline = new Timeline(new KeyFrame(new Duration(500), valueX, valueY));
+        timeline.setCycleCount(1);
+        timeline.play();
+        timeline.setOnFinished(event -> contact_layout.setVisible(false));
+        contact_layout.setScaleX(1.0);
+        contact_layout.setScaleY(1.0);
     }
 }

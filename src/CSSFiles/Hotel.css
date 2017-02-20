@@ -92,8 +92,21 @@
     -fx-font-weight: bold;
 }
 
+#contact_source_type {
+    -fx-text-fill: #212121;
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+}
+
 .label {
     -fx-text-fill: #212121;
-    -fx-font-size: 20;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+.hyperlink {
+    -fx-border-width: 0;
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
     -fx-font-weight: bold;
 }
