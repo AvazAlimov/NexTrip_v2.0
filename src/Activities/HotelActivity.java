@@ -1,5 +1,6 @@
 package Activities;
 
+import Classes.Contact;
 import Classes.Hotel;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -59,6 +60,7 @@ public class HotelActivity implements Initializable {
         price.setText(hotel.getStartingPrice() + " - " + hotel.getEndingPrice());
         countRates();
         addAmenities();
+        addContacts();
     }
 
     public void closeWindow() {
@@ -151,6 +153,12 @@ public class HotelActivity implements Initializable {
             box.getChildren().add(imageView);
             box.getChildren().add(label);
             amenity_container.getChildren().add(box);
+        }
+    }
+
+    private void addContacts() {
+        for (Contact contact : hotel.getContacts()) {
+            System.out.println(contact.getType());
         }
     }
 }
