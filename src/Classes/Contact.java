@@ -1,7 +1,7 @@
 package Classes;
 
 @SuppressWarnings("unused")
-class Contact {
+public class Contact {
     private enum Type{
         Facebook, Site, PhoneNumber, Mail, Telegram, Other
     }

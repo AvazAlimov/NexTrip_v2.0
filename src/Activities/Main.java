@@ -6,7 +6,10 @@ import Classes.Restaurant;
 import Classes.ThingsToDo;
 import au.com.bytecode.opencsv.CSVReader;
 
+import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
+import com.sun.javafx.application.HostServicesDelegate;
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -32,14 +35,16 @@ public class Main extends Application {
     static ArrayList<Entertaining> entertainings = new ArrayList<>();
     static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
     static Stage stage;
-    static String serverHost = "192.168.43.53";
-    static int count = 0;
+    static String serverHost = "127.0.0.1";
+    static String Rating[] = {"Bad", "Normal", "Good", "Excellent", "Fantastic"};
+    static HostServices hostServices ;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        hostServices = getHostServices();
         Locale.setDefault(Locale.ENGLISH);
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/HotelNewWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
         Scene scene = new Scene(root, 1280, 720);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.initStyle(StageStyle.TRANSPARENT);

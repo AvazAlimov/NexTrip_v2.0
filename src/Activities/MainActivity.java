@@ -25,6 +25,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -136,6 +137,7 @@ public class MainActivity implements Initializable {
             button.setGraphic(pane);
             pane.setScaleX(0.0);
             pane.setScaleY(0.0);
+            button.setOnMouseClicked(pane.getOnMouseClicked());
             container.getChildren().add(button);
             KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
             KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
@@ -220,10 +222,11 @@ public class MainActivity implements Initializable {
         item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
-        try {
-            value = loadImage(hotel.getPhotos().get(0));
-        } catch (IOException ignored) {
-        }
+        if (hotel.getPhotos().size() > 0)
+            try {
+                value = loadImage(hotel.getPhotos().get(0));
+            } catch (IOException ignored) {
+            }
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
@@ -268,6 +271,7 @@ public class MainActivity implements Initializable {
                     Main.stage.setScene(scene);
                     Main.stage.show();
                 } catch (IOException ignored) {
+                    ignored.printStackTrace();
                 }
             }
         });

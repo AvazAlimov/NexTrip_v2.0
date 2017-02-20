@@ -1,7 +1,7 @@
 package Classes;
 
 @SuppressWarnings("unused")
-class Guest extends User {
+public class Guest extends User {
     private String username;
 
     Guest(){

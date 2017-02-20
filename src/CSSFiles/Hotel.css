@@ -1,77 +1,129 @@
 
 .root {
-    -fx-background-image: url("/Resources/Pictures/world-superb-resort-tree-pool-hotel-wide-screen-1920x1080.jpg");
-    -fx-background-size: cover;
 
+}
+
+#rate_layout {
+    -fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);
 }
 
 #textBackground {
     -fx-background-color: #80DEEA;
     -fx-background-radius: 6;
     -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-
 }
 
-.text-field {
-    -fx-effect: dropshadow(two-pass-box, black, 10, 0.2, 0, 0);
-    -fx-font-size: 18;
-    -fx-text-fill: #212121;
-    -fx-prompt-text-fill: #666;
-
-}
-
-#prevImage:hover{
-    -fx-cursor: hand;
-}
-
-#nextImage:hover{
-    -fx-cursor: hand;
-}
-
-#nameLabel {
-    -fx-font-size: 22;
-    -fx-text-fill: #212121;
-    -fx-background-color: white;
-    -fx-background-radius: 10;
-    -fx-effect: dropshadow(gaussian, #212121, 5, 0, 0, 0);
-}
-
-
-#locationLabel {
-    -fx-background-color: white;
-    -fx-background-radius: 6;
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-pref-height: 25;
-    -fx-pref-width: 400;
-}
-
-#mail_icon:hover {
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-#facebook_icon:hover{
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-
-#telegram_icon:hover{
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-
-#phone_icon:hover{
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-
-#web_icon:hover{
-    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
-    -fx-cursor: hand;
-}
-
-#commentText:hover{
+#rate {
+    -fx-background-color: #FFC107;
+    -fx-background-radius: 16 0 0 16;
+    -fx-padding: 16;
     -fx-text-fill: white;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #212121, 8, 0, 0, 0);
+    -fx-text-alignment: center;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
 }
 
+#right_part {
+    -fx-background-color: #212121;
+    -fx-background-radius: 0 16 16 0;
+    -fx-padding: 16;
+}
+
+#rate_text {
+    -fx-text-fill: #009688;
+    -fx-text-alignment: center;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+#rate_number {
+    -fx-text-fill: white;
+    -fx-text-alignment: center;
+    -fx-font-size: 14;
+}
+
+#name {
+    -fx-text-fill: white;
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+}
+
+#location {
+    -fx-text-fill: white;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+#your_rate {
+    -fx-padding: 16;
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+#price {
+    -fx-text-fill: #212121;
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+}
+
+#info_button {
+    -fx-background-color: lightskyblue;
+    -fx-text-fill: dodgerblue;
+    -fx-font-size: 24;
+    -fx-cursor: hand;
+}
+
+#overall_rating {
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+#amenities_text {
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+#contact_text {
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+#contact_source_type {
+    -fx-text-fill: #212121;
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+}
+
+.label {
+    -fx-text-fill: #212121;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+
+.hyperlink {
+    -fx-border-width: 0;
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+#information {
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+#info_text {
+    -fx-border-width: 0;
+    -fx-text-fill: #212121;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+#comments_container {
+    -fx-padding: 16;
+}
