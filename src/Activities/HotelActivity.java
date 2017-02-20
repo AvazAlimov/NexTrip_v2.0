@@ -159,6 +159,14 @@ public class HotelActivity implements Initializable {
     private void addContacts() {
         for (Contact contact : hotel.getContacts()) {
             System.out.println(contact.getType());
+            JFXButton button = new JFXButton();
+            button.setStyle("-fx-padding: 5; -fx-background-color: transparent; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';");
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("../Resources/Icons/" + contact.getType() + ".png"))));
+            imageView.setFitWidth(56);
+            imageView.setFitHeight(56);
+            button.setGraphic(imageView);
+            button.setId(contact.getSource());
+            contact_container.getChildren().add(button);
         }
     }
 }
