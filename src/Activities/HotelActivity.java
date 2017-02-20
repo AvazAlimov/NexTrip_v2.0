@@ -60,6 +60,7 @@ public class HotelActivity implements Initializable {
     public Hyperlink contact_source_text;
     public GridPane info_layout;
     public Label info_text;
+    public Label information;
     private double xOffset;
     private double yOffset;
     public VBox main_image;
@@ -72,6 +73,7 @@ public class HotelActivity implements Initializable {
         name.setText(hotel.getName());
         this.location.setText(hotel.getLocation());
         price.setText(hotel.getStartingPrice() + " - " + hotel.getEndingPrice());
+        info_text.setText(hotel.getInfo());
         countRates();
         addAmenities();
         addContacts();
@@ -213,5 +215,31 @@ public class HotelActivity implements Initializable {
 
     public void openBrowser() {
         Main.hostServices.showDocument(contact_source_text.getText());
+    }
+
+    public void showInfo() {
+        info_layout.setVisible(true);
+        info_layout.setScaleX(0.0);
+        info_layout.setScaleY(0.0);
+        info_layout.setOpacity(0.0);
+        KeyValue valueX = new KeyValue(info_layout.scaleXProperty(), 1.0);
+        KeyValue valueY = new KeyValue(info_layout.scaleYProperty(), 1.0);
+        KeyValue opacity = new KeyValue(info_layout.opacityProperty(), 1.0);
+        Timeline timeline = new Timeline(new KeyFrame(new Duration(300), valueX, valueY, opacity));
+        timeline.setCycleCount(1);
+        timeline.play();
+    }
+
+    public void closeInfo() {
+        KeyValue valueX = new KeyValue(info_layout.scaleXProperty(), 0.0);
+        KeyValue valueY = new KeyValue(info_layout.scaleYProperty(), 0.0);
+        KeyValue opacity = new KeyValue(info_layout.opacityProperty(), 0.0);
+        Timeline timeline = new Timeline(new KeyFrame(new Duration(300), valueX, valueY, opacity));
+        timeline.setCycleCount(1);
+        timeline.setOnFinished(event -> info_layout.setVisible(false));
+        timeline.play();
+        info_layout.setScaleX(0.0);
+        info_layout.setScaleY(0.0);
+        info_layout.setOpacity(0.0);
     }
 }
