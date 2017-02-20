@@ -6,27 +6,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import static Activities.Main.hotels;
 
 public class HotelActivity implements Initializable {
     public ImageView image;
@@ -64,6 +53,7 @@ public class HotelActivity implements Initializable {
         name.setText(hotel.getName());
         this.location.setText(hotel.getLocation());
         price.setText(hotel.getStartingPrice() + " - " + hotel.getEndingPrice());
+        countRates();
     }
 
     public void closeWindow() {
@@ -99,6 +89,7 @@ public class HotelActivity implements Initializable {
     }
 
     private void loadRating() {
+        countRates();
         float sum = 0;
         float rating = 0;
         for (int i = 0; i < hotel.getRatings().size(); i++)
@@ -112,7 +103,7 @@ public class HotelActivity implements Initializable {
         for (int i = 4; i >= hotel.getRating(); i--)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107;");
         rate_number.setText("based on " + hotel.getRatings().size() + " reviews");
-        rate.setText(String.format("%.01f",(rating == 0.0f ? 0.0f : (rating + 1.0f))));
+        rate.setText(String.format("%.01f", (rating == 0.0f ? 0.0f : (rating + 1.0f))));
         rate_text.setText(Main.Rating[(int) (rating > -1 ? rating : 0)]);
     }
 
@@ -131,5 +122,16 @@ public class HotelActivity implements Initializable {
         wr.write(query, 0, query.length);
         wr.close();
         socket.close();
+    }
+
+    private void countRates() {
+        int[] ratings = new int[]{0, 0, 0, 0, 0};
+        for (int rating : hotel.getRatings())
+            ratings[rating - 1]++;
+        bad_number.setText(ratings[0] + "");
+        normal_number.setText(ratings[1] + "");
+        good_number.setText(ratings[2] + "");
+        excellent_number.setText(ratings[3] + "");
+        fantastic_number.setText(ratings[4] + "");
     }
 }
