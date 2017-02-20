@@ -184,18 +184,18 @@
 
                 <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
                     <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
-                        <Label fx:id="comment_text" text="COMMENTS"/>
+                        <Label fx:id="comment_header" text="COMMENTS"/>
                         <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
                               style="-fx-background-color: #212121;"/>
                     </HBox>
-                    <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-border-width: 0;">
-                        <VBox spacing="20">
-                            <VBox fx:id="comments_container" maxHeight="400" spacing="10"/>
+                    <ScrollPane VBox.vgrow="ALWAYS" fitToHeight="true" fitToWidth="true" minHeight="400" prefHeight="400" style="-fx-border-width: 0;">
+                        <VBox spacing="20" prefHeight="400">
+                            <VBox fx:id="comments_container" spacing="10"/>
                         </VBox>
                     </ScrollPane>
                     <HBox alignment="CENTER" maxWidth="Infinity">
-                        <JFXTextField HBox.hgrow="ALWAYS"/>
-                        <JFXButton/>
+                        <JFXTextField fx:id="comment_text" HBox.hgrow="ALWAYS"/>
+                        <JFXButton onAction="#addComment" text="Send"/>
                     </HBox>
                 </VBox>
             </VBox>

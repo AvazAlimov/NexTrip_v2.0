@@ -2,6 +2,7 @@ package Activities;
 
 import Classes.*;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -19,7 +20,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.io.BufferedOutputStream;
@@ -66,7 +66,8 @@ public class HotelActivity implements Initializable {
     public Label info_text;
     public Label information;
     public VBox comments_container;
-    public Label comment_text;
+    public JFXTextField comment_text;
+    public Label comment_header;
     private double xOffset;
     private double yOffset;
     public VBox main_image;
@@ -267,8 +268,6 @@ public class HotelActivity implements Initializable {
         comment.setComment(comment_text.getText());
         addCommentItem(comment);
         hotel.addComment(comment);
-
-
     }
 
     private void addCommentItem(Comment comment) {

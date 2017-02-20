@@ -123,3 +123,7 @@
     -fx-font-size: 18;
     -fx-font-weight: bold;
 }
+
+#comments_container {
+    -fx-padding: 20;
+}
