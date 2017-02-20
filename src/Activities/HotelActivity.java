@@ -261,7 +261,6 @@ public class HotelActivity implements Initializable {
     public void addComment() {
         if (comment_text.getText().isEmpty())
             return;
-
         Comment comment = new Comment();
         comment.setGuest(new Guest("", "", "Guest"));
         comment.setWrittenDate(new Date(LocalDateTime.now().getDayOfMonth(), LocalDateTime.now().getMonth().getValue(), LocalDateTime.now().getYear()));
