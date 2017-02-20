@@ -222,10 +222,11 @@ public class MainActivity implements Initializable {
         item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
 
         Image value = null;
-        try {
-            value = loadImage(hotel.getPhotos().get(0));
-        } catch (IOException ignored) {
-        }
+        if (hotel.getPhotos().size() > 0)
+            try {
+                value = loadImage(hotel.getPhotos().get(0));
+            } catch (IOException ignored) {
+            }
 
         ImageView image = new ImageView(value);
         Circle circle = new Circle(50.0);
