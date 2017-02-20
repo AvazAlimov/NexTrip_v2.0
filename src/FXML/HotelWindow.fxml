@@ -176,6 +176,19 @@
         </ScrollPane>
     </GridPane>
 
+    <GridPane alignment="CENTER" visible="false" fx:id="info_layout" AnchorPane.bottomAnchor="0"
+              AnchorPane.topAnchor="45" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" onMouseClicked="#showMainLayout">
+        <columnConstraints>
+            <ColumnConstraints/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <Label fx:id="info_text"/>
+
+    </GridPane>
+
     <GridPane alignment="CENTER" visible="false" fx:id="contact_layout" AnchorPane.bottomAnchor="0"
               AnchorPane.topAnchor="45" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" onMouseClicked="#showMainLayout">
 

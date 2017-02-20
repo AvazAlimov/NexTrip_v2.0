@@ -58,6 +58,8 @@ public class HotelActivity implements Initializable {
     public Label contact_source_type;
     public ImageView contact_source_image;
     public Hyperlink contact_source_text;
+    public GridPane info_layout;
+    public Label info_text;
     private double xOffset;
     private double yOffset;
     public VBox main_image;
