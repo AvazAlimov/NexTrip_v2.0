@@ -189,7 +189,7 @@ public class HotelActivity implements Initializable {
                 KeyValue opacity = new KeyValue(contact_layout.opacityProperty(), 1.0);
                 KeyValue valueX = new KeyValue(contact_layout.scaleXProperty(), 1.0);
                 KeyValue valueY = new KeyValue(contact_layout.scaleYProperty(), 1.0);
-                Timeline timeline = new Timeline(new KeyFrame(new Duration(500), valueX, valueY, opacity));
+                Timeline timeline = new Timeline(new KeyFrame(new Duration(300), valueX, valueY, opacity));
                 timeline.setCycleCount(1);
                 timeline.play();
             });
@@ -201,7 +201,7 @@ public class HotelActivity implements Initializable {
         KeyValue opacity = new KeyValue(contact_layout.opacityProperty(), 0.0);
         KeyValue valueX = new KeyValue(contact_layout.scaleXProperty(), 0.0);
         KeyValue valueY = new KeyValue(contact_layout.scaleYProperty(), 0.0);
-        Timeline timeline = new Timeline(new KeyFrame(new Duration(500), valueX, valueY, opacity));
+        Timeline timeline = new Timeline(new KeyFrame(new Duration(300), valueX, valueY, opacity));
         timeline.setCycleCount(1);
         timeline.play();
         timeline.setOnFinished(event -> contact_layout.setVisible(false));
