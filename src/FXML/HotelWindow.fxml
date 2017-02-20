@@ -27,28 +27,37 @@
           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <Separator HBox.hgrow="ALWAYS" visible="false"/>
         <JFXButton prefWidth="42" prefHeight="42"
-                   onAction="#minimize"
-                   style="-fx-font-size: 20; -fx-background-color: transparent; -fx-text-fill: #B2EBF2; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
+                   onAction="#backToMenu"
+                   style="-fx-background-color: transparent; -fx-text-fill: #212121; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
             <graphic>
-                <ImageView fitHeight="16.0" fitWidth="16.0">
+                <ImageView fitHeight="24.0" fitWidth="24.0">
+                    <Image url="/Resources/Icons/Horizontal Line1_52px.png"/>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton prefWidth="42" prefHeight="42"
+                   onAction="#minimize"
+                   style="-fx-background-color: transparent; -fx-text-fill: #212121; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0">
                     <Image url="/Resources/Icons/Horizontal Line1_52px.png"/>
                 </ImageView>
             </graphic>
         </JFXButton>
         <JFXButton prefWidth="42" prefHeight="42"
                    onAction="#maximize"
-                   style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: #B2EBF2; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
+                   style="-fx-background-color: transparent; -fx-text-fill: #2121; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
             <graphic>
-                <ImageView fitHeight="16.0" fitWidth="16.0">
+                <ImageView fitHeight="24.0" fitWidth="24.0">
                     <Image url="/Resources/Icons/Minimize Window_64px.png"/>
                 </ImageView>
             </graphic>
         </JFXButton>
         <JFXButton prefWidth="42" prefHeight="42"
                    onAction="#closeWindow"
-                   style="-fx-font-size: 12; -fx-background-color: transparent; -fx-text-fill: #B2EBF2; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
+                   style="-fx-background-color: transparent; -fx-text-fill: #212121; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';">
             <graphic>
-                <ImageView fitHeight="16.0" fitWidth="16.0">
+                <ImageView fitHeight="24.0" fitWidth="24.0">
                     <Image url="/Resources/Icons/Multiply_64px.png"/>
                 </ImageView>
             </graphic>

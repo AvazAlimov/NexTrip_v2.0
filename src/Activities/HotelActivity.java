@@ -7,7 +7,10 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -17,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import java.io.BufferedOutputStream;
@@ -243,5 +247,13 @@ public class HotelActivity implements Initializable {
         info_layout.setScaleX(0.0);
         info_layout.setScaleY(0.0);
         info_layout.setOpacity(0.0);
+    }
+
+    public void backToMenu() throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
+        Scene scene = new Scene(parent, 1280, 720);
+        Main.stage.getIcons().add(new Image("Resources/icon.png"));
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 }
