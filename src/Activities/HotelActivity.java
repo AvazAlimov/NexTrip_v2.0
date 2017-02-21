@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-
+@SuppressWarnings("ALL")
 public class HotelActivity implements Initializable {
     public Label rate;
     public VBox right_part;
