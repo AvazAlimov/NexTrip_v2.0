@@ -31,12 +31,11 @@
     -fx-font-weight: bold;
 }
 
-#your_rate {
-    -fx-font-size: 18;
-}
-
 #sits_header{
+    -fx-padding: 16;
+    -fx-text-fill: #212121;
     -fx-font-size: 24;
+    -fx-font-weight: bold;
 }
 
 #right_part {
