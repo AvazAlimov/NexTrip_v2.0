@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+
 @SuppressWarnings("ALL")
 public class HotelActivity implements Initializable {
     public Label rate;
@@ -96,7 +97,6 @@ public class HotelActivity implements Initializable {
         image_view.fitHeightProperty().bind(Main.stage.heightProperty().divide(2.6));
 
         ExecutorService service = new ScheduledThreadPoolExecutor(2);
-        //Executor executor = Executors.newSingleThreadExecutor();
         Runnable runnable = () -> {
             for (String path : hotel.getPhotos()) {
                 try {
@@ -110,7 +110,6 @@ public class HotelActivity implements Initializable {
             System.out.println(images.size());
             service.shutdown();
         };
-        //executor.execute(runnable);
         service.submit(runnable);
     }
 

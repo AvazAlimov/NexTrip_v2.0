@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+
 @SuppressWarnings("ALL")
 public class RestaurantActivity implements Initializable {
     public Label rate;
@@ -77,6 +78,7 @@ public class RestaurantActivity implements Initializable {
     private int position = 0;
     private double xOffset;
     private double yOffset;
+    //You Rated text language
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -204,11 +206,12 @@ public class RestaurantActivity implements Initializable {
     public void rateRestaurant(ActionEvent event) throws IOException {
         int rating = Integer.parseInt(((Button) event.getSource()).getId());
         restaurant.addRating(rating);
+        //TODO: you rated
         your_rate.setText("You Rated");
         stars.setDisable(true);
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-        byte[] query = ("OH" + restaurant.getId() + "/" + rating).getBytes();
+        byte[] query = ("OR" + restaurant.getId() + "/" + rating).getBytes();
         wr.write(query, 0, query.length);
         wr.close();
         socket.close();
@@ -329,7 +332,7 @@ public class RestaurantActivity implements Initializable {
 
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-        byte[] query = ("CH" + restaurant.getId() + "/" + comment.toString()).getBytes();
+        byte[] query = ("CR" + restaurant.getId() + "/" + comment.toString()).getBytes();
         wr.write(query, 0, query.length);
         wr.close();
         socket.close();
@@ -382,5 +385,4 @@ public class RestaurantActivity implements Initializable {
             timeline.play();
         }
     }
-
 }
