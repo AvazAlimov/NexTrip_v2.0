@@ -74,15 +74,13 @@ public class ThingsToDoActivity implements Initializable {
     public ImageView image_view;
     public VBox left_layout;
     public ImageView info_icon;
-    public Label ageLimit;
-    public Label age_limit_header;
     public Label your_rate_header;
     public JFXButton rules_button;
     public GridPane rules_layout;
     public ImageView rules_icon;
     public Label rules_header;
     public Label rules_text;
-    private Entertaining entertaining;
+    private ThingsToDo thingsToDo;
     private ArrayList<Image> images;
     private int position = 0;
     private double xOffset;
@@ -90,26 +88,25 @@ public class ThingsToDoActivity implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        entertaining = Main.entertaining;
+        thingsToDo = Main.thingsToDo;
         images = new ArrayList<>();
         loadRating();
-        name.setText(entertaining.getName());
-        this.location.setText(entertaining.getLocation());
-        price.setText(entertaining.getPrice() + "");
-        ageLimit.setText(entertaining.getAgeLimit() + " +");
-        info_text.setText(entertaining.getInfo());
-        rules_text.setText(entertaining.getRules());
+        name.setText(thingsToDo.getName());
+        this.location.setText(thingsToDo.getLocation());
+        price.setText(thingsToDo.getPrice() + "");
+        info_text.setText(thingsToDo.getInfo());
+        rules_text.setText(thingsToDo.getRules());
         countRates();
         addAmenities();
         addContacts();
-        entertaining.getComments().forEach(this::addCommentItem);
+        thingsToDo.getComments().forEach(this::addCommentItem);
 
         image_view.fitWidthProperty().bind(Main.stage.widthProperty().divide(2.6));
         image_view.fitHeightProperty().bind(Main.stage.heightProperty().divide(2.6));
 
         ExecutorService service = new ScheduledThreadPoolExecutor(2);
         Runnable runnable = () -> {
-            for (String path : entertaining.getPhotos()) {
+            for (String path : thingsToDo.getPhotos()) {
                 try {
                     images.add(loadImage(path));
                 } catch (IOException e) {
@@ -192,17 +189,17 @@ public class ThingsToDoActivity implements Initializable {
         countRates();
         float sum = 0;
         float rating = 0;
-        for (int i = 0; i < entertaining.getRatings().size(); i++)
-            sum += entertaining.getRatings().get(i);
+        for (int i = 0; i < thingsToDo.getRatings().size(); i++)
+            sum += thingsToDo.getRatings().get(i);
 
-        if (entertaining.getRatings().size() > 0)
-            rating = (sum / entertaining.getRatings().size()) - 1.0f;
+        if (thingsToDo.getRatings().size() > 0)
+            rating = (sum / thingsToDo.getRatings().size()) - 1.0f;
 
-        for (int i = 0; i < entertaining.getRating(); i++)
+        for (int i = 0; i < thingsToDo.getRating(); i++)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
-        for (int i = 4; i >= entertaining.getRating(); i--)
+        for (int i = 4; i >= thingsToDo.getRating(); i--)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
-        rate_number.setText("based on " + entertaining.getRatings().size() + " reviews");
+        rate_number.setText("based on " + thingsToDo.getRatings().size() + " reviews");
         rate.setText(String.format("%.01f", (rating == 0.0f ? 0.0f : (rating + 1.0f))));
         rate_text.setText(Main.Rating[(int) (rating > -1 ? rating : 0)]);
     }
@@ -213,12 +210,12 @@ public class ThingsToDoActivity implements Initializable {
 
     public void rateEntertaining(ActionEvent event) throws IOException {
         int rating = Integer.parseInt(((Button) event.getSource()).getId());
-        entertaining.addRating(rating);
+        thingsToDo.addRating(rating);
         your_rate.setText("You Rated");
         stars.setDisable(true);
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-        byte[] query = ("OE" + entertaining.getId() + "/" + rating).getBytes();
+        byte[] query = ("OE" + thingsToDo.getId() + "/" + rating).getBytes();
         wr.write(query, 0, query.length);
         wr.close();
         socket.close();
@@ -226,7 +223,8 @@ public class ThingsToDoActivity implements Initializable {
 
     private void countRates() {
         int[] ratings = new int[]{0, 0, 0, 0, 0};
-        for (int rating : entertaining.getRatings())
+
+        for (int rating : thingsToDo.getRatings())
             ratings[rating - 1]++;
         bad_number.setText(ratings[0] + "");
         normal_number.setText(ratings[1] + "");
@@ -236,7 +234,7 @@ public class ThingsToDoActivity implements Initializable {
     }
 
     private void addAmenities() {
-        for (String amenity : entertaining.getAmenties()) {
+        for (String amenity : thingsToDo.getAmenties()) {
             HBox box = new HBox(20);
             box.setStyle("-fx-padding: 5; -fx-spacing: 10;");
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("../Resources/Icons/checked.png"))));
@@ -250,7 +248,7 @@ public class ThingsToDoActivity implements Initializable {
     }
 
     private void addContacts() {
-        for (Contact contact : entertaining.getContacts()) {
+        for (Contact contact : thingsToDo.getContacts()) {
             JFXButton button = new JFXButton();
             button.setStyle("-fx-padding: 5; -fx-background-color: transparent; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';");
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("../Resources/Icons/" + contact.getType() + ".png"))));
@@ -335,11 +333,11 @@ public class ThingsToDoActivity implements Initializable {
         comment.setWrittenDate(new Date(LocalDateTime.now().getDayOfMonth(), LocalDateTime.now().getMonth().getValue(), LocalDateTime.now().getYear()));
         comment.setComment(comment_text.getText());
         addCommentItem(comment);
-        entertaining.addComment(comment);
+        thingsToDo.addComment(comment);
 
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-        byte[] query = ("CE" + entertaining.getId() + "/" + comment.toString()).getBytes();
+        byte[] query = ("CE" + thingsToDo.getId() + "/" + comment.toString()).getBytes();
         wr.write(query, 0, query.length);
         wr.close();
         socket.close();
