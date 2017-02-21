@@ -71,11 +71,12 @@ public class HotelActivity implements Initializable {
     public JFXTextField comment_text;
     public Label comment_header;
     public ImageView image_view;
-    private double xOffset;
-    private double yOffset;
     public VBox left_layout;
     private Hotel hotel;
     private ArrayList<Image> images;
+    private int position = 0;
+    private double xOffset;
+    private double yOffset;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -91,8 +92,8 @@ public class HotelActivity implements Initializable {
         addContacts();
         hotel.getComments().forEach(this::addCommentItem);
 
-        image_view.fitWidthProperty().bind(Main.stage.widthProperty().divide(2.3));
-        image_view.fitHeightProperty().bind(Main.stage.heightProperty().divide(2.3));
+        image_view.fitWidthProperty().bind(Main.stage.widthProperty().divide(2.6));
+        image_view.fitHeightProperty().bind(Main.stage.heightProperty().divide(2.6));
 
         ExecutorService service = new ScheduledThreadPoolExecutor(2);
         //Executor executor = Executors.newSingleThreadExecutor();
@@ -349,4 +350,37 @@ public class HotelActivity implements Initializable {
         comments_container.getChildren().add(item);
         comment_text.setText("");
     }
+
+    public void prevImage() {
+        if (position >= 1) {
+            KeyValue value = new KeyValue(image_view.opacityProperty(), 0.2);
+            Timeline timeline = new Timeline(new KeyFrame(new Duration(200), value));
+            timeline.setCycleCount(1);
+            timeline.setOnFinished(event -> {
+                image_view.setImage(images.get(--position));
+                KeyValue value2 = new KeyValue(image_view.opacityProperty(), 1.0);
+                Timeline timeline2 = new Timeline(new KeyFrame(new Duration(200), value2));
+                timeline2.setCycleCount(1);
+                timeline2.play();
+            });
+            timeline.play();
+        }
+    }
+
+    public void nextImage() {
+        if (position + 1 < images.size()) {
+            KeyValue value = new KeyValue(image_view.opacityProperty(), 0.2);
+            Timeline timeline = new Timeline(new KeyFrame(new Duration(200), value));
+            timeline.setCycleCount(1);
+            timeline.setOnFinished(event -> {
+                image_view.setImage(images.get(++position));
+                KeyValue value2 = new KeyValue(image_view.opacityProperty(), 1.0);
+                Timeline timeline2 = new Timeline(new KeyFrame(new Duration(200), value2));
+                timeline2.setCycleCount(1);
+                timeline2.play();
+            });
+            timeline.play();
+        }
+    }
+
 }

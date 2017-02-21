@@ -89,10 +89,14 @@
 
             <Separator VBox.vgrow="SOMETIMES" maxHeight="Infinity" visible="false"/>
 
-            <HBox alignment="CENTER" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
+            <HBox spacing="10" alignment="CENTER" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
+                <JFXButton onAction="#prevImage" prefWidth="40" prefHeight="40"
+                           style="-fx-background-color: lightgray; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z'"/>
                 <ImageView fx:id="image_view" fitWidth="560" fitHeight="280">
                     <Image url="/Resources/Pictures/stock-photo-145774837.jpg"/>
                 </ImageView>
+                <JFXButton onAction="#nextImage" prefWidth="40" prefHeight="40"
+                           style="-fx-background-color: lightgray; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';"/>
             </HBox>
 
             <Separator VBox.vgrow="SOMETIMES" maxHeight="Infinity" visible="false"/>
@@ -196,7 +200,8 @@
                         <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
                               style="-fx-background-color: #212121;"/>
                     </HBox>
-                    <ScrollPane VBox.vgrow="ALWAYS" fitToHeight="true" fitToWidth="true" minHeight="400" prefHeight="400" style="-fx-border-width: 0;">
+                    <ScrollPane VBox.vgrow="ALWAYS" fitToHeight="true" fitToWidth="true" minHeight="400"
+                                prefHeight="400" style="-fx-border-width: 0;">
                         <VBox spacing="20" prefHeight="400">
                             <VBox fx:id="comments_container" spacing="10"/>
                         </VBox>
