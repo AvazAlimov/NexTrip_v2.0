@@ -35,6 +35,10 @@
     -fx-font-size: 18;
 }
 
+#sits_header{
+    -fx-font-size: 24;
+}
+
 #right_part {
     -fx-background-color: #212121;
     -fx-background-radius: 0 16 16 0;

@@ -19,6 +19,7 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.effect.InnerShadow?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
             prefWidth="600.0"
             xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
@@ -154,35 +155,16 @@
 
                     <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
 
-                    <VBox alignment="CENTER">
-                        <Label fx:id="your_rate_header" text="Price"/>
-                        <HBox alignment="TOP_CENTER" spacing="5">
-                            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true"
-                                       disable="true">
-                                <Image url="/Resources/Icons/dollar_icon.png" smooth="false"/>
-                            </ImageView>
-                            <Label fx:id="price" text="349.5"/>
-                        </HBox>
-                    </VBox>
-
-
-                    <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
-
-                    <VBox alignment="CENTER">
-                        <Label fx:id="number_of_sits_header" text="№ of sits"/>
-                        <HBox alignment="TOP_CENTER" spacing="5">
-                            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
-                                       disable="true">
-                                <Image url="/Resources/Icons/Restaurant Table1_50px.png" smooth="false"/>
-                            </ImageView>
-                        </HBox>
+                    <VBox alignment="CENTER" spacing="10">
+                        <Label fx:id="sits_header" text="Sits"/>
+                        <Label fx:id="sits_text"/>
                     </VBox>
                 </HBox>
 
                 <JFXButton fx:id="info_button" maxWidth="Infinity" text="SHOW MORE INFORMATION" onAction="#showInfo"/>
 
 
-                <JFXButton fx:id="menu_button" text="MENU" onAction="#showInfo">
+                <JFXButton id="menu_button" text="MENU" onAction="#showInfo">
                     <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0">
                             <Image url="/Resources/Icons/Restaurant Menu_48px.png"/>
@@ -289,7 +271,7 @@
         <VBox alignment="CENTER" spacing="10"
               style="-fx-padding: 16; -fx-background-color: #4FC3F7; -fx-background-radius: 8;">
             <HBox spacing="20" alignment="CENTER_LEFT">
-                <ImageView fx:id="info_icon" fitHeight="56" fitWidth="56">
+                <ImageView id="info_icon" fitHeight="56" fitWidth="56">
                     <Image url="/Resources/Icons/info1_(64px).png"/>
                 </ImageView>
                 <Label fx:id="information" text="Information"/>

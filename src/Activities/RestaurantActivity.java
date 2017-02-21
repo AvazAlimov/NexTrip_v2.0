@@ -73,6 +73,10 @@ public class RestaurantActivity implements Initializable {
     public Label comment_header;
     public ImageView image_view;
     public VBox left_layout;
+    public Label types_text;
+    public HBox types_container;
+    public Label sits_header;
+    public Label sits_text;
     private Restaurant restaurant;
     private ArrayList<Image> images;
     private int position = 0;
@@ -87,7 +91,7 @@ public class RestaurantActivity implements Initializable {
         loadRating();
         name.setText(restaurant.getName());
         this.location.setText(restaurant.getLocation());
-        //price.setText(restaurant.getStartingPrice() + " - " + restaurant.getEndingPrice());
+        sits_text.setText(restaurant.getNumberOfSeats() + "");
         info_text.setText(restaurant.getInfo());
         countRates();
         addAmenities();
