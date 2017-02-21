@@ -86,6 +86,9 @@ public class HotelActivity implements Initializable {
         addAmenities();
         addContacts();
         hotel.getComments().forEach(this::addCommentItem);
+
+        image_view.fitWidthProperty().bind(Main.stage.widthProperty().divide(2.3));
+        image_view.fitHeightProperty().bind(Main.stage.heightProperty().divide(2.3));
     }
 
     public void closeWindow() {

@@ -89,11 +89,11 @@
 
             <Separator VBox.vgrow="SOMETIMES" maxHeight="Infinity" visible="false"/>
 
-            <VBox alignment="CENTER">
+            <HBox alignment="CENTER" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);">
                 <ImageView fx:id="image_view" fitWidth="560" fitHeight="280">
-                    <Image url="/Resources/Pictures/MainWindow_background.jpg"/>
+                    <Image url="/Resources/Pictures/stock-photo-145774837.jpg"/>
                 </ImageView>
-            </VBox>
+            </HBox>
 
             <Separator VBox.vgrow="SOMETIMES" maxHeight="Infinity" visible="false"/>
 
