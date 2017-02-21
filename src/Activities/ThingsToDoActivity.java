@@ -80,6 +80,9 @@ public class ThingsToDoActivity implements Initializable {
     public ImageView rules_icon;
     public Label rules_header;
     public Label rules_text;
+    public Label date_text;
+    public Label startDate;
+    public Label endDate;
     private ThingsToDo thingsToDo;
     private ArrayList<Image> images;
     private int position = 0;
@@ -96,6 +99,8 @@ public class ThingsToDoActivity implements Initializable {
         price.setText(thingsToDo.getPrice() + "");
         info_text.setText(thingsToDo.getInfo());
         rules_text.setText(thingsToDo.getRules());
+        startDate.setText(thingsToDo.getStartDate().toString());
+        endDate.setText(thingsToDo.getEndDate().toString());
         countRates();
         addAmenities();
         addContacts();

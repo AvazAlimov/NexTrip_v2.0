@@ -162,3 +162,9 @@
     -fx-border-color: lightgrey;
     -fx-border-radius: 8;
 }
+
+#date_text {
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}

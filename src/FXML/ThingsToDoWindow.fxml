@@ -206,6 +206,19 @@
 
                 <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
                     <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
+                        <Label fx:id="date_text" text="HOLDING DATES"/>
+                        <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
+                              style="-fx-background-color: #212121;"/>
+                    </HBox>
+                    <HBox spacing="20" alignment="CENTER">
+                        <Label fx:id="startDate"/>
+                        <Label text="-"/>
+                        <Label fx:id="endDate"/>
+                    </HBox>
+                </VBox>
+
+                <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
+                    <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
                         <Label fx:id="amenities_text" text="HOTEL AMENITIES"/>
                         <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
                               style="-fx-background-color: #212121;"/>
