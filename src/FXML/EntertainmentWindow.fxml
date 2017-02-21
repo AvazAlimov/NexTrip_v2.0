@@ -180,7 +180,7 @@
 
                 <JFXButton fx:id="info_button" maxWidth="Infinity" text="SHOW MORE INFORMATION" onAction="#showInfo"/>
 
-                <JFXButton fx:id="rules_button" maxWidth="Infinity" text="SHOW MORE INFORMATION" onAction="#showRules"/>
+                <JFXButton fx:id="rules_button" maxWidth="Infinity" text="SHOW RULES" onAction="#showRules"/>
 
                 <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
                     <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
