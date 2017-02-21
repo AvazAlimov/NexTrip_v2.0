@@ -226,7 +226,7 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(52, 170, 220, 0.7); -fx-background-radius: 4;");
 
         Image value = null;
         if (hotel.getPhotos().size() > 0)
@@ -293,7 +293,7 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(52, 170, 220, 0.7); -fx-background-radius: 4;");
 
         Image value = null;
         try {
@@ -360,7 +360,7 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(52, 170, 220, 0.7); -fx-background-radius: 4;");
 
         Image value = null;
         try {
@@ -427,7 +427,7 @@ public class MainActivity implements Initializable {
         ColumnConstraints col3 = new ColumnConstraints();
         item.getColumnConstraints().addAll(col1, col2, col3);
         item.setHgap(10);
-        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(0, 100, 100, 0.5); -fx-background-radius: 4;");
+        item.setStyle("-fx-padding: 10; -fx-background-color: rgba(52, 170, 220, 0.7); -fx-background-radius: 4;");
 
         Image value = null;
         try {
