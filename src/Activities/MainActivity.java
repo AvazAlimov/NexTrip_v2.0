@@ -335,7 +335,7 @@ public class MainActivity implements Initializable {
                 try {
                     Main.restaurant = restaurant;
                     Parent parent = FXMLLoader.load(getClass().getResource("../FXML/RestaurantWindow.fxml"));
-                    Scene scene = new Scene(parent);
+                    Scene scene = new Scene(parent, 1280, 720);
                     Main.stage.hide();
                     Main.stage.setScene(scene);
                     Main.stage.show();
@@ -402,7 +402,7 @@ public class MainActivity implements Initializable {
                 try {
                     Main.thingsToDo = thingsToDo;
                     Parent parent = FXMLLoader.load(getClass().getResource("../FXML/ThingsToDoWindow.fxml"));
-                    Scene scene = new Scene(parent);
+                    Scene scene = new Scene(parent, 1280, 720);
                     Main.stage.hide();
                     Main.stage.setScene(scene);
                     Main.stage.show();
@@ -468,8 +468,8 @@ public class MainActivity implements Initializable {
             public void handle(MouseEvent event) {
                 try {
                     Main.entertaining = entertaining;
-                    Parent parent = FXMLLoader.load(getClass().getResource("../FXML/EntertainingWindow.fxml"));
-                    Scene scene = new Scene(parent);
+                    Parent parent = FXMLLoader.load(getClass().getResource("../FXML/EntertainmentWindow.fxml"));
+                    Scene scene = new Scene(parent, 1280, 720);
                     Main.stage.hide();
                     Main.stage.setScene(scene);
                     Main.stage.show();
