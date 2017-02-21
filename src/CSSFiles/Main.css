@@ -15,28 +15,32 @@
     -fx-font-family: FuturaExtended, monospace;
 }
 
-.button:disabled{
+.button:disabled {
     -fx-opacity: 1.0;
 }
 
 .button:hover {
     -fx-background-color: #007aff;
 }
-.combo-box{
-    -fx-background-color:#34aadc ;
+
+.combo-box {
+    -fx-background-color: #34aadc;
 
 }
+
 .combo-box > .list-cell {
     -fx-background: transparent;
     -fx-background-color: transparent;
     -fx-text-fill: -fx-text-base-color;
     -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
 }
+
 .combo-box-base > .arrow-button {
     -fx-background-radius: 0 3 3 0, 0 2 2 0, 0 1 1 0;
     -fx-padding: 0.5em 0.667em 0.5em 0.833333em; /* 6 8 6 10 */
     -fx-background-color: transparent;
 }
+
 .text-field {
     /*-fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);*/
     -fx-font-size: 18;
@@ -140,7 +144,7 @@
 }
 
 .date-picker .text-field {
-    -fx-control-inner-background: white ;
+    -fx-control-inner-background: white;
     -fx-effect: dropshadow(gaussian, red, 0, 0, 0, 0);
 }
 
