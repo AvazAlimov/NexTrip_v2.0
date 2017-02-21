@@ -1,5 +1,6 @@
 package Activities;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -32,6 +33,7 @@ public class GuideActivity implements Initializable {
     public JFXComboBox<String> languageBox;
     public HBox pageContainer;
     public AnchorPane parent;
+    public JFXButton skip_text;
     private double xOffset;
     private double yOffset;
 
@@ -57,6 +59,8 @@ public class GuideActivity implements Initializable {
         secondText.setText(Main.Language.getTranslation("secondGuide"));
         thirdTextLabel.setText(Main.Language.getTranslation("thirdGuideLabel"));
         thirdText.setText(Main.Language.getTranslation("thirdGuide"));
+        skip_text.setText(Main.Language.getTranslation("skip"));
+
     }
 
     public void transformContainer(MouseEvent actionEvent) {

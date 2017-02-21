@@ -54,7 +54,7 @@
                         onMousePressed="#transformContainer"/>
             </HBox>
 
-            <JFXButton GridPane.rowIndex="3" text="SKIP" onAction="#nextWindow"
+            <JFXButton GridPane.rowIndex="3" fx:id="skip_text" text="SKIP" onAction="#nextWindow"
                        alignment="CENTER"
                        style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 20; -fx-cursor: hand; -fx-background-radius: 20;"/>
 
