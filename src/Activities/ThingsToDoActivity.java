@@ -208,14 +208,14 @@ public class ThingsToDoActivity implements Initializable {
         loadRating();
     }
 
-    public void rateEntertaining(ActionEvent event) throws IOException {
+    public void rateThingsTodo(ActionEvent event) throws IOException {
         int rating = Integer.parseInt(((Button) event.getSource()).getId());
         thingsToDo.addRating(rating);
         your_rate.setText("You Rated");
         stars.setDisable(true);
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-        byte[] query = ("OE" + thingsToDo.getId() + "/" + rating).getBytes();
+        byte[] query = ("OT" + thingsToDo.getId() + "/" + rating).getBytes();
         wr.write(query, 0, query.length);
         wr.close();
         socket.close();
@@ -337,7 +337,7 @@ public class ThingsToDoActivity implements Initializable {
 
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-        byte[] query = ("CE" + thingsToDo.getId() + "/" + comment.toString()).getBytes();
+        byte[] query = ("CT" + thingsToDo.getId() + "/" + comment.toString()).getBytes();
         wr.write(query, 0, query.length);
         wr.close();
         socket.close();

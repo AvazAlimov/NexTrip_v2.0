@@ -138,15 +138,15 @@
 
                         <HBox fx:id="stars" spacing="5" onMouseExited="#restoreStars" alignment="CENTER">
                             <Button id="1" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
+                                    onAction="#rateThingsTodo" style="-fx-cursor: hand;"/>
                             <Button id="2" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
+                                    onAction="#rateThingsTodo" style="-fx-cursor: hand;"/>
                             <Button id="3" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
+                                    onAction="#rateThingsTodo" style="-fx-cursor: hand;"/>
                             <Button id="4" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
+                                    onAction="#rateThingsTodo" style="-fx-cursor: hand;"/>
                             <Button id="5" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
+                                    onAction="#rateThingsTodo" style="-fx-cursor: hand;"/>
                         </HBox>
                     </VBox>
 
