@@ -22,15 +22,17 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
-import java.io.BufferedOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 public class HotelActivity implements Initializable {
-    public Image image;
     public Label rate;
     public VBox right_part;
     public Label rate_text;
@@ -73,10 +75,12 @@ public class HotelActivity implements Initializable {
     private double yOffset;
     public VBox left_layout;
     private Hotel hotel;
+    private ArrayList<Image> images;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         hotel = Main.hotel;
+        images = new ArrayList<>();
         loadRating();
         name.setText(hotel.getName());
         this.location.setText(hotel.getLocation());
@@ -89,6 +93,56 @@ public class HotelActivity implements Initializable {
 
         image_view.fitWidthProperty().bind(Main.stage.widthProperty().divide(2.3));
         image_view.fitHeightProperty().bind(Main.stage.heightProperty().divide(2.3));
+
+        ExecutorService service = new ScheduledThreadPoolExecutor(2);
+        //Executor executor = Executors.newSingleThreadExecutor();
+        Runnable runnable = () -> {
+            for (String path : hotel.getPhotos()) {
+                try {
+                    images.add(loadImage(path));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (images.size() > 0)
+                image_view.setImage(images.get(0));
+            System.out.println(images.size());
+            service.shutdown();
+        };
+        //executor.execute(runnable);
+        service.submit(runnable);
+    }
+
+    private Image loadImage(String path) throws IOException {
+        Socket socket = new Socket(Main.serverHost, 2332);
+        BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+        byte[] query = ("P" + path).getBytes();
+        wr.write(query, 0, query.length);
+        wr.close();
+
+        ServerSocket serverSocket = new ServerSocket(2333);
+        Socket accept = serverSocket.accept();
+
+        BufferedInputStream stream = new BufferedInputStream(accept.getInputStream());
+
+        File file = File.createTempFile("temp", ".nxtp");
+        FileOutputStream fil2 = new FileOutputStream(file);
+
+        byte[] buf = new byte[1024];
+        int read;
+
+        while ((read = stream.read(buf)) != -1)
+            fil2.write(buf, 0, read);
+
+        Image image = new Image(String.valueOf(file.toURI().toURL()));
+
+        fil2.close();
+        file.deleteOnExit();
+        stream.close();
+        accept.close();
+        serverSocket.close();
+
+        return image;
     }
 
     public void closeWindow() {
@@ -186,7 +240,6 @@ public class HotelActivity implements Initializable {
 
     private void addContacts() {
         for (Contact contact : hotel.getContacts()) {
-            System.out.println(contact.getType());
             JFXButton button = new JFXButton();
             button.setStyle("-fx-padding: 5; -fx-background-color: transparent; -fx-shape: 'M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255s255-114.75 255-255S395.25 0 255 0z';");
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("../Resources/Icons/" + contact.getType() + ".png"))));
