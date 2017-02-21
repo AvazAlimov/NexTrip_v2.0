@@ -74,6 +74,9 @@ public class EntertainmentActivity implements Initializable {
     public ImageView image_view;
     public VBox left_layout;
     public ImageView info_icon;
+    public Label ageLimit;
+    public Label age_limit_header;
+    public Label your_rate_header;
     private Entertaining entertaining;
     private ArrayList<Image> images;
     private int position = 0;
@@ -87,7 +90,8 @@ public class EntertainmentActivity implements Initializable {
         loadRating();
         name.setText(entertaining.getName());
         this.location.setText(entertaining.getLocation());
-        //price.setText(entertaining.getStartingPrice() + " - " + entertaining.getEndingPrice());
+        price.setText(entertaining.getPrice() + "");
+        ageLimit.setText(entertaining.getAgeLimit() + " +");
         info_text.setText(entertaining.getInfo());
         countRates();
         addAmenities();
