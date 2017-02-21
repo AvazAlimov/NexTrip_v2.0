@@ -154,7 +154,7 @@
                     <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
 
                     <VBox alignment="CENTER" spacing="10">
-                        <Label fx:id="sits_header" text="Sits"/>
+                        <Label fx:id="sits_header" text="Seats"/>
                         <Label fx:id="sits_text"/>
                     </VBox>
                 </HBox>
@@ -181,11 +181,6 @@
                         <Separator HBox.hgrow="SOMETIMES" visible="false"/>
                         <Label fx:id="fantastic_number" text="80"/>
                     </HBox>
-                    <Separator>
-                        <effect>
-                            <InnerShadow color="#00C853"/>
-                        </effect>
-                    </Separator>
                     <HBox style="-fx-padding: 5;" maxWidth="250">
                         <Label fx:id="excellent_text" text="Excellent"/>
                         <Separator HBox.hgrow="SOMETIMES" visible="false"/>
