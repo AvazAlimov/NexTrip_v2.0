@@ -210,7 +210,7 @@
                         <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
                               style="-fx-background-color: #212121;"/>
                     </HBox>
-                    <HBox spacing="20" alignment="CENTER">
+                    <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10;">
                         <Label fx:id="startDate"/>
                         <Label text="-"/>
                         <Label fx:id="endDate"/>
