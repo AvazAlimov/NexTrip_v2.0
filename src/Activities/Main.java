@@ -6,8 +6,6 @@ import Classes.Restaurant;
 import Classes.ThingsToDo;
 import au.com.bytecode.opencsv.CSVReader;
 
-import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
-import com.sun.javafx.application.HostServicesDelegate;
 import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.fxml.FXMLLoader;
@@ -37,14 +35,14 @@ public class Main extends Application {
     static Stage stage;
     static String serverHost = "192.168.16.41";
     static String Rating[] = {"Bad", "Normal", "Good", "Excellent", "Fantastic"};
-    static HostServices hostServices ;
+    static HostServices hostServices;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         hostServices = getHostServices();
         Locale.setDefault(Locale.ENGLISH);
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/StartWindow.fxml"));
         Scene scene = new Scene(root, 1280, 720);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
@@ -53,22 +51,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("Resources/icon.png"));
         primaryStage.show();
-
-        ExecutorService service = Executors.newCachedThreadPool();
-        Runnable runnable = () -> {
-            try {
-                loadHotels();
-                loadRestaurants();
-                loadEntertaining();
-                loadThingsToDo();
-                System.out.println("Data were downloaded");
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                service.shutdown();
-            }
-        };
-        service.submit(runnable);
+        loadAllData();
     }
 
     @Override
@@ -100,6 +83,24 @@ public class Main extends Application {
         Language.setLanguage("english");
 
         launch(args);
+    }
+
+    private void loadAllData() {
+        ExecutorService service = Executors.newCachedThreadPool();
+        Runnable runnable = () -> {
+            try {
+                loadHotels();
+                loadRestaurants();
+                loadEntertaining();
+                loadThingsToDo();
+                System.out.println("Data were downloaded");
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                service.shutdown();
+            }
+        };
+        service.submit(runnable);
     }
 
     @SuppressWarnings("unused")
