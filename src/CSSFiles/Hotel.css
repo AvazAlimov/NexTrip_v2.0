@@ -103,6 +103,11 @@
     -fx-font-size: 24;
     -fx-font-weight: bold;
 }
+#types_text{
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
 
 #contact_text {
     -fx-text-fill: #212121;

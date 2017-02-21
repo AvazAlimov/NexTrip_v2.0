@@ -201,7 +201,7 @@ public class RestaurantActivity implements Initializable {
         loadRating();
     }
 
-    public void raterestaurant(ActionEvent event) throws IOException {
+    public void rateRestaurant(ActionEvent event) throws IOException {
         int rating = Integer.parseInt(((Button) event.getSource()).getId());
         restaurant.addRating(rating);
         your_rate.setText("You Rated");
