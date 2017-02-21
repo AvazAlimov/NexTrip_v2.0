@@ -170,6 +170,7 @@
 
 #comments_container {
     -fx-padding: 16;
+    -fx-background-radius: 20;
 }
 
 #image_view {

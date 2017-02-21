@@ -244,7 +244,7 @@
                     <HBox fx:id="contact_container" spacing="20" alignment="CENTER_LEFT"/>
                 </VBox>
 
-                <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
+                <VBox alignment="CENTER_LEFT" style="-fx-padding: 20; -fx-spacing: 10;">
                     <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
                         <Label fx:id="comment_header" text="COMMENTS"/>
                         <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"

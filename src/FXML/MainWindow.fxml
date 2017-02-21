@@ -57,9 +57,9 @@
             <RowConstraints vgrow="SOMETIMES"/>
         </rowConstraints>
 
-        <HBox style="-fx-effect: dropshadow(gaussian, #212121, 4, 0, 0, 0); -fx-border-width: 0 0 7 0; -fx-border-color: #FFA000;">
+        <HBox style="-fx-effect: dropshadow(gaussian, #212121, 4, 0, 0, 0); -fx-border-width: 0 0 7 0; -fx-border-color: #007aff;">
             <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Hotels" prefHeight="40" onAction="#switchTabs"
-                       style="-fx-background-color: #FFA000;">
+                       style="-fx-background-color: #007aff;">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                         <Image smooth="false" url="/Resources/Icons/Building_40px.png"/>

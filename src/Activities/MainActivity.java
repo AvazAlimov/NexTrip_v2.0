@@ -53,7 +53,7 @@ public class MainActivity implements Initializable {
         Button btn = (Button) event.getSource();
         HBox box = (HBox) btn.getParent();
         for (Node item : box.getChildren())
-            item.setStyle("-fx-background-color: #FFC107;");
+            item.setStyle("-fx-background-color: #34aadc;");
         choosenType = btn.getText();
         container.getChildren().clear();
         switch (btn.getText()) {
@@ -72,7 +72,7 @@ public class MainActivity implements Initializable {
             default:
                 break;
         }
-        btn.setStyle("-fx-background-color: #FFA000;");
+        btn.setStyle("-fx-background-color: #007aff;");
     }
 
     public void searchObject() {
@@ -253,7 +253,7 @@ public class MainActivity implements Initializable {
         for (int i = 0; i < hotel.getRating(); i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
-            star.setStyle("-fx-shape: " + Main.filledStar);
+            star.setStyle(" -fx-background-color: #FFC107; -fx-shape: " + Main.filledStar);
             star.setDisable(true);
             ratingBox.getChildren().add(star);
             maxRate--;
@@ -261,7 +261,7 @@ public class MainActivity implements Initializable {
         for (int i = 0; i < maxRate; i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
-            star.setStyle("-fx-shape: " + Main.emptyStar);
+            star.setStyle(" -fx-background-color: #FFC107; -fx-shape: " + Main.emptyStar);
             star.setDisable(true);
             ratingBox.getChildren().add(star);
         }
@@ -319,7 +319,7 @@ public class MainActivity implements Initializable {
         for (int i = 0; i < restaurant.getRating(); i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
-            star.setStyle("-fx-shape: " + Main.filledStar);
+            star.setStyle(" -fx-background-color: #FFC107; -fx-shape: " + Main.filledStar);
             star.setDisable(true);
             ratingBox.getChildren().add(star);
             maxRate--;
@@ -327,7 +327,7 @@ public class MainActivity implements Initializable {
         for (int i = 0; i < maxRate; i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
-            star.setStyle("-fx-shape: " + Main.emptyStar);
+            star.setStyle(" -fx-background-color: #FFC107; -fx-shape: " + Main.emptyStar);
             star.setDisable(true);
             ratingBox.getChildren().add(star);
         }
@@ -386,7 +386,7 @@ public class MainActivity implements Initializable {
         for (int i = 0; i < thingsToDo.getRating(); i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
-            star.setStyle("-fx-shape: " + Main.filledStar);
+            star.setStyle(" -fx-background-color: #FFC107; -fx-shape: " + Main.filledStar);
             star.setDisable(true);
             ratingBox.getChildren().add(star);
             maxRate--;
@@ -394,7 +394,7 @@ public class MainActivity implements Initializable {
         for (int i = 0; i < maxRate; i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
-            star.setStyle("-fx-shape: " + Main.emptyStar);
+            star.setStyle(" -fx-background-color: #FFC107; -fx-shape: " + Main.emptyStar);
             star.setDisable(true);
             ratingBox.getChildren().add(star);
         }
@@ -453,7 +453,7 @@ public class MainActivity implements Initializable {
         for (int i = 0; i < entertaining.getRating(); i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
-            star.setStyle("-fx-shape: " + Main.filledStar);
+            star.setStyle(" -fx-background-color: #FFC107; -fx-shape: " + Main.filledStar);
             star.setDisable(true);
             ratingBox.getChildren().add(star);
             maxRate--;
@@ -461,7 +461,7 @@ public class MainActivity implements Initializable {
         for (int i = 0; i < maxRate; i++) {
             Button star = new Button();
             star.setPrefSize(40.0, 40.0);
-            star.setStyle("-fx-shape: " + Main.emptyStar);
+            star.setStyle(" -fx-background-color: #FFC107; -fx-shape: " + Main.emptyStar);
             star.setDisable(true);
             ratingBox.getChildren().add(star);
         }

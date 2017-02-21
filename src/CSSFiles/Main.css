@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url("/Resources/Pictures/MainWindow_background.jpg");
+    -fx-background-image: url("/Resources/Pictures/nextrip_v_2.jpg");
     -fx-background-size: cover;
 }
 
@@ -9,7 +9,7 @@
     -fx-border-width: 0;
     -fx-background-insets: 0 0 1 0;
     -fx-background-radius: 0;
-    -fx-background-color: #FFC107;
+    -fx-background-color: #34aadc;
     -fx-font-size: 20;
     -fx-text-fill: #000;
     -fx-font-family: FuturaExtended, monospace;
@@ -20,10 +20,10 @@
 }
 
 .button:hover {
-    -fx-background-color: #FFA000;
+    -fx-background-color: #007aff;
 }
 .combo-box{
-    -fx-background-color:#FFC107 ;
+    -fx-background-color:#34aadc ;
 
 }
 .combo-box > .list-cell {
@@ -145,12 +145,12 @@
 }
 
 .date-picker {
-    -fx-base: #FFC107;
+    -fx-base: #34aadc;
     -fx-effect: dropshadow(gaussian, black, 10, 0, 0, 0);
 }
 
 .date-picker-popup > .calendar-grid {
-    -fx-background-color: derive(#FFC107, 60%);
+    -fx-background-color: derive(#34aadc, 60%);
     -fx-padding: 0;
 }
 
