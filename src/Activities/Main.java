@@ -35,7 +35,7 @@ public class Main extends Application {
     static ArrayList<Entertaining> entertainings = new ArrayList<>();
     static ArrayList<ThingsToDo> thingsToDos = new ArrayList<>();
     static Stage stage;
-    static String serverHost = "127.0.0.1";
+    static String serverHost = "192.168.16.41";
     static String Rating[] = {"Bad", "Normal", "Good", "Excellent", "Fantastic"};
     static HostServices hostServices ;
 
@@ -44,7 +44,7 @@ public class Main extends Application {
         hostServices = getHostServices();
         Locale.setDefault(Locale.ENGLISH);
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("../FXML/MainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../FXML/StartWindow.fxml"));
         Scene scene = new Scene(root, 1280, 720);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.initStyle(StageStyle.TRANSPARENT);

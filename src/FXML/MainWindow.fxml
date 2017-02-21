@@ -13,7 +13,7 @@
             fx:controller="Activities.MainActivity">
 
 
-    <HBox onMousePressed="#mousePressed" onMouseDragged="#mouseDragged" AnchorPane.topAnchor="0.0"
+    <HBox fx:id="title_layout" onMousePressed="#mousePressed" onMouseDragged="#mouseDragged" AnchorPane.topAnchor="0.0"
           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <Separator HBox.hgrow="ALWAYS" visible="false"/>
         <JFXButton prefWidth="42" prefHeight="42"
@@ -105,7 +105,7 @@
                            prefWidth="40.0" onAction="#addObjects">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                            <!--Image smooth="false" url="/Resources/search_icon2(128px).png"/-->
+                            <Image smooth="false" url="/Resources/Icons/Search_48px.png"/>
                         </ImageView>
                     </graphic>
                 </JFXButton>

@@ -2,6 +2,12 @@
 .root {
 
 }
+#title_layout{
+
+}
+#left_layout{
+    -fx-background-image: url("/Resources/Pictures/n.jpg");
+}
 
 #rate_layout {
     -fx-effect: dropshadow(gaussian, black, 5, 0, 0, 0);
@@ -21,6 +27,9 @@
     -fx-text-alignment: center;
     -fx-font-size: 20;
     -fx-font-weight: bold;
+}
+#your_rate{
+    -fx-font-size: 18;
 }
 
 #right_part {
@@ -46,12 +55,14 @@
     -fx-text-fill: white;
     -fx-font-size: 32;
     -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, black, 15, 0, 0, 0);
 }
 
 #location {
     -fx-text-fill: white;
-    -fx-font-size: 24;
+    -fx-font-size: 20;
     -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, black, 15, 0, 0, 0);
 }
 
 #your_rate {
@@ -69,11 +80,18 @@
 
 #info_button {
     -fx-background-color: lightskyblue;
-    -fx-text-fill: dodgerblue;
+    -fx-text-fill: #01579B;
     -fx-font-size: 24;
     -fx-cursor: hand;
+    -fx-background-radius: 7;
+    -fx-effect: dropshadow(gaussian, #212121, 10, 0, 0, 0);
 }
-
+#info_layout{
+    -fx-effect: dropshadow(gaussian, #212121, 15, 0, 0, 0);
+}
+#info_icon{
+    -fx-effect:dropshadow(gaussian, #212121, 10, 0, 0, 0);
+}
 #overall_rating {
     -fx-text-fill: #212121;
     -fx-font-size: 24;
