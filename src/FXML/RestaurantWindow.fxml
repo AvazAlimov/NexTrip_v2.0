@@ -129,7 +129,8 @@
 
         <ScrollPane GridPane.columnIndex="1" fitToHeight="true" fitToWidth="true">
 
-            <VBox alignment="TOP_CENTER" style="-fx-background-color: #FFF9C4;">
+            <VBox alignment="TOP_CENTER" spacing="10" style="-fx-background-color: #FFF9C4;">
+
 
                 <HBox alignment="CENTER" spacing="20" style="-fx-background-color: #FFF59D; -fx-padding: 40;">
                     <VBox alignment="CENTER">
@@ -147,12 +148,14 @@
                             <Button id="5" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
                                     onAction="#rateRestaurant" style="-fx-cursor: hand;"/>
                         </HBox>
+
+
                     </VBox>
 
                     <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
 
                     <VBox alignment="CENTER">
-                        <Label id="your_rate" text="Price Interval"/>
+                        <Label fx:id="your_rate_header" text="Price"/>
                         <HBox alignment="TOP_CENTER" spacing="5">
                             <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true"
                                        disable="true">
@@ -161,9 +164,31 @@
                             <Label fx:id="price" text="349.5"/>
                         </HBox>
                     </VBox>
+
+
+                    <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
+
+                    <VBox alignment="CENTER">
+                        <Label fx:id="number_of_sits_header" text="№ of sits"/>
+                        <HBox alignment="TOP_CENTER" spacing="5">
+                            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                       disable="true">
+                                <Image url="/Resources/Icons/Restaurant Table1_50px.png" smooth="false"/>
+                            </ImageView>
+                        </HBox>
+                    </VBox>
                 </HBox>
 
                 <JFXButton fx:id="info_button" maxWidth="Infinity" text="SHOW MORE INFORMATION" onAction="#showInfo"/>
+
+
+                <JFXButton fx:id="menu_button" text="MENU" onAction="#showInfo">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0">
+                            <Image url="/Resources/Icons/Restaurant Menu_48px.png"/>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
 
                 <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
                     <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
@@ -176,9 +201,9 @@
                         <Separator HBox.hgrow="SOMETIMES" visible="false"/>
                         <Label fx:id="fantastic_number" text="80"/>
                     </HBox>
-                    <Separator >
+                    <Separator>
                         <effect>
-                            <InnerShadow color="#00C853" />
+                            <InnerShadow color="#00C853"/>
                         </effect>
                     </Separator>
                     <HBox style="-fx-padding: 5;" maxWidth="250">
@@ -229,7 +254,7 @@
                     <HBox fx:id="contact_container" spacing="20" alignment="CENTER_LEFT"/>
                 </VBox>
 
-                <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
+                <VBox alignment="CENTER_LEFT" spacing="20" style="-fx-padding: 10;">
                     <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
                         <Label fx:id="comment_header" text="COMMENTS"/>
                         <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
@@ -241,7 +266,6 @@
                             <VBox fx:id="comments_container" spacing="10"/>
                         </VBox>
                     </ScrollPane>
-                    <Separator prefHeight="20" visible="false"/>
                     <HBox alignment="CENTER" maxWidth="Infinity">
                         <JFXTextField fx:id="comment_text" HBox.hgrow="ALWAYS"/>
                         <JFXButton onAction="#addComment" text="Send"/>

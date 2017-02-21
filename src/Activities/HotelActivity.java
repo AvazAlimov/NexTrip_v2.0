@@ -346,7 +346,7 @@ public class HotelActivity implements Initializable {
         item.getChildren().add(username);
         item.getChildren().add(source);
         item.getChildren().add(date);
-        item.setStyle("-fx-background-color: rgba(0, 100, 100, 0.5); -fx-padding: 10;");
+        item.setStyle("-fx-background-color: rgba(3,169,244, 0.8); -fx-padding: 10;");
         comments_container.getChildren().add(item);
         comment_text.setText("");
     }

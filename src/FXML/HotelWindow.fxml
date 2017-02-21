@@ -235,7 +235,7 @@
                     </ScrollPane>
                     <Separator prefHeight="20" visible="false"/>
                     <HBox alignment="CENTER" maxWidth="Infinity">
-                        <JFXTextField fx:id="comment_text" HBox.hgrow="ALWAYS"/>
+                        <JFXTextField fx:id="comment_text"  HBox.hgrow="ALWAYS"/>
                         <JFXButton onAction="#addComment" text="Send"/>
                     </HBox>
                 </VBox>
