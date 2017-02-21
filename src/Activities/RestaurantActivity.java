@@ -42,7 +42,6 @@ public class RestaurantActivity implements Initializable {
     public Label location;
     public HBox stars;
     public Label your_rate;
-    public Label price;
     public JFXButton info_button;
     public Label overall_rating;
     public Label excellent_text;
@@ -102,7 +101,6 @@ public class RestaurantActivity implements Initializable {
         image_view.fitHeightProperty().bind(Main.stage.heightProperty().divide(2.6));
 
         ExecutorService service = new ScheduledThreadPoolExecutor(2);
-        //Executor executor = Executors.newSingleThreadExecutor();
         Runnable runnable = () -> {
             for (String path : restaurant.getPhotos()) {
                 try {
@@ -116,7 +114,6 @@ public class RestaurantActivity implements Initializable {
             System.out.println(images.size());
             service.shutdown();
         };
-        //executor.execute(runnable);
         service.submit(runnable);
     }
 
