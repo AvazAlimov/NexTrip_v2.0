@@ -97,6 +97,7 @@ public class RestaurantActivity implements Initializable {
         info_text.setText(restaurant.getInfo());
         countRates();
         addAmenities();
+        addTypes();
         addContacts();
         loadMenu();
         restaurant.getComments().forEach(this::addCommentItem);
@@ -359,11 +360,11 @@ public class RestaurantActivity implements Initializable {
         comment_text.setText("");
     }
 
-    private void loadMenu(){
+    private void loadMenu() {
         ArrayList<String> names = restaurant.getMenu().getFoods();
         ArrayList<String> prices = restaurant.getMenu().getPrice();
 
-        for(int i = 0; i<names.size(); i++){
+        for (int i = 0; i < names.size(); i++) {
             menuContainer.getChildren().add(new Label(names.get(i) + "\t" + prices.get(i) + " $"));
         }
     }
@@ -424,5 +425,19 @@ public class RestaurantActivity implements Initializable {
         Timeline timeline = new Timeline(new KeyFrame(new Duration(300), valueX, valueY, opacity));
         timeline.setCycleCount(1);
         timeline.play();
+    }
+
+    private void addTypes() {
+        for (Restaurant.Type type : restaurant.getType()) {
+            HBox box = new HBox(20);
+            box.setStyle("-fx-padding: 5; -fx-spacing: 10;");
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("../Resources/Icons/checked.png"))));
+            imageView.setFitHeight(32);
+            imageView.setFitWidth(32);
+            Label label = new Label(type.toString());
+            box.getChildren().add(imageView);
+            box.getChildren().add(label);
+            types_container.getChildren().add(box);
+        }
     }
 }

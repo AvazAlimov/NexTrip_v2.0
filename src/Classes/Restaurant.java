@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("unused")
 public class Restaurant extends Guidance {
-    private enum Type {
+    public enum Type {
         Cafe, Fastfood, Cuisine, SitDown
     }
 
