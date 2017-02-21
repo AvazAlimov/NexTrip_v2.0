@@ -203,6 +203,7 @@ public class MainActivity implements Initializable {
             button.setGraphic(pane);
             pane.setScaleX(0.0);
             pane.setScaleY(0.0);
+            button.setOnMouseClicked(pane.getOnMouseClicked());
             container.getChildren().add(button);
             KeyValue value = new KeyValue(pane.scaleXProperty(), 1.0);
             KeyValue value1 = new KeyValue(pane.scaleYProperty(), 1.0);
