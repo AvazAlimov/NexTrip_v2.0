@@ -138,15 +138,15 @@
 
                         <HBox fx:id="stars" spacing="5" onMouseExited="#restoreStars" alignment="CENTER">
                             <Button id="1" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateHotel" style="-fx-cursor: hand;"/>
+                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
                             <Button id="2" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateHotel" style="-fx-cursor: hand;"/>
+                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
                             <Button id="3" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateHotel" style="-fx-cursor: hand;"/>
+                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
                             <Button id="4" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateHotel" style="-fx-cursor: hand;"/>
+                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
                             <Button id="5" prefHeight="40.0" prefWidth="40.0" onMouseEntered="#fillStars"
-                                    onAction="#rateHotel" style="-fx-cursor: hand;"/>
+                                    onAction="#rateEntertaining" style="-fx-cursor: hand;"/>
                         </HBox>
                     </VBox>
 
@@ -179,6 +179,8 @@
                 </HBox>
 
                 <JFXButton fx:id="info_button" maxWidth="Infinity" text="SHOW MORE INFORMATION" onAction="#showInfo"/>
+
+                <JFXButton fx:id="rules_button" maxWidth="Infinity" text="SHOW MORE INFORMATION" onAction="#showRules"/>
 
                 <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
                     <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
@@ -281,6 +283,32 @@
             <HBox maxWidth="Infinity" prefHeight="2" style="-fx-background-color: #212121;"/>
 
             <Label fx:id="info_text" wrapText="true"/>
+        </VBox>
+
+    </GridPane>
+
+    <GridPane alignment="CENTER" visible="false" fx:id="rules_layout" AnchorPane.bottomAnchor="0"
+              AnchorPane.topAnchor="45" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+              onMouseClicked="#closeRules" style="-fx-padding: 40;">
+        <columnConstraints>
+            <ColumnConstraints/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <VBox alignment="CENTER" spacing="10"
+              style="-fx-padding: 16; -fx-background-color: #4FC3F7; -fx-background-radius: 8;">
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <ImageView fx:id="rules_icon" fitHeight="56" fitWidth="56">
+                    <Image url="/Resources/Icons/info1_(64px).png"/>
+                </ImageView>
+                <Label fx:id="rules_header" text="Information"/>
+            </HBox>
+
+            <HBox maxWidth="Infinity" prefHeight="2" style="-fx-background-color: #212121;"/>
+
+            <Label fx:id="rules_text" wrapText="true"/>
         </VBox>
 
     </GridPane>

@@ -77,6 +77,11 @@ public class EntertainmentActivity implements Initializable {
     public Label ageLimit;
     public Label age_limit_header;
     public Label your_rate_header;
+    public JFXButton rules_button;
+    public GridPane rules_layout;
+    public ImageView rules_icon;
+    public Label rules_header;
+    public Label rules_text;
     private Entertaining entertaining;
     private ArrayList<Image> images;
     private int position = 0;
@@ -93,6 +98,7 @@ public class EntertainmentActivity implements Initializable {
         price.setText(entertaining.getPrice() + "");
         ageLimit.setText(entertaining.getAgeLimit() + " +");
         info_text.setText(entertaining.getInfo());
+        rules_text.setText(entertaining.getRules());
         countRates();
         addAmenities();
         addContacts();
@@ -205,14 +211,14 @@ public class EntertainmentActivity implements Initializable {
         loadRating();
     }
 
-    public void rateHotel(ActionEvent event) throws IOException {
+    public void rateEntertaining(ActionEvent event) throws IOException {
         int rating = Integer.parseInt(((Button) event.getSource()).getId());
         entertaining.addRating(rating);
         your_rate.setText("You Rated");
         stars.setDisable(true);
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-        byte[] query = ("OH" + entertaining.getId() + "/" + rating).getBytes();
+        byte[] query = ("OE" + entertaining.getId() + "/" + rating).getBytes();
         wr.write(query, 0, query.length);
         wr.close();
         socket.close();
@@ -333,7 +339,7 @@ public class EntertainmentActivity implements Initializable {
 
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
-        byte[] query = ("CH" + entertaining.getId() + "/" + comment.toString()).getBytes();
+        byte[] query = ("CE" + entertaining.getId() + "/" + comment.toString()).getBytes();
         wr.write(query, 0, query.length);
         wr.close();
         socket.close();
@@ -387,4 +393,29 @@ public class EntertainmentActivity implements Initializable {
         }
     }
 
+    public void showRules() {
+        rules_layout.setVisible(true);
+        rules_layout.setScaleX(0.0);
+        rules_layout.setScaleY(0.0);
+        rules_layout.setOpacity(0.0);
+        KeyValue valueX = new KeyValue(rules_layout.scaleXProperty(), 1.0);
+        KeyValue valueY = new KeyValue(rules_layout.scaleYProperty(), 1.0);
+        KeyValue opacity = new KeyValue(rules_layout.opacityProperty(), 1.0);
+        Timeline timeline = new Timeline(new KeyFrame(new Duration(300), valueX, valueY, opacity));
+        timeline.setCycleCount(1);
+        timeline.play();
+    }
+
+    public void closeRules() {
+        KeyValue valueX = new KeyValue(rules_layout.scaleXProperty(), 0.0);
+        KeyValue valueY = new KeyValue(rules_layout.scaleYProperty(), 0.0);
+        KeyValue opacity = new KeyValue(rules_layout.opacityProperty(), 0.0);
+        Timeline timeline = new Timeline(new KeyFrame(new Duration(300), valueX, valueY, opacity));
+        timeline.setCycleCount(1);
+        timeline.setOnFinished(event -> rules_layout.setVisible(false));
+        timeline.play();
+        rules_layout.setScaleX(0.0);
+        rules_layout.setScaleY(0.0);
+        rules_layout.setOpacity(0.0);
+    }
 }
