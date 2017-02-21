@@ -153,7 +153,7 @@
                     <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
 
                     <VBox alignment="CENTER">
-                        <Label id="your_rate" text="Price Interval" underline="true"/>
+                        <Label id="your_rate" text="Price" underline="true"/>
                         <HBox alignment="TOP_CENTER" spacing="5">
                             <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true"
                                        disable="true">

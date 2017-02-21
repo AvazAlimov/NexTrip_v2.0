@@ -87,7 +87,7 @@ public class EntertainmentActivity implements Initializable {
         loadRating();
         name.setText(entertaining.getName());
         this.location.setText(entertaining.getLocation());
-        //price.setText(entertaining.getStartingPrice() + " - " + entertaining.getEndingPrice());
+        price.setText(entertaining.getPrice() + "");
         info_text.setText(entertaining.getInfo());
         countRates();
         addAmenities();
