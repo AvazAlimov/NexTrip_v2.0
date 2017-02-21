@@ -1,10 +1,5 @@
-
 .root {
     -fx-background-color: #1976D2;
-}
-
-#title_layout {
-
 }
 
 #left_layout {
@@ -31,7 +26,7 @@
     -fx-font-weight: bold;
 }
 
-#sits_header{
+#sits_header {
     -fx-padding: 16;
     -fx-text-fill: #212121;
     -fx-font-size: 24;
@@ -48,6 +43,12 @@
     -fx-text-fill: #009688;
     -fx-text-alignment: center;
     -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+#sits_text {
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
     -fx-font-weight: bold;
 }
 
@@ -104,8 +105,6 @@
     -fx-pref-height: 30;
 
 }
-
-
 
 #info_layout {
     -fx-effect: dropshadow(gaussian, #212121, 15, 0, 0, 0);
