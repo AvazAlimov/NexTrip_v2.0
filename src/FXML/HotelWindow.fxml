@@ -76,7 +76,7 @@
             <RowConstraints vgrow="ALWAYS"/>
         </rowConstraints>
 
-        <VBox fx:id="main_image"
+        <VBox fx:id="left_layout"
               style="-fx-padding: 40; -fx-background-color: linear-gradient(dodgerblue, lightskyblue)">
 
             <HBox id="rate_layout">
@@ -86,6 +86,14 @@
                     <Label fx:id="rate_number" text="based on 5554 views"/>
                 </VBox>
             </HBox>
+
+            <Separator VBox.vgrow="SOMETIMES" maxHeight="Infinity" visible="false"/>
+
+            <VBox alignment="CENTER">
+                <ImageView fx:id="image_view" fitWidth="560" fitHeight="280">
+                    <Image url="/Resources/Pictures/MainWindow_background.jpg"/>
+                </ImageView>
+            </VBox>
 
             <Separator VBox.vgrow="SOMETIMES" maxHeight="Infinity" visible="false"/>
 

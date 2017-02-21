@@ -30,7 +30,7 @@ import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class HotelActivity implements Initializable {
-    public ImageView image;
+    public Image image;
     public Label rate;
     public VBox right_part;
     public Label rate_text;
@@ -68,9 +68,10 @@ public class HotelActivity implements Initializable {
     public VBox comments_container;
     public JFXTextField comment_text;
     public Label comment_header;
+    public ImageView image_view;
     private double xOffset;
     private double yOffset;
-    public VBox main_image;
+    public VBox left_layout;
     private Hotel hotel;
 
     @Override
