@@ -59,6 +59,9 @@ public class MainActivity implements Initializable {
         restaurant_button.setText(Main.Language.getTranslation("restaurant"));
         entertaining.setText(Main.Language.getTranslation("entertaining"));
         todo_button.setText(Main.Language.getTranslation("todo_button"));
+        searchText.setPromptText(Main.Language.getTranslation("location"));
+        startDate.setPromptText(Main.Language.getTranslation("checkIn"));
+        endDate.setPromptText(Main.Language.getTranslation("checkOut"));
     }
 
     public void switchTabs(ActionEvent event) {
@@ -66,9 +69,9 @@ public class MainActivity implements Initializable {
         HBox box = (HBox) btn.getParent();
         for (Node item : box.getChildren())
             item.setStyle("-fx-background-color: #34aadc;");
-        choosenType = btn.getText();
+        choosenType = btn.getId();
         container.getChildren().clear();
-        switch (btn.getText()) {
+        switch (btn.getId()) {
             case "Hotels":
                 datePane.setVisible(false);
                 break;
@@ -254,7 +257,7 @@ public class MainActivity implements Initializable {
         image.setClip(circle);
         item.add(image, 0, 0);
 
-        Label info = new Label("Name: " + hotel.getName() + "\nPrice: " + hotel.getStartingPrice() + "$ - " + hotel.getEndingPrice() + "$\nLocation: " + hotel.getLocation());
+        Label info = new Label(Main.Language.getTranslation("name") + ": " + hotel.getName() + "\n" + Main.Language.getTranslation("price") + ": " + hotel.getStartingPrice() + "$ - " + hotel.getEndingPrice() + "$\n" + Main.Language.getTranslation("location") + ": " + hotel.getLocation());
         info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
         item.add(info, 1, 0);
 

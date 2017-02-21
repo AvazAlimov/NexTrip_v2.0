@@ -57,7 +57,7 @@
         </rowConstraints>
 
         <HBox style="-fx-effect: dropshadow(gaussian, #212121, 4, 0, 0, 0); -fx-border-width: 0 0 7 0; -fx-border-color: #007aff;">
-            <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" fx:id="hotel_button" text="Hotels" prefHeight="40" onAction="#switchTabs"
+            <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" fx:id="hotel_button" id="Hotels" prefHeight="40" onAction="#switchTabs"
                        style="-fx-background-color: #007aff;">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -65,7 +65,7 @@
                     </ImageView>
                 </graphic>
             </JFXButton>
-            <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" fx:id="restaurant_button" text="Restaurants" prefHeight="40"
+            <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" fx:id="restaurant_button" id="Restaurants" prefHeight="40"
                        onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -73,7 +73,7 @@
                     </ImageView>
                 </graphic>
             </JFXButton>
-            <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" fx:id="entertaining" text="Entertaining" prefHeight="40"
+            <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" fx:id="entertaining" id="Entertaining" prefHeight="40"
                        onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -81,7 +81,7 @@
                     </ImageView>
                 </graphic>
             </JFXButton>
-            <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" fx:id="todo_button" text="Things To Do" prefHeight="40"
+            <JFXButton maxWidth="Infinity" HBox.hgrow="ALWAYS" fx:id="todo_button" id="Things To Do" prefHeight="40"
                        onAction="#switchTabs">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
