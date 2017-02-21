@@ -62,7 +62,7 @@
     </GridPane>
 
     <HBox AnchorPane.topAnchor="100" AnchorPane.bottomAnchor="100" alignment="CENTER" spacing="384" fx:id="container"
-          style="-fx-font-family: 'Trebuchet MS';">
+          style="-fx-font-family: 'Roboto';">
         <Separator prefWidth="0" visible="false"/>
 
         <VBox spacing="20" alignment="CENTER"
