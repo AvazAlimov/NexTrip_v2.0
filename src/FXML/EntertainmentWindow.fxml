@@ -153,13 +153,27 @@
                     <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
 
                     <VBox alignment="CENTER">
-                        <Label id="your_rate" text="Price" underline="true"/>
+                        <Label fx:id="your_rate_header" text="Price" underline="true"/>
                         <HBox alignment="TOP_CENTER" spacing="5">
                             <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true"
                                        disable="true">
                                 <Image url="/Resources/Icons/dollar_icon.png" smooth="false"/>
                             </ImageView>
                             <Label fx:id="price" text="349.5"/>
+                        </HBox>
+                    </VBox>
+
+
+                    <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
+
+                    <VBox alignment="CENTER">
+                        <Label fx:id="age_limit_header" text="Age Limit" underline="true"/>
+                        <HBox alignment="TOP_CENTER" spacing="5">
+                            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true"
+                                       disable="true">
+                                <Image url="/Resources/Icons/dollar_icon.png" smooth="false"/>
+                            </ImageView>
+                            <Label fx:id="ageLimit" text="349.5"/>
                         </HBox>
                     </VBox>
                 </HBox>
@@ -296,6 +310,6 @@
     </GridPane>
 
     <stylesheets>
-        <URL value="@../CSSFiles/Hotel.css"/>
+        <URL value="@../CSSFiles/Entertainment.css"/>
     </stylesheets>
 </AnchorPane>
