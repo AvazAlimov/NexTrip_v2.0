@@ -84,6 +84,7 @@ public class HotelActivity implements Initializable {
         countRates();
         addAmenities();
         addContacts();
+        hotel.getComments().forEach(this::addCommentItem);
     }
 
     public void closeWindow() {
@@ -258,7 +259,7 @@ public class HotelActivity implements Initializable {
         Main.stage.show();
     }
 
-    public void addComment() {
+    public void addComment() throws IOException {
         if (comment_text.getText().isEmpty())
             return;
         Comment comment = new Comment();
@@ -267,6 +268,13 @@ public class HotelActivity implements Initializable {
         comment.setComment(comment_text.getText());
         addCommentItem(comment);
         hotel.addComment(comment);
+
+        Socket socket = new Socket(Main.serverHost, 2332);
+        BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
+        byte[] query = ("CH" + hotel.getId() + "/" + comment.toString()).getBytes();
+        wr.write(query, 0, query.length);
+        wr.close();
+        socket.close();
     }
 
     private void addCommentItem(Comment comment) {
