@@ -338,6 +338,6 @@
     </GridPane>
 
     <stylesheets>
-        <URL value="@../CSSFiles/Entertainment.css"/>
+        <URL value="@../CSSFiles/ThingsToDo.css"/>
     </stylesheets>
 </AnchorPane>
