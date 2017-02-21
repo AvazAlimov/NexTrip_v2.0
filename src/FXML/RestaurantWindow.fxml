@@ -327,6 +327,6 @@
     </GridPane>
 
     <stylesheets>
-        <URL value="@../CSSFiles/Hotel.css"/>
+        <URL value="@../CSSFiles/Restaurant.css"/>
     </stylesheets>
 </AnchorPane>
