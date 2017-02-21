@@ -298,7 +298,7 @@
                 <ImageView id="info_icon" fitHeight="56" fitWidth="56">
                     <Image url="/Resources/Icons/info1_(64px).png"/>
                 </ImageView>
-                <Label fx:id="menu_header" text="Information"/>
+                <Label fx:id="menu_header" text="Menu"/>
             </HBox>
 
             <HBox maxWidth="Infinity" prefHeight="2" style="-fx-background-color: #212121;"/>
