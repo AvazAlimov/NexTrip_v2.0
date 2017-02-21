@@ -32,7 +32,7 @@ import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("Duplicates")
 public class RestaurantActivity implements Initializable {
     public Label rate;
     public VBox right_part;
@@ -98,6 +98,7 @@ public class RestaurantActivity implements Initializable {
         countRates();
         addAmenities();
         addContacts();
+        loadMenu();
         restaurant.getComments().forEach(this::addCommentItem);
 
         image_view.fitWidthProperty().bind(Main.stage.widthProperty().divide(2.6));
@@ -400,10 +401,28 @@ public class RestaurantActivity implements Initializable {
     }
 
     public void closeMenu() {
-
+        KeyValue valueX = new KeyValue(menu_layout.scaleXProperty(), 0.0);
+        KeyValue valueY = new KeyValue(menu_layout.scaleYProperty(), 0.0);
+        KeyValue opacity = new KeyValue(menu_layout.opacityProperty(), 0.0);
+        Timeline timeline = new Timeline(new KeyFrame(new Duration(300), valueX, valueY, opacity));
+        timeline.setCycleCount(1);
+        timeline.setOnFinished(event -> menu_layout.setVisible(false));
+        timeline.play();
+        menu_layout.setScaleX(0.0);
+        menu_layout.setScaleY(0.0);
+        menu_layout.setOpacity(0.0);
     }
 
     public void showMenu() {
-
+        menu_layout.setVisible(true);
+        menu_layout.setScaleX(0.0);
+        menu_layout.setScaleY(0.0);
+        menu_layout.setOpacity(0.0);
+        KeyValue valueX = new KeyValue(menu_layout.scaleXProperty(), 1.0);
+        KeyValue valueY = new KeyValue(menu_layout.scaleYProperty(), 1.0);
+        KeyValue opacity = new KeyValue(menu_layout.opacityProperty(), 1.0);
+        Timeline timeline = new Timeline(new KeyFrame(new Duration(300), valueX, valueY, opacity));
+        timeline.setCycleCount(1);
+        timeline.play();
     }
 }
