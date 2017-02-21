@@ -3,7 +3,7 @@ package Classes;
 import java.util.ArrayList;
 
 @SuppressWarnings("unused")
-class Menu {
+public class Menu {
     private ArrayList<String> foods;
     private ArrayList<String> price;
 
