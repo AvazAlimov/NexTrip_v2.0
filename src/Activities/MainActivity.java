@@ -323,7 +323,7 @@ public class MainActivity implements Initializable {
         image.setClip(circle);
         item.add(image, 0, 0);
 
-        Label info = new Label("Name: " + restaurant.getName() + "\nType: " + restaurant.getType().get(0) + "\t Number of seats: " + restaurant.getNumberOfSeats() + "\nLocation: " + restaurant.getLocation());
+        Label info = new Label(Main.Language.getTranslation("location") + ": " + restaurant.getName() + "\n" + Main.Language.getTranslation("type") + ": " + restaurant.getType().get(0) + "\t " + Main.Language.getTranslation("number_of_sits") + ": " + restaurant.getNumberOfSeats() + "\n" + Main.Language.getTranslation("location") + ": " + restaurant.getLocation());
         info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
         item.add(info, 1, 0);
 
@@ -390,7 +390,7 @@ public class MainActivity implements Initializable {
         image.setClip(circle);
         item.add(image, 0, 0);
 
-        Label info = new Label("Name: " + thingsToDo.getName() + "\nPrice: " + thingsToDo.getPrice() + " $\t" + "\nLocation: " + thingsToDo.getLocation());
+        Label info = new Label(Main.Language.getTranslation("name") + ": " + thingsToDo.getName() + "\n" + Main.Language.getTranslation("price") + ": " + thingsToDo.getPrice() + " $\t" + "\n" + Main.Language.getTranslation("location") + ": " + thingsToDo.getLocation());
         info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
         item.add(info, 1, 0);
 
