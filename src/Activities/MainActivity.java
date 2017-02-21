@@ -41,12 +41,24 @@ public class MainActivity implements Initializable {
     public ComboBox<String> searchText;
     public DatePicker startDate;
     public DatePicker endDate;
+    public JFXButton hotel_button;
+    public JFXButton restaurant_button;
+    public JFXButton entertaining;
+    public JFXButton todo_button;
     private String choosenType = "Hotels";
     private double xOffset;
     private double yOffset;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setTexts();
+    }
+
+    private void setTexts() {
+        hotel_button.setText(Main.Language.getTranslation("hotel"));
+        restaurant_button.setText(Main.Language.getTranslation("restaurant"));
+        entertaining.setText(Main.Language.getTranslation("entertaining"));
+        todo_button.setText(Main.Language.getTranslation("todo_button"));
     }
 
     public void switchTabs(ActionEvent event) {
