@@ -457,7 +457,7 @@ public class MainActivity implements Initializable {
         image.setClip(circle);
         item.add(image, 0, 0);
 
-        Label info = new Label("Name: " + entertaining.getName() + "\nPrice: " + entertaining.getPrice() + " $\t" + "\nLocation: " + entertaining.getLocation());
+        Label info = new Label(Main.Language.getTranslation("name") + ": " + entertaining.getName() + "\n" + Main.Language.getTranslation("price") + ": " + entertaining.getPrice() + " $\t" + "\n" + Main.Language.getTranslation("location") + ": " + entertaining.getLocation());
         info.setStyle("-fx-font-size: 24; -fx-alignment: center-left;");
         item.add(info, 1, 0);
 
