@@ -76,6 +76,9 @@ public class RestaurantActivity implements Initializable {
     public HBox types_container;
     public Label sits_header;
     public Label sits_text;
+    public GridPane menu_layout;
+    public Label menu_header;
+    public VBox menuContainer;
     private Restaurant restaurant;
     private ArrayList<Image> images;
     private int position = 0;
@@ -355,6 +358,15 @@ public class RestaurantActivity implements Initializable {
         comment_text.setText("");
     }
 
+    private void loadMenu(){
+        ArrayList<String> names = restaurant.getMenu().getFoods();
+        ArrayList<String> prices = restaurant.getMenu().getPrice();
+
+        for(int i = 0; i<names.size(); i++){
+            menuContainer.getChildren().add(new Label(names.get(i) + "\t" + prices.get(i) + " $"));
+        }
+    }
+
     public void prevImage() {
         if (position >= 1) {
             KeyValue value = new KeyValue(image_view.opacityProperty(), 0.2);
@@ -385,5 +397,13 @@ public class RestaurantActivity implements Initializable {
             });
             timeline.play();
         }
+    }
+
+    public void closeMenu() {
+
+    }
+
+    public void showMenu() {
+
     }
 }

@@ -162,7 +162,7 @@
                 <JFXButton fx:id="info_button" maxWidth="Infinity" text="SHOW MORE INFORMATION" onAction="#showInfo"/>
 
 
-                <JFXButton id="menu_button" text="MENU" onAction="#showInfo">
+                <JFXButton id="menu_button" text="MENU" onAction="#showMenu">
                     <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0">
                             <Image url="/Resources/Icons/Restaurant Menu_48px.png"/>
@@ -278,6 +278,32 @@
             <HBox maxWidth="Infinity" prefHeight="2" style="-fx-background-color: #212121;"/>
 
             <Label fx:id="info_text" wrapText="true"/>
+        </VBox>
+
+    </GridPane>
+
+    <GridPane alignment="CENTER" visible="false" fx:id="menu_layout" AnchorPane.bottomAnchor="0"
+              AnchorPane.topAnchor="45" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+              onMouseClicked="#closeMenu" style="-fx-padding: 40;">
+        <columnConstraints>
+            <ColumnConstraints/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints/>
+        </rowConstraints>
+
+        <VBox alignment="CENTER" spacing="10"
+              style="-fx-padding: 16; -fx-background-color: #4FC3F7; -fx-background-radius: 8;">
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <ImageView id="info_icon" fitHeight="56" fitWidth="56">
+                    <Image url="/Resources/Icons/info1_(64px).png"/>
+                </ImageView>
+                <Label fx:id="menu_header" text="Information"/>
+            </HBox>
+
+            <HBox maxWidth="Infinity" prefHeight="2" style="-fx-background-color: #212121;"/>
+
+            <VBox fx:id="menuContainer" alignment="CENTER"/>
         </VBox>
 
     </GridPane>
