@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -105,25 +106,28 @@ public class MainActivity implements Initializable {
     }
 
     public void addObjects() {
-        switch (choosenType) {
-            case "Hotels":
-                addHotels();
-                break;
-            case "Restaurants":
-                addRestaurants();
-                break;
-            case "Entertaining":
-                addEntertaining();
-                break;
-            case "Things To Do":
-                try {
-                    addThingsToDo();
-                } catch (Exception ignored) {
-                }
-                break;
-            default:
-                break;
-        }
+        Runnable runnable = () -> {
+            switch (choosenType) {
+                case "Hotels":
+                    addHotels();
+                    break;
+                case "Restaurants":
+                    addRestaurants();
+                    break;
+                case "Entertaining":
+                    addEntertaining();
+                    break;
+                case "Things To Do":
+                    try {
+                        addThingsToDo();
+                    } catch (Exception ignored) {
+                    }
+                    break;
+                default:
+                    break;
+            }
+        };
+        Platform.runLater(runnable);
     }
 
     private void addHotels() {
