@@ -14,3 +14,5 @@
 "price","Price","Narxi","Цена"
 "checkIn","Check In","Boshlanish Sanasi","Начальная дата"
 "checkOut","Check Out","Tugash Sanasi","Дата окончания"
+"type","Type","Turi","Тип"
+"number_of_sits","Number of seats","O'rindiqlar Soni","Количество мест"
