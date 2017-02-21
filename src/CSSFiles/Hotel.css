@@ -127,3 +127,10 @@
 #comments_container {
     -fx-padding: 16;
 }
+
+#image_view {
+    -fx-background-radius: 8;
+    -fx-border-width: 8;
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 8;
+}
