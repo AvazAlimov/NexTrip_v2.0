@@ -73,6 +73,8 @@ public class HotelActivity implements Initializable {
     public Label comment_header;
     public ImageView image_view;
     public VBox left_layout;
+    public Label price_interval;
+    public JFXButton send_button;
     private Hotel hotel;
     private ArrayList<Image> images;
     private int position = 0;
@@ -111,6 +113,27 @@ public class HotelActivity implements Initializable {
             service.shutdown();
         };
         service.submit(runnable);
+
+        setTexts();
+    }
+
+    private void setTexts() {
+        rate_number.setText(Main.Language.getTranslation("rateNumber"));
+        your_rate.setText(Main.Language.getTranslation("your_rate"));
+        price_interval.setText(Main.Language.getTranslation("priceInterval"));
+        info_button.setText(Main.Language.getTranslation("infoButton"));
+        overall_rating.setText(Main.Language.getTranslation("overall_rating"));
+        fantastic_text.setText(Main.Language.getTranslation("fantastic_text"));
+        excellent_text.setText(Main.Language.getTranslation("excellent_text"));
+        good_text.setText(Main.Language.getTranslation("good_text"));
+        normal_text.setText(Main.Language.getTranslation("normal_text"));
+        bad_text.setText(Main.Language.getTranslation("bad_text"));
+        amenities_text.setText(Main.Language.getTranslation("amenities_text"));
+        contact_text.setText(Main.Language.getTranslation("contact_text"));
+        comment_header.setText(Main.Language.getTranslation("comment_header"));
+        comment_text.setText(Main.Language.getTranslation("comment_text"));
+        send_button.setText(Main.Language.getTranslation("send_button"));
+
     }
 
     private Image loadImage(String path) throws IOException {

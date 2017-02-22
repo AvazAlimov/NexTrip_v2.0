@@ -83,6 +83,8 @@ public class ThingsToDoActivity implements Initializable {
     public Label date_text;
     public Label startDate;
     public Label endDate;
+    public Label amenities_thinsToDo_text;
+    public JFXButton send_button;
     private ThingsToDo thingsToDo;
     private ArrayList<Image> images;
     private int position = 0;
@@ -124,6 +126,28 @@ public class ThingsToDoActivity implements Initializable {
             service.shutdown();
         };
         service.submit(runnable);
+        setTexts();
+    }
+
+
+    private void setTexts() {
+        rate_number.setText(Main.Language.getTranslation("rateNumber"));
+        your_rate.setText(Main.Language.getTranslation("your_rate"));
+        your_rate_header.setText(Main.Language.getTranslation("priceHeader"));
+        info_button.setText(Main.Language.getTranslation("infoButton"));
+        overall_rating.setText(Main.Language.getTranslation("overall_rating"));
+        fantastic_text.setText(Main.Language.getTranslation("fantastic_text"));
+        excellent_text.setText(Main.Language.getTranslation("excellent_text"));
+        good_text.setText(Main.Language.getTranslation("good_text"));
+        normal_text.setText(Main.Language.getTranslation("normal_text"));
+        bad_text.setText(Main.Language.getTranslation("bad_text"));
+        amenities_thinsToDo_text.setText(Main.Language.getTranslation("amenities_thingsToDo_text"));
+        contact_text.setText(Main.Language.getTranslation("contact_text"));
+        comment_header.setText(Main.Language.getTranslation("comment_header"));
+        comment_text.setText(Main.Language.getTranslation("comment_text"));
+        send_button.setText(Main.Language.getTranslation("send_button"));
+        rules_button.setText(Main.Language.getTranslation("rules_button"));
+
     }
 
     private Image loadImage(String path) throws IOException {

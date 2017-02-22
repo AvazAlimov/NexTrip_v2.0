@@ -36,7 +36,7 @@
 
         <HBox onMousePressed="#mousePressed" onMouseDragged="#mouseDragged">
             <JFXComboBox fx:id="languageBox" promptText="Language"
-                         style="-fx-font-family: 'Trebuchet MS'; -fx-font-weight: bolder;"
+                         style="-fx-font-family: 'Trebuchet MS'; -fx-font-weight: bolder; -fx-background-color:#007aff;"
                          onAction="#changeLanguage"/>
             <Separator HBox.hgrow="ALWAYS" visible="false"/>
             <JFXButton prefWidth="40" prefHeight="40" text="✖"

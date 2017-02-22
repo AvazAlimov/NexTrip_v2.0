@@ -152,7 +152,7 @@
                     <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
 
                     <VBox alignment="CENTER">
-                        <Label id="your_rate" text="Price Interval"/>
+                        <Label fx:id="price_interval" text="Price Interval"/>
                         <HBox alignment="TOP_CENTER" spacing="5">
                             <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true"
                                        disable="true">
@@ -176,11 +176,6 @@
                         <Separator HBox.hgrow="SOMETIMES" visible="false"/>
                         <Label fx:id="fantastic_number" text="80"/>
                     </HBox>
-                    <Separator >
-                        <effect>
-                            <InnerShadow color="#00C853" />
-                        </effect>
-                    </Separator>
                     <HBox style="-fx-padding: 5;" maxWidth="250">
                         <Label fx:id="excellent_text" text="Excellent"/>
                         <Separator HBox.hgrow="SOMETIMES" visible="false"/>
@@ -235,8 +230,8 @@
                     </ScrollPane>
                     <Separator prefHeight="20" visible="false"/>
                     <HBox alignment="CENTER" maxWidth="Infinity">
-                        <JFXTextField fx:id="comment_text"  HBox.hgrow="ALWAYS"/>
-                        <JFXButton onAction="#addComment" text="Send"/>
+                        <JFXTextField fx:id="comment_text" promptText="Write your comment"  HBox.hgrow="ALWAYS"/>
+                        <JFXButton fx:id="send_button" onAction="#addComment" text="Send"/>
                     </HBox>
                 </VBox>
 

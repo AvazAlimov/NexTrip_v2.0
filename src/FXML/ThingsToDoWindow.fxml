@@ -176,11 +176,6 @@
                         <Separator HBox.hgrow="SOMETIMES" visible="false"/>
                         <Label fx:id="fantastic_number" text="80"/>
                     </HBox>
-                    <Separator>
-                        <effect>
-                            <InnerShadow color="#00C853"/>
-                        </effect>
-                    </Separator>
                     <HBox style="-fx-padding: 5;" maxWidth="250">
                         <Label fx:id="excellent_text" text="Excellent"/>
                         <Separator HBox.hgrow="SOMETIMES" visible="false"/>
@@ -218,7 +213,7 @@
 
                 <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
                     <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
-                        <Label fx:id="amenities_text" text="HOTEL AMENITIES"/>
+                        <Label fx:id="amenities_thinsToDo_text" text="THINGS TO DO AMENITIES"/>
                         <HBox HBox.hgrow="SOMETIMES" maxWidth="Infinity" prefHeight="2" maxHeight="2"
                               style="-fx-background-color: #212121;"/>
                     </HBox>
@@ -249,7 +244,7 @@
                     <Separator prefHeight="20" visible="false"/>
                     <HBox alignment="CENTER" maxWidth="Infinity">
                         <JFXTextField fx:id="comment_text" HBox.hgrow="ALWAYS"/>
-                        <JFXButton onAction="#addComment" text="Send"/>
+                        <JFXButton onAction="#addComment" fx:id="send_button" text="Send"/>
                     </HBox>
                 </VBox>
             </VBox>

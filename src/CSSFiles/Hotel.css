@@ -74,6 +74,13 @@
     -fx-font-size: 24;
     -fx-font-weight: bold;
 }
+#price_interval{
+    -fx-padding: 16;
+    -fx-text-fill: #212121;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+
+}
 
 #price {
     -fx-text-fill: #212121;

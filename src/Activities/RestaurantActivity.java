@@ -54,7 +54,6 @@ public class RestaurantActivity implements Initializable {
     public Label good_text;
     public Label fantastic_text;
     public Label fantastic_number;
-    public Label amenities_text;
     public HBox amenity_container;
     public HBox contact_container;
     public Label contact_text;
@@ -79,6 +78,8 @@ public class RestaurantActivity implements Initializable {
     public GridPane menu_layout;
     public Label menu_header;
     public VBox menuContainer;
+    public JFXButton send_button;
+    public Label amenities_restaurant_text;
     private Restaurant restaurant;
     private ArrayList<Image> images;
     private int position = 0;
@@ -120,6 +121,27 @@ public class RestaurantActivity implements Initializable {
             service.shutdown();
         };
         service.submit(runnable);
+        setTexts();
+    }
+
+    private void setTexts() {
+        rate_number.setText(Main.Language.getTranslation("rateNumber"));
+        your_rate.setText(Main.Language.getTranslation("your_rate"));
+        sits_header.setText(Main.Language.getTranslation("sits_header"));
+        info_button.setText(Main.Language.getTranslation("infoButton"));
+        overall_rating.setText(Main.Language.getTranslation("overall_rating"));
+        fantastic_text.setText(Main.Language.getTranslation("fantastic_text"));
+        excellent_text.setText(Main.Language.getTranslation("excellent_text"));
+        good_text.setText(Main.Language.getTranslation("good_text"));
+        normal_text.setText(Main.Language.getTranslation("normal_text"));
+        bad_text.setText(Main.Language.getTranslation("bad_text"));
+        amenities_restaurant_text.setText(Main.Language.getTranslation("amenities_restaurant_text"));
+        contact_text.setText(Main.Language.getTranslation("contact_text"));
+        comment_header.setText(Main.Language.getTranslation("comment_header"));
+        comment_text.setText(Main.Language.getTranslation("comment_text"));
+        send_button.setText(Main.Language.getTranslation("send_button"));
+        types_text.setText(Main.Language.getTranslation("types_text"));
+
     }
 
     private Image loadImage(String path) throws IOException {
