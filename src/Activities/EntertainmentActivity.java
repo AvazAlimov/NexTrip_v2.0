@@ -225,9 +225,9 @@ public class EntertainmentActivity implements Initializable {
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
         for (int i = 4; i >= entertaining.getRating(); i--)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
-        rate_number.setText("based on " + entertaining.getRatings().size() + " reviews");
+        rate_number.setText(Main.Language.getTranslation("based_on") + " " + entertaining.getRatings().size() + " " + Main.Language.getTranslation("reviews"));
         rate.setText(String.format("%.01f", (rating == 0.0f ? 0.0f : (rating + 1.0f))));
-        rate_text.setText(Main.Rating[(int) (rating > -1 ? rating : 0)]);
+        rate_text.setText(Main.Language.getTranslation(Main.Rating[(int) (rating > -1 ? rating : 0)]));
     }
 
     public void restoreStars() {
@@ -237,7 +237,7 @@ public class EntertainmentActivity implements Initializable {
     public void rateEntertaining(ActionEvent event) throws IOException {
         int rating = Integer.parseInt(((Button) event.getSource()).getId());
         entertaining.addRating(rating);
-        your_rate.setText("You Rated");
+        your_rate.setText(Main.Language.getTranslation("you_rated"));
         stars.setDisable(true);
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());
@@ -265,7 +265,7 @@ public class EntertainmentActivity implements Initializable {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("../Resources/Icons/checked.png"))));
             imageView.setFitHeight(32);
             imageView.setFitWidth(32);
-            Label label = new Label(amenity);
+            Label label = new Label(Main.Language.getTranslation(amenity));
             box.getChildren().add(imageView);
             box.getChildren().add(label);
             amenity_container.getChildren().add(box);
