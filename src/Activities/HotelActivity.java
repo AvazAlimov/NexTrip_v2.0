@@ -403,5 +403,4 @@ public class HotelActivity implements Initializable {
             timeline.play();
         }
     }
-
 }
