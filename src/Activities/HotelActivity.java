@@ -253,7 +253,7 @@ public class HotelActivity implements Initializable {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("../Resources/Icons/checked.png"))));
             imageView.setFitHeight(32);
             imageView.setFitWidth(32);
-            Label label = new Label(amenity);
+            Label label = new Label(Main.Language.getTranslation(amenity));
             box.getChildren().add(imageView);
             box.getChildren().add(label);
             amenity_container.getChildren().add(box);
