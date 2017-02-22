@@ -159,7 +159,6 @@
 
                 <JFXButton fx:id="info_button" maxWidth="Infinity" text="SHOW MORE INFORMATION" onAction="#showInfo"/>
 
-
                 <JFXButton id="menu_button" text="MENU" onAction="#showMenu">
                     <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0">
