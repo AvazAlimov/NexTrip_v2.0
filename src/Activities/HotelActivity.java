@@ -225,7 +225,7 @@ public class HotelActivity implements Initializable {
     public void rateHotel(ActionEvent event) throws IOException {
         int rating = Integer.parseInt(((Button) event.getSource()).getId());
         hotel.addRating(rating);
-        your_rate.setText("You Rated");
+        your_rate.setText(Main.Language.getTranslation("you_rated"));
         stars.setDisable(true);
         Socket socket = new Socket(Main.serverHost, 2332);
         BufferedOutputStream wr = new BufferedOutputStream(socket.getOutputStream());

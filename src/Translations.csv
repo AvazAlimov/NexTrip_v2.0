@@ -18,7 +18,7 @@
 "number_of_sits","Number of seats","O'rindiqlar Soni","Количество мест"
 "skip","SKIP","O'TKAZISH","Пропустить"
 "rateNumber","based on reviews"," ta baholash asosida","на основе  обзоров"
-"your_rate","Rate as you want","Baholang"," Оцените как вы хотите"
+"your_rate","Rate as you want","Baholang"," Оцените"
 "priceInterval","Price Interval","Narx Intervali","Интервал цен"
 "infoButton","SHOW MORE INFORMATION","QO'SHIMCHA MA'LUMOT KO'RSATISH","ПОКАЗАТЬ БОЛЬШЕ ИНФОРМАЦИИ"
 "overall_rating","OVERALL TRAVELLER RATING","UMUMIY SAYOHAT REYTINGI","СВОДНЫЙ РЕЙТИНГ ОТЕЛЯ"
@@ -47,3 +47,4 @@
 "Good","Good","Yahshi","Хороший"
 "Normal","Normal","Oddiy","Нормальный"
 "Bad","Bad","Yomon","Плохой"
+"you_rated","You Rated","Baholadingiz","Оценили"
