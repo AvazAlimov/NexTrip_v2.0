@@ -141,6 +141,7 @@ public class RestaurantActivity implements Initializable {
         comment_text.setText(Main.Language.getTranslation("comment_text"));
         send_button.setText(Main.Language.getTranslation("send_button"));
         types_text.setText(Main.Language.getTranslation("types_text"));
+        information.setText(Main.Language.getTranslation("information"));
 
     }
 

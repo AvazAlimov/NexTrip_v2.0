@@ -145,7 +145,7 @@ public class EntertainmentActivity implements Initializable {
         send_button.setText(Main.Language.getTranslation("send_button"));
         rules_button.setText(Main.Language.getTranslation("rules_button"));
         rules_header.setText(Main.Language.getTranslation("rules_header"));
-
+        information.setText(Main.Language.getTranslation("information"));
     }
 
     private Image loadImage(String path) throws IOException {
