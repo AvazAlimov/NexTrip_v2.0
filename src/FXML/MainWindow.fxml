@@ -9,6 +9,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 
 <?import javafx.scene.image.Image?>
+
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.MainActivity">
 

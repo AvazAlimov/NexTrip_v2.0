@@ -148,6 +148,7 @@ public class ThingsToDoActivity implements Initializable {
         rules_button.setText(Main.Language.getTranslation("rules_button"));
         date_text.setText(Main.Language.getTranslation("date_text"));
         your_rate_header.setText(Main.Language.getTranslation("entertaining_price"));
+        rules_header.setText(Main.Language.getTranslation("rules_header"));
 
     }
 

@@ -32,7 +32,7 @@
 "comment_header","COMMENTS","IZOHLAR","КОММЕНТАРИИ"
 "comment_text","Write your comments","Izohlaringizni yozing","Оставьте свои комментарии"
 "send_button","Send","Jo'natish","Отправить"
-"sits_header","Seats","O"rindiqlar soni","Количество посадочных мест"
+"sits_header","Seats","O'rindiqlar soni","Количество посадочных мест"
 "types_text","TYPES OF FOOD","RESTORAN TURI","ТИП РЕСТОРАНА"
 "priceHeader","Price","Narx","Цена"
 "ageHeader","Age Limit","Yosh Chegarasi",""Возрастное Ограничение"
@@ -53,3 +53,4 @@
 "Free Children Yard","Free Children Yard","Bolalar o'yingohi","Детский двор"
 "date_text","HOLDING DATE","O'TKAZISH SANASI","ХОЛДИНГ ДАТА"
 "entertaining_price","Price","Narx","Цена"
+"rules_header","Rules","Qoidalar","Правилы"

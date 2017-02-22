@@ -144,6 +144,7 @@ public class EntertainmentActivity implements Initializable {
         comment_text.setText(Main.Language.getTranslation("comment_text"));
         send_button.setText(Main.Language.getTranslation("send_button"));
         rules_button.setText(Main.Language.getTranslation("rules_button"));
+        rules_header.setText(Main.Language.getTranslation("rules_header"));
 
     }
 
