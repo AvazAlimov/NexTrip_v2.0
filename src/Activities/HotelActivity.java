@@ -215,7 +215,7 @@ public class HotelActivity implements Initializable {
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
         rate_number.setText(Main.Language.getTranslation("based_on") + " " + hotel.getRatings().size() + " " + Main.Language.getTranslation("reviews"));
         rate.setText(String.format("%.01f", (rating == 0.0f ? 0.0f : (rating + 1.0f))));
-        rate_text.setText(Main.Rating[(int) (rating > -1 ? rating : 0)]);
+        rate_text.setText(Main.Language.getTranslation(Main.Rating[(int) (rating > -1 ? rating : 0)]));
     }
 
     public void restoreStars() {
