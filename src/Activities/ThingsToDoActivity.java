@@ -55,7 +55,6 @@ public class ThingsToDoActivity implements Initializable {
     public Label good_text;
     public Label fantastic_text;
     public Label fantastic_number;
-    public Label amenities_text;
     public HBox amenity_container;
     public HBox contact_container;
     public Label contact_text;
