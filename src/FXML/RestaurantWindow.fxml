@@ -152,7 +152,7 @@
                     <VBox maxHeight="Infinity" prefWidth="2" style="-fx-background-color: #212121;"/>
 
                     <VBox alignment="CENTER" spacing="10">
-                        <Label fx:id="sits_header" text="Seats" wrapText="true" maxWidth="250"/>
+                        <Label fx:id="sits_header" text="Seats" wrapText="true"/>
                         <Label fx:id="sits_text"/>
                     </VBox>
                 </HBox>
