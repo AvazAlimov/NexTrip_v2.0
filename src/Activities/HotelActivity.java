@@ -133,7 +133,6 @@ public class HotelActivity implements Initializable {
         comment_header.setText(Main.Language.getTranslation("comment_header"));
         comment_text.setText(Main.Language.getTranslation("comment_text"));
         send_button.setText(Main.Language.getTranslation("send_button"));
-
     }
 
     private Image loadImage(String path) throws IOException {
@@ -214,7 +213,7 @@ public class HotelActivity implements Initializable {
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.filledStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
         for (int i = 4; i >= hotel.getRating(); i--)
             stars.getChildren().get(i).setStyle("-fx-shape: " + Main.emptyStar + "; -fx-background-color: #FFC107; -fx-cursor: hand;");
-        rate_number.setText("based on " + hotel.getRatings().size() + " reviews");
+        rate_number.setText(Main.Language.getTranslation("based_on") + " " + hotel.getRatings().size() + " " + Main.Language.getTranslation("reviews"));
         rate.setText(String.format("%.01f", (rating == 0.0f ? 0.0f : (rating + 1.0f))));
         rate_text.setText(Main.Rating[(int) (rating > -1 ? rating : 0)]);
     }
