@@ -103,8 +103,8 @@ public class RestaurantActivity implements Initializable {
         loadMenu();
         restaurant.getComments().forEach(this::addCommentItem);
 
-        image_view.fitWidthProperty().bind(Main.stage.widthProperty().divide(2.6));
-        image_view.fitHeightProperty().bind(Main.stage.heightProperty().divide(2.6));
+        image_view.fitWidthProperty().bind(Main.stage.widthProperty().divide(2.8));
+        image_view.fitHeightProperty().bind(Main.stage.heightProperty().divide(2.8));
 
         ExecutorService service = new ScheduledThreadPoolExecutor(2);
         Runnable runnable = () -> {
