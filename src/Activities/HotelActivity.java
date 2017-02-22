@@ -133,6 +133,7 @@ public class HotelActivity implements Initializable {
         comment_header.setText(Main.Language.getTranslation("comment_header"));
         comment_text.setText(Main.Language.getTranslation("comment_text"));
         send_button.setText(Main.Language.getTranslation("send_button"));
+        information.setText(Main.Language.getTranslation("information"));
     }
 
     private Image loadImage(String path) throws IOException {
