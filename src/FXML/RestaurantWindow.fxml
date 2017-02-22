@@ -291,9 +291,10 @@
               style="-fx-padding: 16; -fx-background-color: #4FC3F7; -fx-background-radius: 8;">
             <HBox spacing="20" alignment="CENTER_LEFT">
                 <ImageView id="info_icon" fitHeight="56" fitWidth="56">
-                    <Image url="/Resources/Icons/info1_(64px).png"/>
+                    <Image url="/Resources/Icons/Restaurant Menu_48px.png"/>
                 </ImageView>
                 <Label fx:id="menu_header" text="Menu"/>
+
             </HBox>
 
             <HBox maxWidth="Infinity" prefHeight="2" style="-fx-background-color: #212121;"/>

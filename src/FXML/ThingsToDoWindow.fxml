@@ -163,7 +163,7 @@
 
                 <JFXButton fx:id="info_button" maxWidth="Infinity" text="SHOW MORE INFORMATION" onAction="#showInfo"/>
 
-                <JFXButton fx:id="rules_button" maxWidth="Infinity" text="SHOW RULES" onAction="#showRules"/>
+                <JFXButton fx:id="rules_button" maxWidth="Infinity" text="SHOW RULES" onAction="#showRules" style="-fx-font-size: 18;"/>
 
                 <VBox alignment="CENTER_LEFT" style="-fx-padding: 20;">
                     <HBox maxWidth="Infinity" spacing="10" alignment="CENTER">
@@ -292,9 +292,9 @@
               style="-fx-padding: 16; -fx-background-color: #4FC3F7; -fx-background-radius: 8;">
             <HBox spacing="20" alignment="CENTER_LEFT">
                 <ImageView fx:id="rules_icon" fitHeight="56" fitWidth="56">
-                    <Image url="/Resources/Icons/info1_(64px).png"/>
+                    <Image url="/Resources/Icons/Checklist_48px.png"/>
                 </ImageView>
-                <Label fx:id="rules_header" text="Information"/>
+                <Label fx:id="rules_header" text="Rules"/>
             </HBox>
 
             <HBox maxWidth="Infinity" prefHeight="2" style="-fx-background-color: #212121;"/>
