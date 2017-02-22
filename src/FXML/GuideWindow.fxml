@@ -14,6 +14,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 
+<?import java.net.URL?>
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Activities.GuideActivity" style="-fx-background-color: transparent;" fx:id="parent"
             opacity="0.0">
@@ -36,7 +37,7 @@
 
         <HBox onMousePressed="#mousePressed" onMouseDragged="#mouseDragged">
             <JFXComboBox fx:id="languageBox" promptText="Language"
-                         style="-fx-font-family: 'Trebuchet MS'; -fx-font-weight: bolder; -fx-background-color:#007aff;"
+                         style="-fx-font-family: 'Trebuchet MS'; -fx-pref-width: 200; -fx-font-size: 16; -fx-font-weight: bolder; -fx-background-color:#007aff;"
                          onAction="#changeLanguage"/>
             <Separator HBox.hgrow="ALWAYS" visible="false"/>
             <JFXButton prefWidth="40" prefHeight="40" text="✖"
@@ -100,4 +101,8 @@
 
         <Separator prefWidth="0" visible="false"/>
     </HBox>
+
+    <stylesheets>
+        <URL value="@../CSSFiles/Guide.css"/>
+    </stylesheets>
 </AnchorPane>
